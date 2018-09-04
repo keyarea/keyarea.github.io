@@ -2,12 +2,13 @@
 layout: post
 title:  "JAVAScript基础进阶"
 date:   2017-09-12 08:16:54
-categories: JAVAScript
-tags: JAVAScript
+categories:
+- JAVAScript
+tags:
+- JAVAScript
 ---
 
-* content
-{:toc}
+
 
 JavaScript声明提升
 JavaScript数值转换

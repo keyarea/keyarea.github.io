@@ -2,12 +2,12 @@
 layout: post
 title:  "JAVAScript入门"
 date:   2017-08-21 08:16:54
-categories: JAVAScript
-tags: JAVAScript
+categories: 
+- JAVAScript
+tags: 
+- JAVAScript
 ---
 
-* content
-{:toc}
 
 JAVAScript一种直译式脚本语言,是一种动态类型.弱类型.基于原型的语言,内置支持类型.
 它的解释器被称为JAVAScript引擎,为浏览器的一部分,广泛用于客户端的脚本语言,最早是在HTML网页上使用,用来给HTML网页增加动态功能.
