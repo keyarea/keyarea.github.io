@@ -1,5 +1,5 @@
 ---
-title: interface
+title: 接口
 date: 2018-09-18 20:37:57
 tags:
   - interface
@@ -103,4 +103,72 @@ public class _01Test {
 
 }
 
+```
+
+# 接口与抽象类的区别
+
+## 相同点
+
+1. 都是被其它类实现或者被继承的；
+2. 都不能实例化；
+3. 都可以定义抽象方法，定义的抽象方法子类必须得要覆盖；
+
+## 不同点
+
+1. 接口是没有构造器的，抽象类中有构造器；
+2. 抽象类中可以包含抽象方法和普通方法，接口当中只能有抽象方法,不能有普通方法（带有方法体）；（jdk8以后可以有普通方法）；
+3. 接口当中成员变量为`public static final 变量;`->静态常量;抽象类中默认的权限(包访问权限);
+4. 方法 接口中默认方法为`public abstract 方法名;`;抽象类中默认的权限(包访问权限);
+
+
+# 面向接口编程
+
+> 面向接口编程:把实现类对象赋值给接口类型的变量;
+
+> 多态的好处：屏蔽了不同类之间的实现差异，从而达到通用编程；
+
+```java
+package 接口;
+
+interface IUSB {
+	void swapData();
+}
+
+class Mouse implements IUSB {
+
+	@Override
+	public void swapData() {
+		System.out.println("鼠标移动");
+		
+	}
+	
+}
+
+class Keyboard implements IUSB {
+
+	@Override
+	public void swapData() {
+		System.out.println("输出字符");
+		
+	}
+	
+}
+
+class MotherBoard {
+	public void pluginIn(IUSB USB) {
+		USB.swapData();
+	}
+}
+
+public class Test {
+	public static void main(String[] args) {
+		IUSB m = new Mouse();
+		IUSB k = new Keyboard();
+		
+		MotherBoard mo = new MotherBoard();
+		mo.pluginIn(k);
+		mo.pluginIn(m);
+		
+	}
+}
 ```
