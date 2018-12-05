@@ -8,7 +8,7 @@ subtitle:
 description: Key个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面
 keywords:
 author: Key
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme:  next
+theme:  maupassant
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
