@@ -242,7 +242,7 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-#reward_comment: Donate comment here
+#reward_comment: 赏
 wechatpay: /images/wechatpay.jpg
 alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
@@ -406,7 +406,7 @@ gitment:
   count: true # Show comments count in post meta area
   lazy: true # Comments lazy loading with a button
   cleanly: false # Hide 'Powered by ...' on footer, and more
-  language: # Force language, or auto switch by theme
+  language: zh-Hans # Force language, or auto switch by theme
   github_user: keyarea # MUST HAVE, Your Github ID
   github_repo: blog_comments # MUST HAVE, The repo you use to store Gitment comments
   client_id: 7f418b92162809660c41 # MUST HAVE, Github client id for the Gitment
