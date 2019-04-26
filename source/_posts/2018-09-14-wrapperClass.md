@@ -2,9 +2,9 @@
 title: 包装类
 date: 2018-09-14 21:21:39
 tags:
-  - wrapperClass
+  - Java
 categories:
-  - JAVA
+  - Java
 ---
 
 # 什么是包装类
@@ -45,12 +45,12 @@ categories:
 public class Test {
 
 	public static void main(String[] args) {
-		int a = 10; 
+		int a = 10;
 		//把基本数据类型变成包装类  >> 装箱操作
 		//之所以输出10，是因为Integer内部覆写了toString
 		Integer num = new Integer(a);
 		Integer num1 = Integer.valueOf(20);
-		
+
 		System.out.println(num); //10
 		System.out.println(num1); //20
 		//int类型能够表示的最大值
@@ -70,13 +70,13 @@ public class Test {
 public class Test {
 
 	public static void main(String[] args) {
-		int a = 10; 
+		int a = 10;
 		//把基本数据类型变成包装类  >> 装箱操作
 		Integer num = Integer.valueOf(a);
-		
+
 		//拆箱操作：把包装类的对象，转换为对应的基本数据类型的变量
 		int num1 = num.intValue();
-		
+
 		System.out.println(num); //10  对象
 		System.out.println(num1); //10 基本数据类型		
 	}
@@ -94,11 +94,11 @@ public class Test {
 		//5是基本数据类型，通过自动装箱变为对象类型
 		//编译器执行了Integer num = Integer.valueOf(5)
 		Integer num = 5;
-		
+
 		//自动拆箱，实际上执行了 int num1 = num.intValue()
 		int num1 = num;
 		System.out.println(num1); //5
-		
+
 	}
 
 }
@@ -116,17 +116,17 @@ public static Integer valueOf(int i) {
 
 > 说明：Integer num = 5;相当于编译器执行了Integer num = Integer.valueOf(5)操作。这个方法就是返回一个 Integer 对象，只是在返回之前，看作了一个判断，判断当前 i 的值是否在 [-128,127] 区别，且 IntegerCache 中是否存在此对象，如果存在，则直接返回引用，否则，创建一个新的对象。
 
-# 包装类的缓存值 
+# 包装类的缓存值
 
 > 各个包装类缓存值范围 ：
 
 ```
-boolean：true和false 
-byte：-128～127 
-char：0～127 
-short：-128～127 
-int：-128～127 
-long：-128～127 
+boolean：true和false
+byte：-128～127
+char：0～127
+short：-128～127
+int：-128～127
+long：-128～127
 ```
 
 > 特别注意：对于float和double没有缓存。
@@ -147,15 +147,15 @@ long：-128～127
         System.out.println("num1==num2: "+(num1==num2));                    
         Integer num3 = 100;   
         Integer num4 = 100;   
-        System.out.println("num3==num4: "+(num3==num4)); 
+        System.out.println("num3==num4: "+(num3==num4));
 ```
 
-输出结果：num1==num2:false 和num3==num4:true 
+输出结果：num1==num2:false 和num3==num4:true
 
 >说明：
 >
->>首先要明确equal方法与==的区别： 
-equals() 比较的是两个对象的值（内容）是否相同。 
+>>首先要明确equal方法与==的区别：
+equals() 比较的是两个对象的值（内容）是否相同。
 “==” 比较的是两个对象的引用（内存地址）是否相同，也用来比较两个基本数据类型的变量值是否相等。
 >
 >>java定义：在自动装箱时对于值从–128到127之间的值，它们被装箱为Integer对象后，会存在内存中被重用，始终只存在一个对象而如果超过了从–128到127之间的值，被装箱后的Integer对象并不会被重用，即相当于每次装箱时都新建一个 Integer对象；

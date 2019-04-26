@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "JAVAScript入门"
+title:  "JavaScript入门"
 date:   2017-08-21 08:16:54
-categories: 
-- JAVAScript
+categories:
+- JavaScript
 tags: 
-- JAVAScript
+- JavaScript
 ---
 
 

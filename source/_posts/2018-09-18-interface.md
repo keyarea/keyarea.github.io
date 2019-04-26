@@ -2,9 +2,9 @@
 title: 接口
 date: 2018-09-18 20:37:57
 tags:
-  - interface
+  - Java
 categories:
-  - JAVA
+  - Java
 ---
 
 在java中，接口表示一种规范/约束/要求实现者必须遵循该规范：用来约束使用者应该怎么做。
@@ -52,7 +52,7 @@ interface Iswimable{
 }
 //两栖动物
 interface Iamphibiousablbe extends Iswimable,Iwalkable{
-	
+
 }
 ```
 
@@ -73,7 +73,7 @@ interface Iswimable{
 }
 //两栖动物
 interface Iamphibiousablbe extends Iswimable,Iwalkable{
-	
+
 }
 
 class Aniaml{
@@ -139,9 +139,9 @@ class Mouse implements IUSB {
 	@Override
 	public void swapData() {
 		System.out.println("鼠标移动");
-		
+
 	}
-	
+
 }
 
 class Keyboard implements IUSB {
@@ -149,9 +149,9 @@ class Keyboard implements IUSB {
 	@Override
 	public void swapData() {
 		System.out.println("输出字符");
-		
+
 	}
-	
+
 }
 
 class MotherBoard {
@@ -164,11 +164,11 @@ public class Test {
 	public static void main(String[] args) {
 		IUSB m = new Mouse();
 		IUSB k = new Keyboard();
-		
+
 		MotherBoard mo = new MotherBoard();
 		mo.pluginIn(k);
 		mo.pluginIn(m);
-		
+
 	}
 }
 ```

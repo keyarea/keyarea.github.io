@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "JAVAScript基础进阶"
+title:  "JavaScript基础进阶"
 date:   2017-09-12 08:16:54
 categories:
-- JAVAScript
+- JavaScript
 tags:
-- JAVAScript
+- JavaScript
 ---
 
 

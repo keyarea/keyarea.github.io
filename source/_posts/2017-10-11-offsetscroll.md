@@ -3,13 +3,10 @@ layout: post
 title:  "元素位置操作"
 date:   2017-10-10 08:16:54
 categories:
-- JAVAScript
-- scroll
-- offset
+- JavaScript
 tags:
-- JAVAScript
-- scroll
-- offset
+- JavaScript
+- HTML
 ---
 
 

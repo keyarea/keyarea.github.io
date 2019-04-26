@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  linux shell脚本-2
+title:  Linux Shell脚本-2
 date:   2017-06-27 17:14:54
-categories: 
-- shell
-tags: 
-- linux
-- shell
+categories:
+- Linux
+tags:
+- Linux
+- Shell
 ---
 
 
