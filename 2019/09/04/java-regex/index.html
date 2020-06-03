@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,regex,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="通过之前一系列的分析，String是一个非常万能的类，因为String不仅仅可以支持有各种字符串的处理操作，也支持有向各个数据类型的转换，所以在项目的开发之中，只要是用户输入的信息基本上都用String表示。于是在向其他数据类型转换时候为了保证转换的正确性，往往需要对其进行一些复杂的验证处理，那么这种情况下如果只是单纯的依靠String类中的方法是非常麻烦的。  认识正则表达式 现在假设有一个字">
+<meta name="keywords" content="Java,regex">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 正则表达式">
+<meta property="og:url" content="https://blog.loong.io/2019/09/04/java-regex/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="通过之前一系列的分析，String是一个非常万能的类，因为String不仅仅可以支持有各种字符串的处理操作，也支持有向各个数据类型的转换，所以在项目的开发之中，只要是用户输入的信息基本上都用String表示。于是在向其他数据类型转换时候为了保证转换的正确性，往往需要对其进行一些复杂的验证处理，那么这种情况下如果只是单纯的依靠String类中的方法是非常麻烦的。  认识正则表达式 现在假设有一个字">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 正则表达式">
+<meta name="twitter:description" content="通过之前一系列的分析，String是一个非常万能的类，因为String不仅仅可以支持有各种字符串的处理操作，也支持有向各个数据类型的转换，所以在项目的开发之中，只要是用户输入的信息基本上都用String表示。于是在向其他数据类型转换时候为了保证转换的正确性，往往需要对其进行一些复杂的验证处理，那么这种情况下如果只是单纯的依靠String类中的方法是非常麻烦的。  认识正则表达式 现在假设有一个字">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2019/09/04/java-regex/">
+
+
+
+
+
+  <title>Java 正则表达式 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2019/09/04/java-regex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java 正则表达式</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-04T16:53:33+08:00">
+                2019-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>通过之前一系列的分析，String是一个非常万能的类，因为String不仅仅可以支持有各种字符串的处理操作，也支持有向各个数据类型的转换，所以在项目的开发之中，只要是用户输入的信息基本上都用String表示。<br>于是在向其他数据类型转换时候为了保证转换的正确性，往往需要对其进行一些复杂的验证处理，那么这种情况下如果只是单纯的依靠String类中的方法是非常麻烦的。</p>
+</blockquote>
+<h2 id="认识正则表达式"><a href="#认识正则表达式" class="headerlink" title="认识正则表达式"></a>认识正则表达式</h2><blockquote>
+<p>现在假设有一个字符串要求你判断字符串是否由数字所组成，如果由数字所组成则将其变为数字进行乘法计算。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 正则表达式;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringToIntTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"123213"</span>;</span><br><span class="line">        <span class="keyword">if</span>(isNumber(str)) &#123;</span><br><span class="line">            <span class="keyword">int</span> num = Integer.parseInt(str);</span><br><span class="line">            System.out.println(num * <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isNumber</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] list = str.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; list.length ; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(list[i] &gt; <span class="string">'9'</span> || list[i] &lt; <span class="string">'0'</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>实际上这种验证的功能是非常简单的，但是如此简单的功能却需要开发者编写大量的程序逻辑代码，那么如果是更加复杂的验证呢？那么在这样的情况下，对于验证最好的做法就是利用正则表达式来完成。</p>
+</blockquote>
+<p>范例：使用正则表达式实现相同的功能</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 正则表达式;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//        String str = "sdf";</span></span><br><span class="line">        String str = <span class="string">"123"</span>;</span><br><span class="line">        <span class="keyword">if</span>(str.matches(<span class="string">"\\d+"</span>))&#123;</span><br><span class="line">            <span class="keyword">int</span> num = Integer.parseInt(str);</span><br><span class="line">            System.out.println(num * <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>正则表达式最早是从Perl语言发展而来的，而后在JDK1.4以前如果需要使用到正则表达式的相关定义则需要单独引入其他的*.jar文件，但是从JDK1.4之后已经默认被支持。</p>
+<p>并且提供有java.util.regex开发包，同时针对String类也进行了一些修改，使其有方法可以直接支持正则处理。</p>
+<p>使用正则最大的特点在于方便进行验证处理，以及方便进行复杂字符串的修改处理。</p>
+</blockquote>
+<h2 id="正则标记-记住"><a href="#正则标记-记住" class="headerlink" title="正则标记(记住)"></a>正则标记(记住)</h2><blockquote>
+<p>如果要想进行正则的处理操作，那么首先需要对常用的正则标记有所掌握，从JDK1.4开始，提供有java.util.regex开发包，这个包里面提供有一个Pattern程序类，在这个程序类里面定义有所有支持的正则标记。</p>
+</blockquote>
+<blockquote>
+<p>单个字符匹配</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">任意字符：表示由任意字符组成;</span><br><span class="line">\\: 表示匹配\;</span><br><span class="line">\n: 标识匹配换行;</span><br><span class="line">\t: 匹配制表符;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>单个字符集匹配(可以从中任选一个字符)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[abc] : 表示可能是字符a,b,c中的任意一个;</span><br><span class="line">[^abc] : 表示不是由字母a,b,c中的任意一个;</span><br><span class="line">[a-zA-Z] : 表示任意一个字母所组成，不区分大小写;</span><br><span class="line">[0-9] : 表示由一位数字所组成;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>简化的字符集</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">. : 表示任意的一个字符;</span><br><span class="line">\d : 表示任意一个数字，等价于[0-9];</span><br><span class="line">\D : 表示不是数字，等价于[^0-9];</span><br><span class="line">\s : 表示匹配任意的一位空格，可能是空格、换行、制表符;  </span><br><span class="line">\S : 表示匹配任意的非空格数据;</span><br><span class="line">\w : 表示匹配字母、数字、下划线，等价于[a-zA-Z_0-9];</span><br><span class="line">\W : 表示匹配非字母、数字、下划线，等价于[^a-zA-Z_0-9];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>边界匹配</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">^ ：匹配边界开始;</span><br><span class="line">$ : 匹配边界结束;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>数量表达,默认情况下只有添加上了数量单位才可以匹配多位字符;</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">表达式? : 表示该表达式可以出现0次或一次;</span><br><span class="line">表达式* : 表示该表达式可以出现0次1次或多次;</span><br><span class="line">表达式+ : 表示该表达式可以出现1次或多次;</span><br><span class="line">表达式&#123;n&#125; : 表示该表达式出现n次;</span><br><span class="line">表达式&#123;n,&#125; : 表示该表达式出现n次或n次以上;</span><br><span class="line">表达式&#123;m,m&#125; : 表示该表达式出现n-m次;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>逻辑表达式: 可以连接多个正则</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">表达式X表达式Y ：X表达式之后紧跟上Y表达式;</span><br><span class="line">表达式X|表达式Y ：有一个表达式满足即可;</span><br><span class="line">(表达式): 为表达式设置一个整体描述，可以为整体描述设置数量单位;</span><br></pre></td></tr></table></figure>
+<h2 id="String类对正则的支持"><a href="#String类对正则的支持" class="headerlink" title="String类对正则的支持"></a>String类对正则的支持</h2><blockquote>
+<p>在进行正则表达式大部分处理的情况下都会基于String类来完成，并且在String类里面提供有如下与正则有关的操作方法:</p>
+</blockquote>
+<hr>
+<blockquote>
+<p><code>public boolean matches(String regex)</code></p>
+</blockquote>
+<p>将指定字符串进行正则判断</p>
+<hr>
+<blockquote>
+<p><code>public String replaceAll(String regex, String replacement)</code></p>
+</blockquote>
+<p>替换全部</p>
+<hr>
+<blockquote>
+<p><code>public String replaceFirst(String regex, String replacement)</code></p>
+</blockquote>
+<p>替换首个</p>
+<hr>
+<blockquote>
+<p><code>public String[] split(String regex)</code></p>
+</blockquote>
+<p>正则拆分</p>
+<hr>
+<blockquote>
+<p><code>public String[] split(String regex, int limit)</code></p>
+</blockquote>
+<p>正则拆分</p>
+<hr>
+<p>范例：实现字符串的替换（删除掉非字母与数字）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"djfosdjfoj3j4o3#@#@OJOjojoj@J#$JOjoj"</span>;</span><br><span class="line">        String regex = <span class="string">"[^a-zA-Z0-9]+"</span>;</span><br><span class="line">        System.out.println(str.replaceAll(regex, <span class="string">""</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>范例：实现字符串的拆分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"fi2121d2jf3oij1fj"</span>;</span><br><span class="line">        String regex = <span class="string">"\\d+"</span>;</span><br><span class="line">        String[] result = str.split(regex);</span><br><span class="line">        System.out.println(Arrays.toString(result));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在正则的处理的时候对于拆分与替换的操作相对容易一些，但是比较麻烦的是数据验证部分。</p>
+</blockquote>
+<p>范例：判断一个字符串是否为小数，如果是小数则将其变为double类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"100.1"</span>;</span><br><span class="line">        String regex = <span class="string">"\\d+(\\.\\d+)?"</span>;</span><br><span class="line">        System.out.println(str.matches(regex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>范例：判断一个字符串是否是由日期所组成，如果是由日期所组成则将其转为Date类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        String str = <span class="string">"1994-09-12"</span>;</span><br><span class="line">        String regex = <span class="string">"\\d&#123;4&#125;-\\d&#123;2&#125;-\\d&#123;2&#125;"</span>;</span><br><span class="line">        <span class="keyword">if</span>(str.matches(regex)) &#123;</span><br><span class="line">            System.out.println((<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>)).parse(str));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>需要注意的是，正则表达式无法对里面的内容进行判断，只能对格式进行判断处理</p>
+</blockquote>
+<p>范例：验证email地址:</p>
+<ul>
+<li>email的用户名可以由字母、数字、下划线所组成（不应该使用<code>_</code>开头）;</li>
+<li>email的域名可以由字母、数字、_、-所组成;</li>
+<li>域名的后缀必须是：.net,.com,.cn,.com.cn,.org,.gov</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"mail@qipo.net"</span>;</span><br><span class="line">        String regex = <span class="string">"[a-zA-Z0-9]\\w+@\\w+.(net|com|cn|org|gov|com.cn)"</span>;</span><br><span class="line">        System.out.println(str.matches(regex));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java-util-regex开发包"><a href="#java-util-regex开发包" class="headerlink" title="java.util.regex开发包"></a>java.util.regex开发包</h2><blockquote>
+<p>虽然在大部分的情况下都可以利用String类实现正则的操作，但是也有一些情况下需要使用到java.util.regex开发包中提供的正则处理类。</p>
+<p>在这个包中一共定义有两个类：Pattern（正则表达式的编译类），Matcher（匹配类）。</p>
+</blockquote>
+<h3 id="Pattern类"><a href="#Pattern类" class="headerlink" title="Pattern类"></a>Pattern类</h3><blockquote>
+<p>Pattern类提供有正则表达式的编译处理支持：<code>public static Pattern compile(String regex)</code></p>
+<p>同时也提供有字符串的拆分操作支持: <code>public String[] split(CharSequence input)</code></p>
+</blockquote>
+<p>范例： 字符串拆分（字符串按照非字母进行拆分操作）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest6</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"fjsdojo3ojf9gjdfoj4ojfjos3423jofjdosjf"</span>;</span><br><span class="line">        String regex = <span class="string">"[^a-zA-Z]+"</span>;</span><br><span class="line">        Pattern pat = Pattern.compile(regex);</span><br><span class="line">        String[] result = pat.split(str);</span><br><span class="line">        System.out.println(Arrays.toString(result));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Matcher类"><a href="#Matcher类" class="headerlink" title="Matcher类"></a>Matcher类</h3><blockquote>
+<p>实现了正则匹配的处理类，这个类的对象实例化依靠Pattern类完成：</p>
+<ul>
+<li>Pattern类提供的方法： <code>public Mathcher matcher(CharSequence input)</code>;<br>当获取了Matcher类对象之后就可以利用该类中的方法进行如下操作：</li>
+<li>正则匹配：<code>public boolean matches()</code>;</li>
+<li>字符串替换：<code>pulice String replaceAll(String replacement)</code>;</li>
+</ul>
+</blockquote>
+<hr>
+<p>范例：字符串匹配</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest7</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"101"</span>;</span><br><span class="line">        String regex = <span class="string">"\\d+"</span>;</span><br><span class="line">        Pattern pat = Pattern.compile(regex);</span><br><span class="line">        Matcher mat = pat.matcher(str);</span><br><span class="line">        System.out.println(mat.matches());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果纯粹的是以拆分、替换、匹配三种操作为例根本用不到java.util.regex开发包，只依靠String类就都可以实现了。</p>
+</blockquote>
+<p>范例： 找出字符串中的所有数字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest8</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"fjodsijfoi3jjojoi34234jfo3423"</span>;</span><br><span class="line">        String regex = <span class="string">"\\D+"</span>;</span><br><span class="line">        Pattern pat = Pattern.compile(regex);</span><br><span class="line">        Matcher mat = pat.matcher(str);</span><br><span class="line">        System.out.println(mat.replaceAll(<span class="string">""</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<blockquote>
+<p>但是Matcher里面提供有一种分组的功能，而这种分组的功能是String所不具备的。   </p>
+</blockquote>
+<p>范例：要求取出${}里面的所有内容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RegexTest9</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"hello$&#123;var&#125;,my name is $&#123;name&#125;"</span>;</span><br><span class="line">        String regEx = <span class="string">"\\$\\&#123;\\w+\\&#125;"</span>;</span><br><span class="line">        Pattern pat = Pattern.compile(regEx);</span><br><span class="line">        Matcher mat = pat.matcher(str);</span><br><span class="line">        <span class="keyword">while</span> (mat.find()) &#123; <span class="comment">// 是否有匹配成功的内容</span></span><br><span class="line">            System.out.println(mat.group(<span class="number">0</span>).replaceAll(<span class="string">"\\$|\\&#123;|\\&#125;"</span>, <span class="string">""</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>java.util.regex开发包，如果不是进行一些更为复杂的正则处理是很难使用到的，而String类所提供的功能只适合于正则的基本操作。</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/regex/" rel="tag"># regex</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/03/java-date/" rel="next" title="Java 时间处理类">
+                <i class="fa fa-chevron-left"></i> Java 时间处理类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/09/java-common-class/" rel="prev" title="Java开发常用类库">
+                Java开发常用类库 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#认识正则表达式"><span class="nav-number">1.</span> <span class="nav-text">认识正则表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则标记-记住"><span class="nav-number">2.</span> <span class="nav-text">正则标记(记住)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String类对正则的支持"><span class="nav-number">3.</span> <span class="nav-text">String类对正则的支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-regex开发包"><span class="nav-number">4.</span> <span class="nav-text">java.util.regex开发包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pattern类"><span class="nav-number">4.1.</span> <span class="nav-text">Pattern类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matcher类"><span class="nav-number">4.2.</span> <span class="nav-text">Matcher类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

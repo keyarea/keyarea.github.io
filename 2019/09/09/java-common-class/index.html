@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="UUID类 UUID是一种生成无重复字符串的程序类,这种程序类的主要功能是根据时间戳实现一个自动的无重复的字符串定义.   一般在获取UUID的时候往往都是随机生成一个内容,所以可以通过如下方法获取:  获取UUID对象: public static UUID randomUUID(); 根据字符串获取UUID内容: public static UUID fromString(String nam">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java开发常用类库">
+<meta property="og:url" content="https://blog.loong.io/2019/09/09/java-common-class/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="UUID类 UUID是一种生成无重复字符串的程序类,这种程序类的主要功能是根据时间戳实现一个自动的无重复的字符串定义.   一般在获取UUID的时候往往都是随机生成一个内容,所以可以通过如下方法获取:  获取UUID对象: public static UUID randomUUID(); 根据字符串获取UUID内容: public static UUID fromString(String nam">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://imgs.loong.io/20190908101310_wCY5wM_Screenshot.jpeg">
+<meta property="og:image" content="http://imgs.loong.io/20190908105406_Oh17FM_Screenshot.jpeg">
+<meta property="og:image" content="http://imgs.loong.io/20190908112149_vwSI5h_Screenshot.jpeg">
+<meta property="og:image" content="http://imgs.loong.io/20190908113324_LYlF82_Screenshot.jpeg">
+<meta property="og:image" content="http://imgs.loong.io/20190908115725_Wqt9ar_Screenshot.jpeg">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.378Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java开发常用类库">
+<meta name="twitter:description" content="UUID类 UUID是一种生成无重复字符串的程序类,这种程序类的主要功能是根据时间戳实现一个自动的无重复的字符串定义.   一般在获取UUID的时候往往都是随机生成一个内容,所以可以通过如下方法获取:  获取UUID对象: public static UUID randomUUID(); 根据字符串获取UUID内容: public static UUID fromString(String nam">
+<meta name="twitter:image" content="http://imgs.loong.io/20190908101310_wCY5wM_Screenshot.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2019/09/09/java-common-class/">
+
+
+
+
+
+  <title>Java开发常用类库 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2019/09/09/java-common-class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java开发常用类库</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-09T11:10:04+08:00">
+                2019-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="UUID类"><a href="#UUID类" class="headerlink" title="UUID类"></a>UUID类</h2><blockquote>
+<p>UUID是一种生成无重复字符串的程序类,这种程序类的主要功能是根据时间戳实现一个自动的无重复的字符串定义.</p>
+</blockquote>
+<blockquote>
+<p>一般在获取UUID的时候往往都是随机生成一个内容,所以可以通过如下方法获取:</p>
+<ul>
+<li>获取UUID对象: <code>public static UUID randomUUID()</code>;</li>
+<li>根据字符串获取UUID内容: <code>public static UUID fromString(String name)</code>;</li>
+</ul>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UUIDTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        UUID uuid = UUID.randomUUID();</span><br><span class="line">        System.out.println(uuid.toString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在对一些文件进行自动命名处理的情况下,UUID类型非常好用.</p>
+</blockquote>
+<h2 id="Optional类"><a href="#Optional类" class="headerlink" title="Optional类"></a>Optional类</h2><blockquote>
+<p>Optional类主要是进行null的相关处理,在以前进行程序开发的时候,如果为了程序之中出现空指向,往往可以追加有null的验证.</p>
+</blockquote>
+<p>范例:传统的引用传递问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OptionalTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        print(<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(str != <span class="keyword">null</span>)&#123;</span><br><span class="line">            System.out.println(str.toString());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在引用接收的一方往往都是被动判断,所以为了解决这种被动的处理操作,在Java中提供有一个Optional类,这个类可以实现null的处理操作,在这个类里面提供有如下的操作方法:</p>
+<ul>
+<li>返回空数据: <code>public static &lt;T&gt; Optional&lt;T&gt; empty()</code>;</li>
+<li>获取数据: <code>public T get()</code>;</li>
+<li>保存数据,但是不允许出现null: <code>public static &lt;T&gt; Optional&lt;T&gt; of(T value)</code>;<ul>
+<li>如果在保存数据的时候存在有null,则会抛出NullPointerException异常</li>
+</ul>
+</li>
+<li>保存数据,允许为null: <code>public static &lt;T&gt; Optional&lt;T&gt; ofNullable(T able)</code>;</li>
+<li>空的时候返回其它数据: <code>public T orElse(T other)</code>;</li>
+</ul>
+</blockquote>
+<p><img src="http://imgs.loong.io/20190908101310_wCY5wM_Screenshot.jpeg" alt></p>
+<p>范例: 修改程序,按照正规的结构完成</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMessage</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MessageUtil</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Optional&lt;IMessage&gt; <span class="title">getMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Optional.of(<span class="keyword">new</span> MessageImpl());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useMessage</span><span class="params">(IMessage msg)</span> </span>&#123;</span><br><span class="line">        System.out.println(msg.getContent());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageImpl</span> <span class="keyword">implements</span> <span class="title">IMessage</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"www.qipo.net"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OptionalTest1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        IMessage temp = MessageUtil.getMessage().get();</span><br><span class="line">        MessageUtil.useMessage(temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于Optional类中允许保存有null的内容,所以在数据获取的时候也可以进行null的处理.但是如果为null,则在使用get()获取数据的时候就会出现<code>Exception in thread &quot;main&quot; java.util.NoSuchElementException: No value present</code>的异常.<br>所以此时可以更换为ofElse()方法.</p>
+<p>范例: 处理null的值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMessage</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageUtil</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MessageUtil</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Optional&lt;IMessage&gt; <span class="title">getMessage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Optional.ofNullable(<span class="keyword">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">useMessage</span><span class="params">(IMessage msg)</span> </span>&#123;</span><br><span class="line">        System.out.println(msg.getContent());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MessageImpl</span> <span class="keyword">implements</span> <span class="title">IMessage</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getContent</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"www.qipo.net"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OptionalTest1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        IMessage temp = MessageUtil.getMessage().orElse(<span class="keyword">new</span> MessageImpl());</span><br><span class="line">        MessageUtil.useMessage(temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在所有引用数据类型的操作处理之中,null是一个重要的技术问题,所以JDK1.8之后对于null的处理很有帮助,同时也是日后进行项目开发之中使用次数最多的一个程序类. </p>
+<h2 id="ThreadLocal类"><a href="#ThreadLocal类" class="headerlink" title="ThreadLocal类"></a>ThreadLocal类</h2><p>在真正的去了解ThreadLocal类作用的时候编写一个简单的程序做一个先期分析 :</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String meg;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMeg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> meg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMeg</span><span class="params">(String meg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.meg = meg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Channel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Message msg;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Channel</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMessage</span><span class="params">(Message m)</span> </span>&#123;</span><br><span class="line">        msg = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[发送消息]"</span> + msg.getMeg());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocalTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">        msg.setMeg(<span class="string">"消息"</span>);</span><br><span class="line">        Channel.setMessage(msg);</span><br><span class="line">        Channel.send();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://imgs.loong.io/20190908105406_Oh17FM_Screenshot.jpeg" alt></p>
+<p>对于当前的程序实际上采用的是一种单线程的模式来进行处理的,那么再多线程情况下能否实现完全一致的操作效果呢?为此我们启动三个线程进行处理.</p>
+<p>范例: 多线程的影响</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String meg;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMeg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> meg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMeg</span><span class="params">(String meg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.meg = meg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Channel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Message msg;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Channel</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMessage</span><span class="params">(Message m)</span> </span>&#123;</span><br><span class="line">        msg = m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[发送消息]"</span> + Thread.currentThread().getName() + <span class="string">"-"</span> + msg.getMeg());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocalTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">            msg.setMeg(<span class="string">"线程A的消息"</span>);</span><br><span class="line">            Channel.setMessage(msg);</span><br><span class="line">            Channel.send();</span><br><span class="line">        &#125;, <span class="string">"线程A"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">            msg.setMeg(<span class="string">"线程B的消息"</span>);</span><br><span class="line">            Channel.setMessage(msg);</span><br><span class="line">            Channel.send();</span><br><span class="line">        &#125;, <span class="string">"线程B"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">            msg.setMeg(<span class="string">"线程C的消息"</span>);</span><br><span class="line">            Channel.setMessage(msg);</span><br><span class="line">            Channel.send();</span><br><span class="line">        &#125;, <span class="string">"线程C"</span>).start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候消息的处理产生了影响.</p>
+<p><img src="http://imgs.loong.io/20190908112149_vwSI5h_Screenshot.jpeg" alt></p>
+<p>在保持Channel(所有发送的通道)核心结构不改变的情况下,需要考虑到每个线程的独立操作问题.那么在这样的情况下就发现对于Channel类而言,除了要保留有发送的消息之外,还应该多存放有一个每一个线程的标记(当前线程),<br>那么这个时候我们就可以通过ThreadLocal类来存放数据.在ThreadLocal类里面提供有如下的操作方法:</p>
+<ul>
+<li>构造方法: <code>public ThreadLocal()</code>;</li>
+<li>设置数据: <code>public void set(T value)</code>;</li>
+<li>取出数据: <code>public T get()</code>;</li>
+<li>删除数据: <code>public void remove()</code>;</li>
+</ul>
+<p><img src="http://imgs.loong.io/20190908113324_LYlF82_Screenshot.jpeg" alt></p>
+<p>范例: 解决线程同步问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String meg;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMeg</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> meg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMeg</span><span class="params">(String meg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.meg = meg;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Channel</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> ThreadLocal&lt;Message&gt; THREAD_LOCAL = <span class="keyword">new</span> ThreadLocal&lt;&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Channel</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setMessage</span><span class="params">(Message m)</span> </span>&#123;</span><br><span class="line">        THREAD_LOCAL.set(m);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[发送消息]"</span> + Thread.currentThread().getName() + <span class="string">"-"</span> + THREAD_LOCAL.get().getMeg());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadLocalTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">            msg.setMeg(<span class="string">"线程A的消息"</span>);</span><br><span class="line">            Channel.setMessage(msg);</span><br><span class="line">            Channel.send();</span><br><span class="line">        &#125;, <span class="string">"线程A"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">            msg.setMeg(<span class="string">"线程B的消息"</span>);</span><br><span class="line">            Channel.setMessage(msg);</span><br><span class="line">            Channel.send();</span><br><span class="line">        &#125;, <span class="string">"线程B"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">            Message msg = <span class="keyword">new</span> Message();</span><br><span class="line">            msg.setMeg(<span class="string">"线程C的消息"</span>);</span><br><span class="line">            Channel.setMessage(msg);</span><br><span class="line">            Channel.send();</span><br><span class="line">        &#125;, <span class="string">"线程C"</span>).start();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每个线程通过ThreadLocal只允许保存一个数据.</p>
+<h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>定时器的主要操作是进行定时任务的处理.在Java中提供有定时任务的支持,但是这种任务的处理只是实现了一种间隔触发的操作.</p>
+<p>如果要想实现定时的处理操作主要是需要有一个定时操作的主体类,以及一个定时任务的控制.可以使用两个类实现:</p>
+<ul>
+<li><code>java.util.TimerTask</code>类:实现定时任务处理;</li>
+<li><code>java.util.Timer</code>类:进行任务的处理,启动的方法:<ul>
+<li>任务启动: <code>public void schedule(TimerTask task, long delay)</code>,延迟单位为毫秒;</li>
+<li>间隔触发: <code>public void scheduleAtFixedRate(TimerTask task, long delay, long period)</code>;</li>
+</ul>
+</li>
+</ul>
+<p>范例: 实现定时任务处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Timer;</span><br><span class="line"><span class="keyword">import</span> java.util.TimerTask;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTask</span> <span class="keyword">extends</span> <span class="title">TimerTask</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(Thread.currentThread().getName() + <span class="string">"定时任务启动, 当前时间为: "</span> + System.currentTimeMillis());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimerTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Timer timer = <span class="keyword">new</span> Timer(); <span class="comment">// 定时任务</span></span><br><span class="line">        <span class="comment">// 定义间隔任务,1000毫秒之后开始执行,1000毫秒执行一次</span></span><br><span class="line">        timer.scheduleAtFixedRate(<span class="keyword">new</span> MyTask(), <span class="number">1000</span>, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">//        timer.schedule(new MyTask(), 1000); // 1000毫秒之后开始执行</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://imgs.loong.io/20190908115725_Wqt9ar_Screenshot.jpeg" alt></p>
+<p>这种定时是由JDK最原始的方式提供的支持,但是实际上开发之中利用此类方式进行的定时处理实现的代码会非常复杂.</p>
+<h2 id="Base64加密工具"><a href="#Base64加密工具" class="headerlink" title="Base64加密工具"></a>Base64加密工具</h2><p>正常来说,加密基本上永远都伴随着解密,所谓的加密或者是解密往往都需要有一些所谓的规则.在JDK1.8开始提供有一个新的加密处理操作类,Base64处理,在这个类里面有两个内部类:</p>
+<ul>
+<li>Base64.Encoder:进行加密处理;<ul>
+<li>加密处理: <code>public byte[] encode(byte[] src)</code></li>
+</ul>
+</li>
+<li>Base64.Decoder:进行解密处理;<ul>
+<li>解密处理: <code>public byte[] decode(String src)</code></li>
+</ul>
+</li>
+</ul>
+<p>范例: 加密与解密操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Base64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Base64Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str = <span class="string">"www.qipo.net"</span>; <span class="comment">// 要进行加密的内容</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 加密操作</span></span><br><span class="line">        String enStr = <span class="keyword">new</span> String(Base64.getEncoder().encode(str.getBytes()));</span><br><span class="line">        System.out.println(enStr); <span class="comment">// 加密之后的字符串</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 解密操作</span></span><br><span class="line">        String deStr = <span class="keyword">new</span> String(Base64.getDecoder().decode(enStr));</span><br><span class="line">        System.out.println(deStr); <span class="comment">// 解密之后的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>虽然Base64可以实现加密与解密操作的处理,但是由于是一个公共的算法,所以如果直接对数据进行加密往往并不安全,最好的做法是使用盐值操作.</p>
+<p>范例: 盐值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Base64;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Base64Test1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String salt = <span class="string">"jfidsj"</span>;</span><br><span class="line"></span><br><span class="line">        String str = <span class="string">"www.qipo.net"</span> + salt; <span class="comment">// 要进行加密的内容</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 加密操作</span></span><br><span class="line">        String enStr = <span class="keyword">new</span> String(Base64.getEncoder().encode(str.getBytes()));</span><br><span class="line">        System.out.println(enStr); <span class="comment">// 加密之后的字符串</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 解密操作</span></span><br><span class="line">        String deStr = <span class="keyword">new</span> String(Base64.getDecoder().decode(enStr));</span><br><span class="line">        System.out.println(deStr); <span class="comment">// 解密之后的字符串</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>即使现在有盐值,实际上加密效果也不是很好,最好的办法就是多次加密。</p>
+<p>范例：复杂的加密操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Base64;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StringUtil</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> REPEAT = <span class="number">5</span>; <span class="comment">// 加密次数</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String SALT = <span class="string">"qipo"</span>; <span class="comment">// 盐值</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">StringUtil</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 加密处理</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> str 需要加密的字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 加密后的数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">encode</span><span class="params">(String str)</span> </span>&#123; <span class="comment">// 加密处理</span></span><br><span class="line">        String temp =   str + <span class="string">"&#123;"</span> + SALT + <span class="string">"&#125;"</span>; <span class="comment">// 盐值不对外公布</span></span><br><span class="line">        <span class="keyword">byte</span>[] data = temp.getBytes();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; REPEAT; i++) &#123;</span><br><span class="line">            data = Base64.getEncoder().encode(data);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 解密处理</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> str 需要进行解密的字符串</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 解密之后的数据</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">decode</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span>[] data = str.getBytes();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; REPEAT ; i++) &#123;</span><br><span class="line">            data = Base64.getDecoder().decode(data);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(data).replaceAll(<span class="string">"\\&#123;\\w+\\&#125;"</span>, <span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Base64Test2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String temp = <span class="string">"www.qipo.net"</span>;</span><br><span class="line"></span><br><span class="line">        String encodeStr = StringUtil.encode(temp);</span><br><span class="line">        System.out.println(encodeStr);</span><br><span class="line">        String decodeStr = StringUtil.decode(encodeStr);</span><br><span class="line">        System.out.println(decodeStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最好的做法是使用2-3种加密程序，同时再找到一些完全不可解密的加密算法。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/04/java-regex/" rel="next" title="Java 正则表达式">
+                <i class="fa fa-chevron-left"></i> Java 正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#UUID类"><span class="nav-number">1.</span> <span class="nav-text">UUID类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optional类"><span class="nav-number">2.</span> <span class="nav-text">Optional类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal类"><span class="nav-number">3.</span> <span class="nav-text">ThreadLocal类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定时器"><span class="nav-number">4.</span> <span class="nav-text">定时器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64加密工具"><span class="nav-number">5.</span> <span class="nav-text">Base64加密工具</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

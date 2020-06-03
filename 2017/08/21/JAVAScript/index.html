@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="JAVAScript一种直译式脚本语言,是一种动态类型.弱类型.基于原型的语言,内置支持类型.它的解释器被称为JAVAScript引擎,为浏览器的一部分,广泛用于客户端的脚本语言,最早是在HTML网页上使用,用来给HTML网页增加动态功能. 组成部分 ECMAScript,描述了该语言的基本语法. 文档对象模型(DOM),描述处理网页内容的方法和接口. 浏览器对象模型(BOM),描述与浏览器进行交">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript入门">
+<meta property="og:url" content="https://blog.loong.io/2017/08/21/JAVAScript/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="JAVAScript一种直译式脚本语言,是一种动态类型.弱类型.基于原型的语言,内置支持类型.它的解释器被称为JAVAScript引擎,为浏览器的一部分,广泛用于客户端的脚本语言,最早是在HTML网页上使用,用来给HTML网页增加动态功能. 组成部分 ECMAScript,描述了该语言的基本语法. 文档对象模型(DOM),描述处理网页内容的方法和接口. 浏览器对象模型(BOM),描述与浏览器进行交">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/js.jpg">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/keywords.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/bool1.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/bool2.png">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.127Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript入门">
+<meta name="twitter:description" content="JAVAScript一种直译式脚本语言,是一种动态类型.弱类型.基于原型的语言,内置支持类型.它的解释器被称为JAVAScript引擎,为浏览器的一部分,广泛用于客户端的脚本语言,最早是在HTML网页上使用,用来给HTML网页增加动态功能. 组成部分 ECMAScript,描述了该语言的基本语法. 文档对象模型(DOM),描述处理网页内容的方法和接口. 浏览器对象模型(BOM),描述与浏览器进行交">
+<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/js.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2017/08/21/JAVAScript/">
+
+
+
+
+
+  <title>JavaScript入门 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2017/08/21/JAVAScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript入门</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T08:16:54+08:00">
+                2017-08-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JAVAScript一种直译式脚本语言,是一种动态类型.弱类型.基于原型的语言,内置支持类型.<br>它的解释器被称为JAVAScript引擎,为浏览器的一部分,广泛用于客户端的脚本语言,最早是在HTML网页上使用,用来给HTML网页增加动态功能.</p>
+<h3 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h3><ul>
+<li>ECMAScript,描述了该语言的基本语法.</li>
+<li>文档对象模型(DOM),描述处理网页内容的方法和接口.</li>
+<li>浏览器对象模型(BOM),描述与浏览器进行交互的方法和接口.</li>
+</ul>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/js.jpg" alt></p>
+<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><p>JAVAScript是一种属于网络的脚本语言,已经被广泛用于Web应用开发,常用来为网页添加各种各样的动态效果,为用户提供更流畅美观的浏览效果.通常JAVAScript脚本是通过嵌入在HTML中来实现自身的功能的.</p>
+<ol>
+<li>是一种解释性脚本语言(代码不进行预编译).</li>
+<li>主要用来向HTML页面添加交互行为.</li>
+<li>可以直接嵌入HTML页面,但写成单独的js文件有利于结构和行为的分离.</li>
+<li>跨平台特性,在绝大多数浏览器的支持下,可以在多种平台下运行(如windows.Linux.Mac.Android.ios等)</li>
+</ol>
+<h3 id="JAVAScript的作用"><a href="#JAVAScript的作用" class="headerlink" title="JAVAScript的作用"></a>JAVAScript的作用</h3><ul>
+<li>嵌入动态文本与HTMLyemain</li>
+<li>对浏览器事件做出响应.</li>
+<li>读写HTML元素.</li>
+<li>在数据被提交到服务器之前验证数据.</li>
+<li>检测访客的浏览器信息</li>
+<li>控制cookies,包括创建和修改等.</li>
+<li>基于Node.js技术进行服务器编程</li>
+</ul>
+<h3 id="JAVAScript的编写方式"><a href="#JAVAScript的编写方式" class="headerlink" title="JAVAScript的编写方式"></a>JAVAScript的编写方式</h3><ul>
+<li><p>行内样式</p>
+<p>  <code>&lt;button onclick=&quot;alert();&quot;&gt;点我&lt;/button&gt;</code></p>
+</li>
+<li><p>嵌套样式:这个样式是写在<code>&lt;body&gt;&lt;/body&gt;</code>之内的,而不是别的.</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--嵌套javascript  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">"我是提示框！！！！"</span>);</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>外部的js脚本</p>
+<p>先要创建一个<code>.js</code>结尾的文件,在里面写你需要的js脚本.<br>然后同样是在<code>&lt;body&gt;&lt;/body&gt;</code>标签中引入外部js脚本.<br><code>&lt;script src=&quot;./text.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+</ul>
+<h3 id="javascript-基本概念"><a href="#javascript-基本概念" class="headerlink" title="javascript 基本概念"></a>javascript 基本概念</h3><h4 id="严格区分大小写"><a href="#严格区分大小写" class="headerlink" title="严格区分大小写"></a>严格区分大小写</h4><p>第一个概念就是ECMAScript中的一切(变量,函数名和操作符)都区分大小写.<br>这也就意味着,变量名<code>test</code>和变量名<code>Test</code>分别代表着两个不同的变量.而函数名不能使用<code>typeof</code>,因为他是一个关键字,但<code>typeOf</code>则完全可以是一个有效的函数名.</p>
+<h4 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h4><p>所谓标识符,就是指变量,函数,属性的名字,或者函数的参数.标识符可以使按照下列格式规则组合起来的一个或多个字符:</p>
+<ol>
+<li><p>第一个字符必须是一个字母,下划线(_)或一个美元符号($)其他字符可以是字母,下划线,美元符号或数字.</p>
+</li>
+<li><p>标识符的字母也可以包含扩展的ASCII或Unicode字母字符,但我们不推荐这么做.</p>
+</li>
+<li><p>按照惯例,ECMAScript 标识符采用驼峰大小写格式,也就是第一个字母小写,剩下的每个单词的首字母大写,例如:<code>firstChild</code></p>
+</li>
+<li>不要和关键字重名</li>
+</ol>
+<h4 id="注释风格"><a href="#注释风格" class="headerlink" title="注释风格"></a>注释风格</h4><ol>
+<li><p>单行注释<code>//</code>,<code>//这里是单行注释!</code></p>
+</li>
+<li><p>多行注释<code>/* 这是注释内容! */</code></p>
+</li>
+</ol>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">这里是注释!</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意:不要和python,html中的注释混淆.</p>
+</blockquote>
+<h4 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h4><p>ECMAScript 中的语句以一个分号结尾;如果省略分号,则由解析器确定语句的结尾,比如:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value1 = a - b  <span class="comment">//不推荐</span></span><br><span class="line"><span class="keyword">var</span> value2 = a + b; <span class="comment">//推荐</span></span><br></pre></td></tr></table></figure>
+<p>使用代码块,让代码看起来更加清晰,比如:</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不推荐</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">value</span>)</span><br><span class="line">  alert(<span class="string">"value is ..."</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//推荐</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">value</span>)&#123;</span><br><span class="line">  alert(<span class="string">"value is ..."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p><img src="http://oujvmc3la.bkt.clouddn.com/keywords.png" alt></p>
+<blockquote>
+<p>注意:定义标识符时不要使用关键字和保留字.</p>
+</blockquote>
+<h3 id="JAVAScript-变量"><a href="#JAVAScript-变量" class="headerlink" title="JAVAScript 变量"></a>JAVAScript 变量</h3><p>ECMAScript 的变量是松散类型的,所谓松散类型就是可以用来保存任何类型的数据.换句话说,每个变量仅仅是一个用于保存值的占位符而已.定义变量时要使用<code>var</code>操作符.再次定义变量就不需要<code>var</code>操作符了.<br>比如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义变量！！！！</span></span><br><span class="line">    <span class="comment">// var是个关键字，a是变量名(标识符)</span></span><br><span class="line">    <span class="comment">//注意标识符的命名规则</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">//分号表示一条语句的结尾</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//用于控制台输出</span></span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<h3 id="JAVAScript-数据类型"><a href="#JAVAScript-数据类型" class="headerlink" title="JAVAScript 数据类型"></a>JAVAScript 数据类型</h3><p>ECMAScript 中有 5 种简单数据类型(也称为基本数据类型): <code>Undefined</code>, <code>Null</code>, <code>Boolean</code>, <code>Number</code>和 <code>String</code> 。<br>对一个值使用 <code>typeof</code> 操作符可能返回下列某个字符串:</p>
+<ul>
+<li>“undefined” ——如果这个值未定义;</li>
+<li>“boolean” ——如果这个值是布尔值;</li>
+<li>“string” ——如果这个值是字符串;</li>
+<li>“number” ——如果这个值是数值;</li>
+<li>“object” ——如果这个值是对象或 null ;</li>
+<li>“function” ——如果这个值是函数。</li>
+</ul>
+<p>例如:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"string"</span>;</span><br><span class="line"> alert(<span class="keyword">typeof</span> a); <span class="comment">//string</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> b = <span class="number">123</span>;</span><br><span class="line"> alert(<span class="keyword">typeof</span> b); <span class="comment">//number</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> c = <span class="literal">true</span>;</span><br><span class="line"> alert(<span class="keyword">typeof</span> c);<span class="comment">//boolean</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> d;</span><br><span class="line"> alert(<span class="keyword">typeof</span> d);<span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;alert(<span class="string">"hello"</span>);&#125;;</span><br><span class="line"> alert(<span class="keyword">typeof</span> f);<span class="comment">//function</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> e = <span class="literal">null</span>;</span><br><span class="line"> alert(<span class="keyword">typeof</span> e);<span class="comment">//object</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><p>String 类型用于表示由零或多个 16 位 Unicode 字符组成的字符序列,即字符串。字符串可以由双引号(“)或单引号(’)表示,因此下面两种字符串的写法都是有效的:</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">var a</span> = <span class="string">"string1"</span>;</span><br><span class="line"><span class="attribute">var b</span> = <span class="string">'string2'</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意:不要混合使用单引号或者双引号,要统一,否则会报错.</p>
+</blockquote>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str1 = <span class="string">"hello"</span>;</span><br><span class="line">     <span class="keyword">var</span> str2 = <span class="string">"world"</span>;</span><br><span class="line">     <span class="keyword">var</span> str3 = 'hehe';</span><br><span class="line">     console.<span class="built_in">log</span>(str1,str2,str3);</span><br><span class="line">     console.<span class="built_in">log</span>(<span class="string">"10"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//typeof 测试数据类型</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="keyword">typeof</span> str1);<span class="comment">//string</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//再次使用变量时，不需要var</span></span><br><span class="line">    str1 = <span class="string">"HELLO"</span>;</span><br><span class="line">    console.<span class="built_in">log</span>(str1);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//字符串拼接 "+"</span></span><br><span class="line">    <span class="keyword">var</span>  newStr = str1 + str2;</span><br><span class="line">    console.<span class="built_in">log</span>(newStr);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//其他类型如何转换为字符串, toString()!!!!</span></span><br><span class="line">    a = 20;</span><br><span class="line">    console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>());<span class="comment">//直接变为字符串</span></span><br><span class="line">    console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>(2));<span class="comment">//将数字按照2进制转换为字符串， 10100</span></span><br></pre></td></tr></table></figure>
+<p>其他类型装换为字符串的方法<code>toString()</code>,比如:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = 10;</span><br><span class="line">console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>());</span><br><span class="line">console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>(2));<span class="comment">//转换为２进制，“1010”</span></span><br><span class="line">console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>(8));<span class="comment">//转化为8进制 “12”</span></span><br><span class="line">console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>(10));<span class="comment">//转化为10进制 “10”</span></span><br><span class="line">console.<span class="built_in">log</span>(a.<span class="keyword">toString</span>(16));<span class="comment">//转化为16进制 “a”</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = false;</span><br><span class="line">console.<span class="built_in">log</span>(b.<span class="keyword">toString</span>());<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p>在不知道要转换的值是不是<code>null</code>或<code>undefined</code>的情况下,还可以使用转型函数<code>String()</code>,这个函数能够将任何类型的值转换为字符串.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(d));<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>(c));<span class="comment">//null</span></span><br></pre></td></tr></table></figure>
+<h4 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h4><p>boolean类型是<code>ECMAScript</code>中使用最多的一种类型,该类型只有两个字面值:<code>true</code>和<code>false</code>.<br>将一个值转换为其对应的<code>Boolean</code>值,可以调用转型函数<code>Boolean()</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">"hellowitwghjjhi"</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">""</span>));<span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">10</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">-10</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">10.123</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">0</span>));<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/bool1.png" alt><br><img src="http://oujvmc3la.bkt.clouddn.com/bool2.png" alt></p>
+<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><p>最基本的数值格式是10进制整数,除了以10进制表示外,整数还可以通过8进制或16进制的字面值来表示.比如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> g = <span class="number">016</span>;<span class="comment">//8进制使用'0'开头</span></span><br><span class="line"><span class="built_in">console</span>.log(g);<span class="comment">//14   控制台是以10进制输出的</span></span><br><span class="line"><span class="keyword">var</span> k = <span class="number">0x16</span>;<span class="comment">//16进制,使用'0x'开头</span></span><br><span class="line"><span class="built_in">console</span>.log(k);<span class="comment">//22</span></span><br></pre></td></tr></table></figure>
+<h5 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h5><p>所谓浮点数值,就是该数值中必须包含一个小数点,并且小数点后面必须至少有一位数字.</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0.123</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">.123</span>; <span class="comment">//不推荐</span></span><br></pre></td></tr></table></figure>
+<p>对于那些极大或极小的数值,可以用<code>e</code>表示法(即科学计数法)表示的浮点数值表示,比如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="number">12e2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(o);<span class="comment">//1200</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="number">12e-2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(p);<span class="comment">//0.12</span></span><br></pre></td></tr></table></figure>
+<p>浮点数的最高精度是17位小数,但是在进行算数计算时其精度远远不如整数.例如:<br><code>0.1</code>+<code>0.2</code>的结果不是<code>0.3</code>,而是<code>0.30000000000000004</code>.这个小小的舍入误差会导致无法测量特定的浮点数值.</p>
+<h5 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h5><p>NaN,即非数值(Not a Number)是一个特殊的数值,这个数值用于表示一个本来要返回数值的操作数,未返回数值的情况(这样就不会抛出错误了).<br>ECMAScript定义了<code>isNaN()</code>函数.这个函数接受一个参数,该参数可以是任何类型,而函数会帮我们确定这个参数是否<code>不是数值</code>.</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="name">isNaN</span>(<span class="name">NaN</span>))<span class="comment">;//true  arert这个函数会让浏览器弹出一个提示窗口</span></span><br><span class="line">alert(<span class="name">isNaN</span>(<span class="number">10</span>))<span class="comment">;//false</span></span><br><span class="line">alert(<span class="name">isNaN</span>(<span class="string">"blue"</span>))<span class="comment">;//true</span></span><br><span class="line">alert(<span class="name">isNaN</span>(<span class="string">"10"</span>))<span class="comment">;//false</span></span><br><span class="line">alert(<span class="name">isNaN</span>(<span class="name">true</span>))<span class="comment">;//false</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意:可以看出当<code>isNaN()</code>不是数值才会是true.因为有隐式转换的存在才会把<code>&quot;10&quot;</code>或者<code>&quot;&quot;</code>看成数字.</p>
+</blockquote>
+<h4 id="未定义类型-undefined"><a href="#未定义类型-undefined" class="headerlink" title="未定义类型(undefined)"></a>未定义类型(undefined)</h4><p>Undefined 类型只有一个值,即<code>undefined</code>.在使用var声明变量但并未对其加以初始化时,这个变量就是<code>undefined</code>,或者显式的进行<code>undefined</code>赋值操作,比如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> t);<span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> u = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> u);<span class="comment">//underfined</span></span><br></pre></td></tr></table></figure>
+<p>对于尚未声明过得变量,只能执行一项操作,即使用<code>typeof</code>操作符检测其数据类型.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(c);<span class="comment">//出现错误，因为没有定义变量c</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> c); <span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+<h4 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h4><p>Null类型是第二个只有一个值的数据类型,这个特殊的值是<code>null</code>.从逻辑角度来看.<code>null</code>值表示一个空对对象指针,而这也是使用<code>typeof</code>操作符检测<code>null</code>值时会返回<code>object</code>的原因,比如:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>  a);<span class="comment">//object</span></span><br></pre></td></tr></table></figure>
+<h4 id="JAVAScript-函数"><a href="#JAVAScript-函数" class="headerlink" title="JAVAScript 函数"></a>JAVAScript 函数</h4><p>函数对于任何语言来说都是一个核心的概念.通过函数可以封装任意多条语句,而且可以在任何地方.任何时候调用执行.</p>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">kai</span><span class="params">(arg1,arg2)</span><span class="comment">&#123;</span></span></span><br><span class="line"><span class="function"><span class="comment">  return arg1 + arg2;</span></span></span><br><span class="line"><span class="function"><span class="comment">&#125;</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">k</span> = <span class="title">kai</span><span class="params">(2,3)</span></span></span><br><span class="line"><span class="function"><span class="title">console</span>.<span class="title">log</span><span class="params">(k)</span>;</span><span class="comment">//5</span></span><br></pre></td></tr></table></figure>
+<p>js中的函数有个特点:声明提升.<br>函数可以定义在可调用的任何位置,在javascript引擎中解释运行该代码时,会自动将函数提升到该作用域的顶部.例如:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span>();</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">function</span></span> <span class="function"><span class="keyword">fun</span>()&#123;</span></span><br><span class="line"><span class="function">  <span class="title">console</span></span>.log(<span class="string">"fun......"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><p>按作用域分有两种变量:全局变量,局部变量.在JAVAScript中只有函数是用于区分作用域的.</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>; <span class="comment">//全局变量</span></span><br><span class="line"></span><br><span class="line">function <span class="function"><span class="title">fun</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">20</span>;</span><br><span class="line">  <span class="comment">//局部变量</span></span><br><span class="line">  <span class="comment">//局部变量只能在指定的作用内访问</span></span><br><span class="line">  console.log(<span class="string">"b = "</span>, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//全局变量在任意位置都可以访问</span></span><br><span class="line">console.log(<span class="string">"a = "</span>, a);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">fun</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/21/jQuery/" rel="next" title="jQuery">
+                <i class="fa fa-chevron-left"></i> jQuery
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/24/form/" rel="prev" title="HTML中form表单">
+                HTML中form表单 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#组成部分"><span class="nav-number">1.</span> <span class="nav-text">组成部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本特点"><span class="nav-number">2.</span> <span class="nav-text">基本特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVAScript的作用"><span class="nav-number">3.</span> <span class="nav-text">JAVAScript的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVAScript的编写方式"><span class="nav-number">4.</span> <span class="nav-text">JAVAScript的编写方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-基本概念"><span class="nav-number">5.</span> <span class="nav-text">javascript 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#严格区分大小写"><span class="nav-number">5.1.</span> <span class="nav-text">严格区分大小写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标识符"><span class="nav-number">5.2.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释风格"><span class="nav-number">5.3.</span> <span class="nav-text">注释风格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语句"><span class="nav-number">5.4.</span> <span class="nav-text">语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关键字"><span class="nav-number">5.5.</span> <span class="nav-text">关键字</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVAScript-变量"><span class="nav-number">6.</span> <span class="nav-text">JAVAScript 变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVAScript-数据类型"><span class="nav-number">7.</span> <span class="nav-text">JAVAScript 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串类型"><span class="nav-number">7.1.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔类型"><span class="nav-number">7.2.</span> <span class="nav-text">布尔类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数值类型"><span class="nav-number">7.3.</span> <span class="nav-text">数值类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#浮点数"><span class="nav-number">7.3.1.</span> <span class="nav-text">浮点数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NaN"><span class="nav-number">7.3.2.</span> <span class="nav-text">NaN</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#未定义类型-undefined"><span class="nav-number">7.4.</span> <span class="nav-text">未定义类型(undefined)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Null类型"><span class="nav-number">7.5.</span> <span class="nav-text">Null类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JAVAScript-函数"><span class="nav-number">7.6.</span> <span class="nav-text">JAVAScript 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量作用域"><span class="nav-number">7.7.</span> <span class="nav-text">变量作用域</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

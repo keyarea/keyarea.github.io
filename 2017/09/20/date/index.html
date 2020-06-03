@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Date类型使用自 UTC(Coordinated Universal Time,国际协调时间)1970 年 1 月 1 日午夜(零时)开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下, Date 类型保存的日期能够精确到 1970 年 1月 1 日之前或之后的 285 616 年。ECMAScript 还为保存数学公式和信息提供了一个公共位置,即 Math 对象。与我们在 JavaSc">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript内置对象Math,Date">
+<meta property="og:url" content="https://blog.loong.io/2017/09/20/date/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="Date类型使用自 UTC(Coordinated Universal Time,国际协调时间)1970 年 1 月 1 日午夜(零时)开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下, Date 类型保存的日期能够精确到 1970 年 1月 1 日之前或之后的 285 616 年。ECMAScript 还为保存数学公式和信息提供了一个公共位置,即 Math 对象。与我们在 JavaSc">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/math.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/math1.png">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript内置对象Math,Date">
+<meta name="twitter:description" content="Date类型使用自 UTC(Coordinated Universal Time,国际协调时间)1970 年 1 月 1 日午夜(零时)开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下, Date 类型保存的日期能够精确到 1970 年 1月 1 日之前或之后的 285 616 年。ECMAScript 还为保存数学公式和信息提供了一个公共位置,即 Math 对象。与我们在 JavaSc">
+<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/math.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2017/09/20/date/">
+
+
+
+
+
+  <title>JavaScript内置对象Math,Date | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2017/09/20/date/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript内置对象Math,Date</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-20T08:16:54+08:00">
+                2017-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Date类型使用自 UTC(Coordinated Universal Time,国际协调时间)1970 年 1 月 1 日午夜(零时)开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下, Date 类型保存的日期能够精确到 1970 年 1月 1 日之前或之后的 285 616 年。<br>ECMAScript 还为保存数学公式和信息提供了一个公共位置,即 Math 对象。与我们在 JavaScript 直接编写的计算功能相比, Math 对象提供的计算功能执行起来要快得多。 Math 对象中还提供了辅助完成<br>这些计算的属性和方法。   </p>
+<h2 id="内置对象Date"><a href="#内置对象Date" class="headerlink" title="内置对象Date"></a>内置对象Date</h2><h3 id="创建一个日期对象"><a href="#创建一个日期对象" class="headerlink" title="创建一个日期对象"></a>创建一个日期对象</h3><p><code>var day = new Date();</code>:这是新建了一个现在的时间的对象.那么如何创建一个过去或者未来某一天的对象呢?<br><code>var day = new Date(&#39;2017-11-11 11:11:11&#39;)</code>:这就创建了一个将来的双11的日期.</p>
+<h3 id="日期常用方法"><a href="#日期常用方法" class="headerlink" title="日期常用方法"></a>日期常用方法</h3><ul>
+<li><code>getDate()</code>: 获取日</li>
+<li><code>getDay ()</code> :获取星期</li>
+<li><code>getMonth ()</code>: 获取月</li>
+<li><code>getFullYear ()</code>: 获取完整年份</li>
+<li><code>getHours ()</code>: 获取小时</li>
+<li><code>getMinutes ()</code>: 获取分钟</li>
+<li><code>getSeconds ()</code>: 获取秒</li>
+<li><code>getMilliseconds ()</code>: 获取毫秒 1s = 1000ms</li>
+<li><code>getTime ()</code> :返回累计毫秒数(从1970/1/1午夜)</li>
+</ul>
+<p>实例:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> day = <span class="keyword">new</span> <span class="built_in">Date</span>();<span class="comment">//现在时间 为2017-9-20</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getYear());<span class="comment">//117 getYear返回的是距1900年1月1日的年份</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getFullYear());<span class="comment">//2017 getFullYear返回的是公元年份</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getMonth());<span class="comment">//8 返回的是月份-1,因为月份是0-11.</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getDate());<span class="comment">//20 返回这个月的第几天</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getDay());<span class="comment">//3 返回这个星期的第几天,星期日为0</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getMinutes());<span class="comment">//20 返回分钟数</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getSeconds());<span class="comment">//59 返回秒数</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getMilliseconds());<span class="comment">//389 返回毫秒数</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(day.getTime());<span class="comment">//1505910059389 返回累计毫秒数(从1970/1/1午夜)</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Date-日期格式化为字符串的方法"><a href="#Date-日期格式化为字符串的方法" class="headerlink" title="Date 日期格式化为字符串的方法"></a>Date 日期格式化为字符串的方法</h3><ul>
+<li><code>toDateString()</code> ——以特定于实现的格式显示星期几、月、日和年;</li>
+<li><code>toTimeString()</code> ——以特定于实现的格式显示时、分、秒和时区;</li>
+<li><code>toLocaleDateString()</code> ——以特定于地区的格式显示星期几、月、日和年;</li>
+<li><code>toLocaleTimeString()</code> ——以特定于实现的格式显示时、分、秒;</li>
+<li><code>toUTCString()</code> ——以特定于实现的格式完整的 UTC 日期。</li>
+</ul>
+<p>与 <code>toLocaleString()</code> 和 <code>toString()</code> 方法一样,以上这些字符串格式方法的输出也是因浏览器而异的,因此没有哪一个方法能够用来在用户界面中显示一致的日期信息。</p>
+<p>实例:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//现在时间</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toDateString());<span class="comment">//Wed Sep 20 2017</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toLocaleDateString());<span class="comment">//2017/9/20</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toTimeString());<span class="comment">//20:27:15 GMT+0800 (CST)</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toLocaleTimeString());<span class="comment">//下午8:27:15</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toUTCString());<span class="comment">//Wed, 20 Sep 2017 12:27:15 GMT</span></span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="javascript-内置对象-Math"><a href="#javascript-内置对象-Math" class="headerlink" title="javascript　内置对象 Math"></a>javascript　内置对象 Math</h2><h3 id="Math-属性"><a href="#Math-属性" class="headerlink" title="Math 属性"></a>Math 属性</h3><p><img src="http://oujvmc3la.bkt.clouddn.com/math.png" alt></p>
+<h3 id="Math-常见方法"><a href="#Math-常见方法" class="headerlink" title="Math 常见方法"></a>Math 常见方法</h3><h4 id="Math-max-Math-min"><a href="#Math-max-Math-min" class="headerlink" title="Math.max(),Math.min()"></a>Math.max(),Math.min()</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d = Math.min(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">console.log(d);<span class="comment">//1 最小值</span></span><br><span class="line"></span><br><span class="line">d = Math.max(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">console.log(d);<span class="comment">//5 最大值</span></span><br><span class="line"></span><br><span class="line">var nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">34</span>,<span class="number">56</span>,<span class="number">78</span>];</span><br><span class="line">d = Math.max.apply(Math, nums);</span><br><span class="line">console.log(d);<span class="comment">//78</span></span><br></pre></td></tr></table></figure>
+<h4 id="舍入方法"><a href="#舍入方法" class="headerlink" title="舍入方法"></a>舍入方法</h4><p>下面来介绍将小数值舍入为整数的几个方法: <code>Math.ceil()</code> 、 <code>Math.floor()</code> 和 <code>Math.round()</code> 。</p>
+<ul>
+<li><code>Math.ceil()</code> 执行向上舍入,即它总是将数值向上舍入为最接近的整数;</li>
+<li><code>Math.floor()</code> 执行向下舍入,即它总是将数值向下舍入为最接近的整数;</li>
+<li><code>Math.round()</code> 执行标准舍入,即它总是将数值四舍五入为最接近的整数;</li>
+</ul>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取舍</span></span><br><span class="line"><span class="comment">//round</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">20.1</span>));<span class="comment">//20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">20.6</span>));<span class="comment">//21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">-20.1</span>));<span class="comment">//-20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">-20.6</span>));<span class="comment">//-21</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ceil 向上取</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">20.1</span>));<span class="comment">//21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">20.6</span>));<span class="comment">//21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">-20.1</span>));<span class="comment">//-20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">-20.6</span>));<span class="comment">//-20</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//floor 向下取</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">20.1</span>));<span class="comment">//20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">20.6</span>));<span class="comment">//20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">-20.1</span>));<span class="comment">//-21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">-20.6</span>));<span class="comment">//-21</span></span><br></pre></td></tr></table></figure>
+<h4 id="random-方法"><a href="#random-方法" class="headerlink" title="random() 方法:"></a>random() 方法:</h4><p><code>Math.random()</code> 方法返回大于等于 0 小于 1 的一个随机数。<br>可以利用<code>Math.random()</code>实现某个正数范围内获得一个随机数:<code>值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</code>.</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">产生[<span class="number">0</span>, <span class="number">11</span>]之间的数</span><br><span class="line">num = Math.floor(Math.random()*<span class="number">12</span> + <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">产生[<span class="number">2</span>, <span class="number">10</span>]之间的数</span><br><span class="line">num = Math.floor(Math.random()*<span class="number">9</span> + <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><p><img src="http://oujvmc3la.bkt.clouddn.com/math1.png" alt></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/19/object/" rel="next" title="JavaScriptDOM对象和jQuery对象的互相转换">
+                <i class="fa fa-chevron-left"></i> JavaScriptDOM对象和jQuery对象的互相转换
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/21/closure/" rel="prev" title="JavaScript闭包">
+                JavaScript闭包 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置对象Date"><span class="nav-number">1.</span> <span class="nav-text">内置对象Date</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一个日期对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建一个日期对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期常用方法"><span class="nav-number">1.2.</span> <span class="nav-text">日期常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-日期格式化为字符串的方法"><span class="nav-number">1.3.</span> <span class="nav-text">Date 日期格式化为字符串的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript-内置对象-Math"><span class="nav-number">2.</span> <span class="nav-text">javascript　内置对象 Math</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-属性"><span class="nav-number">2.1.</span> <span class="nav-text">Math 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math-常见方法"><span class="nav-number">2.2.</span> <span class="nav-text">Math 常见方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-max-Math-min"><span class="nav-number">2.2.1.</span> <span class="nav-text">Math.max(),Math.min()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#舍入方法"><span class="nav-number">2.2.2.</span> <span class="nav-text">舍入方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random-方法"><span class="nav-number">2.2.3.</span> <span class="nav-text">random() 方法:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他方法"><span class="nav-number">2.2.4.</span> <span class="nav-text">其他方法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

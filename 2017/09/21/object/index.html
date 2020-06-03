@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="面向对象的语言有一个标志,那就是它们都有类的概念,而通过类可以创建任意多个具有相同属性和方法的对象。但是 ECMAScript 中没有类的概念,因此它的对象也与基于类的语言中的对象有所不同, 可以将ECMAScript对象理解为　　　　　　包含多个键值对的集合，其中值可以是普通数据也可以是函数。 面向对象面向对象:所有的操作以对象为中心,对象拥有属性和方法,属性和方法属于对象的附庸. 面向对象的特">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面向对象">
+<meta property="og:url" content="https://blog.loong.io/2017/09/21/object/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="面向对象的语言有一个标志,那就是它们都有类的概念,而通过类可以创建任意多个具有相同属性和方法的对象。但是 ECMAScript 中没有类的概念,因此它的对象也与基于类的语言中的对象有所不同, 可以将ECMAScript对象理解为　　　　　　包含多个键值对的集合，其中值可以是普通数据也可以是函数。 面向对象面向对象:所有的操作以对象为中心,对象拥有属性和方法,属性和方法属于对象的附庸. 面向对象的特">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/%E2%95%98%D0%BD%E2%95%A8%E2%95%90%E2%94%B4%E2%94%A4%E2%95%9D%E2%95%A0%E2%94%82%E2%95%A81.jpg">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/2017-09-26%2020-30-29%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.159Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript面向对象">
+<meta name="twitter:description" content="面向对象的语言有一个标志,那就是它们都有类的概念,而通过类可以创建任意多个具有相同属性和方法的对象。但是 ECMAScript 中没有类的概念,因此它的对象也与基于类的语言中的对象有所不同, 可以将ECMAScript对象理解为　　　　　　包含多个键值对的集合，其中值可以是普通数据也可以是函数。 面向对象面向对象:所有的操作以对象为中心,对象拥有属性和方法,属性和方法属于对象的附庸. 面向对象的特">
+<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/%E2%95%98%D0%BD%E2%95%A8%E2%95%90%E2%94%B4%E2%94%A4%E2%95%9D%E2%95%A0%E2%94%82%E2%95%A81.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2017/09/21/object/">
+
+
+
+
+
+  <title>JavaScript面向对象 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2017/09/21/object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript面向对象</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T08:16:54+08:00">
+                2017-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>面向对象的语言有一个标志,那就是它们都有类的概念,而通过类可以创建任意多个具有相同属性和方法的对象。<br>但是 ECMAScript 中没有类的概念,因此它的对象也与基于类的语言中的对象有所不同, 可以将ECMAScript对象理解为　　　　　　<br>包含多个键值对的集合，其中值可以是普通数据也可以是函数。</p>
+<h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><p>面向对象:所有的操作以对象为中心,对象拥有属性和方法,属性和方法属于对象的附庸.</p>
+<p>面向对象的特点:</p>
+<ol>
+<li>封装:封装是把过程和数据包围起来,对数据的访问只能通过已定义的界面.</li>
+<li>继承:派生类继承基类的属性方法.</li>
+<li>多态:多态是指两个或者多个属于不同类的对象,对于同一个消息(方法调用)做出不同响应的过程的方法</li>
+</ol>
+<h2 id="对象的创建"><a href="#对象的创建" class="headerlink" title="对象的创建"></a>对象的创建</h2><h3 id="使用已有的构造函数"><a href="#使用已有的构造函数" class="headerlink" title="使用已有的构造函数"></a>使用已有的构造函数</h3><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">date</span> = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'hehe'</span>);</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object构造函数是所有构造函数的祖先,其他的都继承了Object的属性和方法</span></span><br><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">// 创建了一个空对象</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">date</span>, <span class="keyword">typeof</span> str, <span class="keyword">typeof</span> a, <span class="keyword">typeof</span> obj)<span class="comment">//object</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用字面量来创建对象"><a href="#使用字面量来创建对象" class="headerlink" title="使用字面量来创建对象"></a>使用字面量来创建对象</h3><p><code>var obj = {};</code></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span></span><br><span class="line"><span class="xml">      var obj = </span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">        name : 'wangkai',</span></span><br><span class="line"><span class="template-variable">        age : 24</span></span><br><span class="line"><span class="template-variable">      &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">      console.log(obj);//</span><span class="template-variable">&#123;name: "wangkai", age: 24&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">      var obj1 = </span><span class="template-variable">&#123;&#125;</span><span class="xml">;</span></span><br><span class="line"><span class="xml">      obj1.name = 'wangkai';</span></span><br><span class="line"><span class="xml">      obj1.age  = 24;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">      console.log(obj1);//</span><span class="template-variable">&#123;name: "wangkai", age: 24&#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">      console.log(obj1.name);//访问属性,可以用 .</span></span><br><span class="line"><span class="xml">      console.log(obj1['name']);//访问属性,也可以用 []</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义构造函数"><a href="#自定义构造函数" class="headerlink" title="自定义构造函数"></a>自定义构造函数</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//使用构造函数来创建对象(批量创建)</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//创建一个构造函数,构造函数一般是以大写字母开头</span></span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name, age)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.age = age;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.getname = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">return</span> <span class="keyword">this</span>.name;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.getage = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">return</span> <span class="keyword">this</span>.age;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//接下来就是用这个构造函数创建一个对象</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> kai = <span class="keyword">new</span> Person(<span class="string">'wangkai'</span>, <span class="number">24</span>);<span class="comment">//必须用new创建新的对象,不然其this指向的是window</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(kai);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用<code>new</code>创建新的对象,那么用<code>new</code>的时候发生了什么,会出现这种变化呢?</p>
+<ol>
+<li>this 指向新创建的对象</li>
+<li>执行构造函数</li>
+<li>返回创建完成的对象</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>通过<code>obj.construction</code>可以确认这个对象是由哪个构造函数产生的.</p>
+</blockquote>
+<h3 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h3><p>创建的每个函数都有一个 <code>prototype</code> (原型) 属性,这个属性是一个指针,指向一个对象,而这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="actionscript">      Person.prototype.eat = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">'wakaka.....'</span>);</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="actionscript">      Person.prototype.name = <span class="string">'kai'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> one = <span class="keyword">new</span> Person();</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> two = <span class="keyword">new</span> Person();</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(one.name);<span class="comment">//kai</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(two.name);<span class="comment">//kai</span></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>由上面的结果可以看出,添加到<code>prototype</code>的方法和属性成为了所有创建对象的共有属性或者方法.</p>
+<h3 id="构造函数模式和原型模式结合"><a href="#构造函数模式和原型模式结合" class="headerlink" title="构造函数模式和原型模式结合"></a>构造函数模式和原型模式结合</h3><p>在原型模式中，每创建一个实例都会获得一样的属性值, 为了让每个实例对象都有自己特有的属性值可以将构造函数模式和原型模式相结合。<br>那么为什么不直接只用构造函数呢?他也可以添加共有属性和共有方法啊!<br>这里存在内存问题,每个对象都有的属性,每个对象都会给这个共有属性一块内存,那么一旦数量上去之后,就会占用大量内存,但是原型呢?他是一个引用类型,占用的只是一块内存.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name, age)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.age = age;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="actionscript">      Person.prototype.leg = <span class="string">'two'</span>;</span></span><br><span class="line"><span class="actionscript">      Person.prototype.arm = <span class="string">'two'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> kai = <span class="keyword">new</span> Person(<span class="string">'kai'</span>, <span class="number">24</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(kai);</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>　</p>
+<blockquote>
+<p>这样即添加了特有属性,又添加了其共有属性.还有浪费内存.</p>
+</blockquote>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><p>原型链继承的缺点：</p>
+<ol>
+<li>构造函数中的属性没有实现继承</li>
+<li>通过 new Person()来实现原型方法的继承，但是携带了无用的数据</li>
+</ol>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/%E2%95%98%D0%BD%E2%95%A8%E2%95%90%E2%94%B4%E2%94%A4%E2%95%9D%E2%95%A0%E2%94%82%E2%95%A81.jpg" alt></p>
+<p>先来一个实例:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name, age)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.age = age;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="actionscript">      Person.prototype.arm = <span class="string">'two'</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name, age, score)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.age = age;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      Student.prototype = <span class="keyword">new</span> Person();<span class="comment">//新产生的Person对象赋给Student的原型,必然新产生的对象有啥,其Student的原型就有啥.原型是对象共有的.</span></span></span><br><span class="line"><span class="actionscript">      <span class="comment">//但是有一个问题就是新产生的Person对象也是有原型的啊,其原型里面的构造器指向的可不是Student啊,所以就有下面的一行代码,将构造器重定向.</span></span></span><br><span class="line"><span class="undefined">      Student.prototype.constructor = Student;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//上面两行代码就实现了Student继承Person</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      Student.prototype.hobbys = [<span class="string">'eat'</span>, <span class="string">'drink'</span>, <span class="string">'play'</span>, <span class="string">'happy'</span>];<span class="comment">//注意子的共有属性必然不能定义在继承函数之前,不然就会被继承函数覆盖.</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">      <span class="comment">//试一下是否可以</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">var</span> stu = <span class="keyword">new</span> Student(<span class="string">'kai'</span>, <span class="number">18</span>, <span class="number">99</span>);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(stu.arm);<span class="comment">//kai</span></span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(stu.hobbys);<span class="comment">//["eat", "drink", "play", "happy"]</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>属性和方法的查找顺序:从构造中内部开始 —–&gt; 自己的原型  —-&gt; 继承来的  —-&gt; 继承来的 …… —-&gt; Object</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>所有实例共享属性，修改任意一个会影响其他实例  2. 创建实例时无法传递参数</li>
+</ol>
+</blockquote>
+<h3 id="借用构造函数"><a href="#借用构造函数" class="headerlink" title="借用构造函数"></a>借用构造函数</h3><p>在子类构造函数中调用父类的构造函数.要想做到这一点必须要先学<code>call</code>或者<code>apply</code>:</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;call and apply&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> name = <span class="string">'global'</span>; <span class="comment">//window.name</span></span><br><span class="line"></span><br><span class="line">      function <span class="function"><span class="title">fun</span><span class="params">(arg1,arg2)</span></span>&#123;</span><br><span class="line">        console.log(<span class="string">"this = "</span>, <span class="keyword">this</span>);</span><br><span class="line">        console.log(<span class="string">"this.name = "</span>, <span class="keyword">this</span>.name);</span><br><span class="line">        console.log(<span class="string">"arg1 = "</span>, arg1);</span><br><span class="line">        console.log(<span class="string">"arg2 = "</span>, arg2);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        function fun2 ()&#123;</span></span><br><span class="line"><span class="comment">          console.log("fun2 中  this = ", this);</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">        fun2();</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//直接调用</span></span><br><span class="line">      <span class="function"><span class="title">fun</span><span class="params">()</span></span>;</span><br><span class="line">      console.log(<span class="string">"---------------------------------"</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//间接调用</span></span><br><span class="line">      <span class="keyword">var</span> obj = &#123;</span><br><span class="line">        name: <span class="string">'zhansan'</span>,</span><br><span class="line">        age: <span class="number">20</span></span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">var</span> obj2 = &#123;</span><br><span class="line">        name: <span class="string">'lisi'</span>,</span><br><span class="line">        age: <span class="number">20</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      call方法的功能：在一个指定的this上调用函数，其实就是将函数内部的this指定为某个对象.</span></span><br><span class="line"><span class="comment">      call方法从第二个参数开始的参数，都是传递给函数的参数！！！</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      <span class="function"><span class="keyword">fun</span>.<span class="title">call</span><span class="params">(obj,<span class="number">10</span>,<span class="number">20</span>)</span></span>;</span><br><span class="line">      <span class="function"><span class="keyword">fun</span>.<span class="title">call</span><span class="params">(obj2,<span class="number">100</span>,<span class="number">200</span>)</span></span>;</span><br><span class="line">      <span class="function"><span class="keyword">fun</span>.<span class="title">call</span><span class="params">(<span class="literal">null</span>,<span class="number">1000</span>,<span class="number">2000</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      console.log(<span class="string">"-------------apply-----------"</span>);</span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      apply: 功能和call一模一样</span></span><br><span class="line"><span class="comment">      区别：给函数传参使用的是数组,虽然此处传递的是数组，但是apply会把该数组中的每个元素分别传递给函数</span></span><br><span class="line"><span class="comment">      */</span></span><br><span class="line">      <span class="function"><span class="keyword">fun</span>.<span class="title">apply</span><span class="params">(obj,[<span class="number">10</span>,<span class="number">20</span>])</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>以上为<code>call</code>和<code>apply</code>的用法!接下来是如何借用构造函数继承.</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>借用构造函数继承<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.age = age;  </span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    Person.prototype.sayHello = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"hello....."</span>);</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name,age,score)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//借用构造函数</span></span></span><br><span class="line"><span class="actionscript">      Person.call(<span class="keyword">this</span>, name, age);</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.score = score;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    /*</span></span><br><span class="line"><span class="undefined">    借用构造函数缺点：只能实现构造函数内部的属性和方法的继承，而原型上的属性和方法无法实现继承</span></span><br><span class="line"><span class="undefined">    */</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'lisi'</span>, <span class="number">20</span>, <span class="number">88</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(stu1);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>看了上面的原型链继承和借用构造函数继承,发现他们的一些方面是可以互补的.结合起来就有了下面的组合继承.</p>
+</blockquote>
+<h3 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>组合继承: 借用构造函数 + 原型链继承<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.age = age;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    Person.prototype.sayHello = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"hello....."</span>);</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name,age,score)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//使用借用构造函数,继承构造函数内部的属性</span></span></span><br><span class="line"><span class="actionscript">      Person.call(<span class="keyword">this</span>, name, age);</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.score = score;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//使用原型链继承原型方法和原型属性</span></span></span><br><span class="line"><span class="actionscript">    Student.prototype = <span class="keyword">new</span> Person();</span></span><br><span class="line"><span class="undefined">    Student.prototype.constructor = Student;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'lisi'</span>, <span class="number">20</span>,<span class="number">59</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(stu1);</span></span><br><span class="line"><span class="undefined">    stu1.sayHello();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上面的代码是组合继承,即原型链继承+借用构造函数继承.但是还有一点小瑕丝,就是你查看继承关系的时候会发现其实原型链继承还是携带了无用的数据,这些无用的数据也占用了内存.<br>如下:</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/2017-09-26%2020-30-29%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt></p>
+<p>改良:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>组合继承: 借用构造函数 + 原型链继承<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    /*</span></span><br><span class="line"><span class="undefined">    功能：用于实现原型方法和属性的继承</span></span><br><span class="line"><span class="undefined">    @sup, 被继承的构造函数</span></span><br><span class="line"><span class="undefined">    @sub, 要继承的构造函数</span></span><br><span class="line"><span class="undefined">    */</span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">inherit</span><span class="params">(Sup,Sub)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//定义空构造函数的目的，就是为了不携带多余的属性</span></span></span><br><span class="line"><span class="actionscript">       <span class="function"><span class="keyword">function</span> <span class="title">F</span><span class="params">()</span></span>&#123;&#125;;</span></span><br><span class="line"><span class="undefined">       F.prototype = Sup.prototype;</span></span><br><span class="line"><span class="actionscript">       Sub.prototype = <span class="keyword">new</span> F();</span></span><br><span class="line"><span class="undefined">       Sub.prototype.constructor = Sub;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.name = name;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.age = age;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    Person.prototype.sayHello = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="built_in">console</span>.log(<span class="string">"hello....."</span>);</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="function"><span class="keyword">function</span> <span class="title">Student</span><span class="params">(name,age,score)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">//使用借用构造函数,继承构造函数内部的属性</span></span></span><br><span class="line"><span class="actionscript">      Person.call(<span class="keyword">this</span>, name, age);</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.score = score;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    /*</span></span><br><span class="line"><span class="undefined">    使用原型链继承原型方法和原型属性</span></span><br><span class="line"><span class="actionscript">    要解决使用<span class="keyword">new</span> Person()产生多余的属性的问题</span></span><br><span class="line"><span class="undefined">    */</span></span><br><span class="line"><span class="undefined">    inherit(Person,Student);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> stu1 = <span class="keyword">new</span> Student(<span class="string">'lisi'</span>, <span class="number">20</span>, <span class="number">34</span>);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(stu1);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/21/closure/" rel="next" title="JavaScript闭包">
+                <i class="fa fa-chevron-left"></i> JavaScript闭包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/21/JSON/" rel="prev" title="JSON XML">
+                JSON XML <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#面向对象"><span class="nav-number">1.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的创建"><span class="nav-number">2.</span> <span class="nav-text">对象的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用已有的构造函数"><span class="nav-number">2.1.</span> <span class="nav-text">使用已有的构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用字面量来创建对象"><span class="nav-number">2.2.</span> <span class="nav-text">使用字面量来创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义构造函数"><span class="nav-number">2.3.</span> <span class="nav-text">自定义构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#原型"><span class="nav-number">2.4.</span> <span class="nav-text">原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造函数模式和原型模式结合"><span class="nav-number">2.5.</span> <span class="nav-text">构造函数模式和原型模式结合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原型链继承"><span class="nav-number">3.1.</span> <span class="nav-text">原型链继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#借用构造函数"><span class="nav-number">3.2.</span> <span class="nav-text">借用构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组合继承"><span class="nav-number">3.3.</span> <span class="nav-text">组合继承</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="关于java数组的定义与使用 数组基本概念数组在开发之中一定会使用,但是像以下讲解的时候这么用的数组少了.在以后的实际开发之中,你们会更多的使用数组概念,而直接使用数组99%的情况下都只是做一个数组的for循环输出. 如果说现在要求你定义100个整型变量，那么按照之前的一个做法，可能现在定义的结构如下： 1int i1,i2,i3....i100; 但是这个时候如果按照此类方式定义就会非常麻烦，因">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java数组的定义与使用">
+<meta property="og:url" content="https://blog.loong.io/2018/01/03/java/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="关于java数组的定义与使用 数组基本概念数组在开发之中一定会使用,但是像以下讲解的时候这么用的数组少了.在以后的实际开发之中,你们会更多的使用数组概念,而直接使用数组99%的情况下都只是做一个数组的for循环输出. 如果说现在要求你定义100个整型变量，那么按照之前的一个做法，可能现在定义的结构如下： 1int i1,i2,i3....i100; 但是这个时候如果按照此类方式定义就会非常麻烦，因">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OOP5.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OOP6.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/array1.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/fanzhuan1.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/fanzhuan2.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/fanzhuan3.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/fanzhuan4.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/erfenzz.PNG">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OBar.PNG">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.197Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java数组的定义与使用">
+<meta name="twitter:description" content="关于java数组的定义与使用 数组基本概念数组在开发之中一定会使用,但是像以下讲解的时候这么用的数组少了.在以后的实际开发之中,你们会更多的使用数组概念,而直接使用数组99%的情况下都只是做一个数组的for循环输出. 如果说现在要求你定义100个整型变量，那么按照之前的一个做法，可能现在定义的结构如下： 1int i1,i2,i3....i100; 但是这个时候如果按照此类方式定义就会非常麻烦，因">
+<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/OOP5.PNG">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2018/01/03/java/">
+
+
+
+
+
+  <title>Java数组的定义与使用 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2018/01/03/java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java数组的定义与使用</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-03T17:16:54+08:00">
+                2018-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于java数组的定义与使用</p>
+<h1 id="数组基本概念"><a href="#数组基本概念" class="headerlink" title="数组基本概念"></a>数组基本概念</h1><p>数组在开发之中一定会使用,但是像以下讲解的时候这么用的数组少了.在以后的实际开发之中,你们会更多的使用数组概念,而直接使用数组99%的情况下都只是做一个数组的for循环输出.</p>
+<p>如果说现在要求你定义100个整型变量，那么按照之前的一个做法，可能现在定义的结构如下：</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int <span class="keyword">i1</span>,<span class="keyword">i2</span>,<span class="keyword">i3</span>....<span class="keyword">i100</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>但是这个时候如果按照此类方式定义就会非常麻烦，因为这些变量彼此之间没有任何的关联，也就是说如果现在突然再有一个要求，要求你输出这100个变量的内容，意味着你需要编写System.out.println（）语句100次。</p>
+<h1 id="数组的动态初始化"><a href="#数组的动态初始化" class="headerlink" title="数组的动态初始化"></a>数组的动态初始化</h1><p>所谓的数组指的就是一组相关类型的变量集合，并且这些变量可以按照统一的方式进行操作。数组本身属于我们的引用数据类型，那么既然是引用数据类型，这里面实际上又会牵扯到内存分配，而数组的定义有如下两类。</p>
+<ul>
+<li>声明并开辟数组：</li>
+</ul>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据类型 <span class="string">[]</span> 数组名称 = new 数据类型 <span class="string">[长度]</span>;</span><br><span class="line"></span><br><span class="line">数据类型 数组名称 <span class="string">[]</span> = new 数据类型 <span class="string">[长度]</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>分布进行数组空间开辟(实例化)</li>
+</ul>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明数组:</span></span><br><span class="line">数据类型 [] 数组名称 = <span class="literal">null</span>;  <span class="comment">//或者下面</span></span><br><span class="line">数据类型 数组名称 [] = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//开辟数组空间</span></span><br><span class="line">数组名称 = <span class="keyword">new</span> <span class="type"></span>数据类型 [长度];</span><br></pre></td></tr></table></figure>
+<p>那么当数组开辟空间之后,就可以采用如下的方式进行操作:</p>
+<ul>
+<li>数组的访问通过索引完成,即:数组名称[索引];但是需要注意的是,数组的索引从0开始,所以可以使用的索引范围就是 0~数组长度-1,例如:现在开辟了3个空间的数组,所以可以使用的索引是:0,1,2;如果此时数组访问的时候超过了数组的索引范围,则会产生”ArrayIndexOutOfBoundsException”异常信息;</li>
+<li>当数组采用动态初始化开辟空间之后,数组里面的每一个元素都是该数组对应数据类型的默认值;</li>
+<li>数组本身是一个有序的集合操作,所以对于数组的内容操作往往采用循环的模式完成,数组是一个有限的数据集合,所以应该使用for循环.</li>
+<li>在java中提供有一种动态取得数组长度的方法:<code>数组名称.length</code>;</li>
+</ul>
+<p>范例:定义一个int数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//开辟一个数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class15</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>];<span class="comment">//开辟了一个数组长度为3的数组空间</span></span><br><span class="line">		data[<span class="number">0</span>] = <span class="number">10</span>;<span class="comment">//第一个元素赋值</span></span><br><span class="line">		data[<span class="number">1</span>] = <span class="number">11</span>;<span class="comment">//第二个元素赋值</span></span><br><span class="line">		data[<span class="number">2</span>] = <span class="number">12</span>;<span class="comment">//第三个元素赋值</span></span><br><span class="line">		<span class="comment">//data.length 可以获取到该数组的长度</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; data.length;i++) &#123;</span><br><span class="line">			System.out.println(data[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数组本身除了声明并开辟空间之外还有另外一种开辟模式.</p>
+<p>范例:采用分布模式开辟数组空间</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//分布式开辟一个数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class16</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">null</span>;<span class="comment">//声明</span></span><br><span class="line">		data = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>];<span class="comment">//开辟了一个数组长度为3的数组空间</span></span><br><span class="line">		data[<span class="number">0</span>] = <span class="number">10</span>;<span class="comment">//第一个元素赋值</span></span><br><span class="line">		data[<span class="number">1</span>] = <span class="number">11</span>;<span class="comment">//第二个元素赋值</span></span><br><span class="line">		data[<span class="number">2</span>] = <span class="number">12</span>;<span class="comment">//第三个元素赋值</span></span><br><span class="line">		<span class="comment">//data.length 可以获取到该数组的长度</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; data.length;i++) &#123;</span><br><span class="line">			System.out.println(data[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是千万要记住,数组属于引用数据类型,所以在数组使用之前一定要开辟空间(实例化),如果使用了没有开辟空间的数组,则一定会出现NullPointException异常信息:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class16</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">null</span>;<span class="comment">//声明</span></span><br><span class="line">		System.out.println(data.length);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这一原则和之前讲解的对象操作是完全相同的.</p>
+<h1 id="数组引用传递"><a href="#数组引用传递" class="headerlink" title="数组引用传递"></a>数组引用传递</h1><p>既然数组也属于引用数据类型，那么也一定可以发生引用传递。在这之前首先来研究一下数组的空间开辟。</p>
+<p>范例：观察一道程序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class17</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">null</span>;</span><br><span class="line">		data = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>];<span class="comment">//开辟一个长度为3的数组</span></span><br><span class="line">		data[<span class="number">0</span>] = <span class="number">10</span>;<span class="comment">//第一个元素</span></span><br><span class="line">		data[<span class="number">1</span>] = <span class="number">20</span>;<span class="comment">//第二个元素</span></span><br><span class="line">		data[<span class="number">2</span>] = <span class="number">30</span>;<span class="comment">//第三个元素</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/OOP5.PNG" alt></p>
+<p>那么既然说到了引用数据类型，那么就一定可以发生引用传递，而现在的引用传递的本质也一定是：同一块堆内存空间可以被不同的栈内存所指向。</p>
+<p>范例：定义一个程序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array3</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">3</span>];<span class="comment">//开辟了一个长度为3的数组</span></span><br><span class="line">		<span class="keyword">int</span> temp [] = <span class="keyword">null</span>;<span class="comment">//声明了对象</span></span><br><span class="line">		data[<span class="number">0</span>] = <span class="number">10</span>;<span class="comment">//第一个元素</span></span><br><span class="line">		data[<span class="number">1</span>] = <span class="number">20</span>;<span class="comment">//第二个元素</span></span><br><span class="line">		data[<span class="number">2</span>] = <span class="number">30</span>;<span class="comment">//第三个元素</span></span><br><span class="line">		<span class="comment">//如果要发生引用传递，就不要出现[]</span></span><br><span class="line">		temp = data;</span><br><span class="line">		temp[<span class="number">0</span>] = <span class="number">99</span>;<span class="comment">//修改数据</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; data.length;i++) &#123;</span><br><span class="line">			System.out.println(data[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/OOP6.PNG" alt></p>
+<p>引用传递分析都是一个套路。</p>
+<h1 id="数组的静态初始化"><a href="#数组的静态初始化" class="headerlink" title="数组的静态初始化"></a>数组的静态初始化</h1><p>在之前所进行的数组定义都有一个明显特点：数组首先开辟内存空间，而后再使用索引进行内容设置，实际上这种做法都叫做动态初始化，而如果希望数组在定义的时候可以同时设置内容，那么就可以采用静态初始化完成。</p>
+<p>数组的静态初始化的语法一共分为以下两种类型：</p>
+<ul>
+<li>简化格式：</li>
+</ul>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 数组名称 [] = &#123;值，值...&#125;<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>完整格式：</li>
+</ul>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 数组名称 <span class="string">[]</span> = new 数据类型 <span class="string">[]</span> &#123;值，值...&#125;;</span><br></pre></td></tr></table></figure>
+<p>范例：采用静态初始化定义数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组的静态初始化</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array4</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; data.length;i++) &#123;</span><br><span class="line">			System.out.println(data[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在开发之中，对于静态数组的初始化强烈建议使用完整语法格式，这样可以轻松使用匿名数组这一概念。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组的静态初始化 完整写法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array5</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;.length);</span><br><span class="line">		<span class="comment">//这是个匿名数组，而直接&#123;1,2,3&#125;.length就会报错</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以后使用静态方法定义数组的时候一定要写上完整格式。</p>
+<blockquote>
+<p>数组的最大缺陷：长度固定。</p>
+</blockquote>
+<h1 id="二维数组-了解"><a href="#二维数组-了解" class="headerlink" title="二维数组(了解)"></a>二维数组(了解)</h1><p>在之前的所使用的数组发现只需要一个索引就可以进行访问，那么这样的数组非常像一个数据行的概念。</p>
+<table>
+<thead>
+<tr>
+<th>索引</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内容</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<p>现在通过一个索引就可以取得唯一的一个记录。所以这样的数组可以简单理解为一维数组，而二维数组本质上指的就是一个行列集合，也就是说如果要想确定某一个数据需要行索引和列索引来进行定位。</p>
+<table>
+<thead>
+<tr>
+<th>索引</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>234</td>
+<td>23</td>
+<td>243</td>
+<td>243</td>
+<td>243</td>
+<td>243</td>
+</tr>
+<tr>
+<td>1</td>
+<td>654</td>
+<td>564</td>
+<td>465</td>
+<td>784</td>
+<td>354</td>
+<td>543</td>
+</tr>
+</tbody>
+</table>
+<p>如果要想确定一个数据则数组使用的结构就是<code>数组名称[行索引][列索引]</code>，所以这样的结构就是一个表的结构。</p>
+<p>那么对于二维数组的定义有两种声明形式：</p>
+<ul>
+<li>数组的动态初始化</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 数组名称 [<span class="string"></span>][<span class="symbol"></span>] = new 数据类型 [<span class="string">行个数</span>][<span class="symbol">列个数</span>]；</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数组的静态初始化</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数据类型 数组名称 [<span class="string"></span>][<span class="symbol"></span>] = new 数据类型[][]&#123;</span><br><span class="line">  &#123;值,值,...&#125;,&#123;值,值,...&#125;,&#123;值,值,...&#125;&#125;；</span><br></pre></td></tr></table></figure>
+<p>范例：定义一个二维数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//二维数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array6</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="comment">//此时的数组并不是一个等列数组</span></span><br><span class="line">		<span class="keyword">int</span> data [][] = <span class="keyword">new</span> <span class="keyword">int</span> [][] &#123;</span><br><span class="line">			&#123;<span class="number">1</span>,<span class="number">2</span>&#125;,&#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;,&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;</span><br><span class="line">		&#125;;<span class="comment">//如果进行输出的时候一定要使用双重循环，外部循环控制输出的行数，而内部循环控制输出的列数。</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; data.length;x++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>;y &lt; data[x].length;y++) &#123;</span><br><span class="line">				System.out.println(data[x][y]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>由于输出麻烦，所以可以忽略了，你们所进行的开发之中，出现二维数组的几率并不高。</p>
+<h1 id="数组与方法调用（重点）"><a href="#数组与方法调用（重点）" class="headerlink" title="数组与方法调用（重点）"></a>数组与方法调用（重点）</h1><p>数组是一个引用数据类型，那么所有的引用数据类型都可以为其设置多个栈内存指向。所以在进行数组操作的时候，也可以将其通过方法进行处理。</p>
+<p>范例：方法接受数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法接受数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array7</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">		printArray(data);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//定义一个专门进行数组输出的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> temp [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在方法的参数上由于需要接受一个整型数组，所以就实现了一个最为基础的引用传递操作。</p>
+<p>范例：方法返回数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法返回数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array8</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = init();<span class="comment">//接受数组</span></span><br><span class="line">		printArray(data);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//此时的方法希望返回一个整型数组，所以返回值类型定义为整型数组</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] init() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//定义一个专门进行数组输出的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> temp [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么现在的数组上发生了引用传递，那么也就意味着方法接受数组之后也可以对数组内容进行修改。</p>
+<p>范例：定义一个方法，该方法可以实现数组的内容乘2</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个方法，该方法可以实现数组的内容乘2</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array9</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = init();<span class="comment">//接受数组</span></span><br><span class="line">		inc(data);<span class="comment">//扩大数组中的内容</span></span><br><span class="line">		printArray(data);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">inc</span><span class="params">(<span class="keyword">int</span> arr[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; arr.length;x++) &#123;</span><br><span class="line">			arr[x] *= <span class="number">2</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//此时的方法希望返回一个整型数组，所以返回值类型定义为整型数组</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] init() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//定义一个专门进行数组输出的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> temp [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>内存分析：</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/array1.PNG" alt></p>
+<h1 id="java对数组的支持"><a href="#java对数组的支持" class="headerlink" title="java对数组的支持"></a>java对数组的支持</h1><p>在java给出的类库之中也提供有对于数组操作的相关支持方法；</p>
+<h2 id="数组排序：java-util-Arrays-sort-数组名称"><a href="#数组排序：java-util-Arrays-sort-数组名称" class="headerlink" title="数组排序：java.util.Arrays.sort(数组名称);"></a>数组排序：java.util.Arrays.sort(数组名称);</h2><p>范例：实现数组排序操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组排序</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array10</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">55</span>,<span class="number">33</span>,<span class="number">22</span>,<span class="number">64</span>,<span class="number">47</span>&#125;;</span><br><span class="line">		<span class="keyword">char</span> zf [] = <span class="keyword">new</span> <span class="keyword">char</span> [] &#123;<span class="string">'v'</span>,<span class="string">'g'</span>,<span class="string">'h'</span>,<span class="string">'j'</span>,<span class="string">'k'</span>&#125;;</span><br><span class="line">		java.util.Arrays.sort(data);</span><br><span class="line">		java.util.Arrays.sort(zf);</span><br><span class="line">		printArray(data);</span><br><span class="line">		printArray(zf);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//定义一个专门进行数组输出的方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> temp [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">char</span> temp [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>只要是基本数据类型的数组，<code>Arrays.sort()</code>都可以轻松的实现排序处理。</p>
+<h2 id="数组拷贝"><a href="#数组拷贝" class="headerlink" title="数组拷贝"></a>数组拷贝</h2><p>指的是将一个数组的部分内容替换掉另外一个数组的部分内容；</p>
+<ul>
+<li>方法（加工）：<code>System.arraycopy(源数组名称,源数组开始点,目标数组名称,目标数组开始点,拷贝长度);</code></li>
+</ul>
+<p>范例：实现数组拷贝</p>
+<ul>
+<li>源数组a：1,2,3,4,5,6,7,8,9</li>
+<li>源数组b：11,22,33,44,55,66,77,88，99</li>
+<li>替换后的数组a：1,55,66,77,5,6,7,8,9</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组拷贝</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array11</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> dataA [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> dataB [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span>,<span class="number">66</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">99</span>&#125;;</span><br><span class="line">		System.arraycopy(dataB, <span class="number">4</span>, dataA, <span class="number">1</span>, <span class="number">3</span>);</span><br><span class="line">		printArray(dataA);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> temp[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span> ;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"、"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这些基本的数组操作只能作为逻辑玩玩，开发用不上。</p>
+</blockquote>
+<h1 id="数组案例：数组数据统计"><a href="#数组案例：数组数据统计" class="headerlink" title="数组案例：数组数据统计"></a>数组案例：数组数据统计</h1><p>现在假设给你一个数组，要求可以统计出该数组的最大值，最小值，平均值以及总和。这种操作肯定是要通过循环的形式完成的。</p>
+<p>范例：基本实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组的基本数据处理</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array12</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> list [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">66</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> max = list[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">int</span> min = list[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">int</span> sum = list[<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>;x &lt; list.length;x++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(list[x] &gt; max) &#123;</span><br><span class="line">				max = list[x];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(list[x] &lt; min) &#123;</span><br><span class="line">				min = list[x];</span><br><span class="line">			&#125;</span><br><span class="line">			sum += list[x];</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(<span class="string">"最大值为"</span>+max);</span><br><span class="line">		System.out.println(<span class="string">"最小值为"</span>+min);</span><br><span class="line">		System.out.println(<span class="string">"和为"</span>+sum);</span><br><span class="line">		System.out.println(<span class="string">"平均值为"</span>+sum/(<span class="keyword">double</span>)list.length);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时的确是实现了我们想要的功能，但是随之会发现主方法的代码有些多。主方法实际上就相当于一个客户端调用，那么既然是客户端调用，里面的代码应该是越简单越好。</p>
+<p>范例：改进代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array13</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">66</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">double</span> result [] = stat(data);</span><br><span class="line">		System.out.println(<span class="string">"最大值为"</span>+result[<span class="number">0</span>]);</span><br><span class="line">		System.out.println(<span class="string">"最小值为"</span>+result[<span class="number">1</span>]);</span><br><span class="line">		System.out.println(<span class="string">"和为"</span>+result[<span class="number">2</span>]);</span><br><span class="line">		System.out.println(<span class="string">"平均值为"</span>+result[<span class="number">3</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//此时需要返回的数据一共有四个，那么一个方法只能返回一种数据类型，那么就应该用数组返回</span></span><br><span class="line">	<span class="comment">//retData[0]为最大值，retData[1]为最小值，数组[2]为和，数组[3]为平均值</span></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span>[] stat(<span class="keyword">int</span> data[]) &#123;</span><br><span class="line">		<span class="keyword">double</span> retData [] = <span class="keyword">new</span> <span class="keyword">double</span> [<span class="number">4</span>];</span><br><span class="line">		retData[<span class="number">0</span>] = data[<span class="number">0</span>];</span><br><span class="line">		retData[<span class="number">1</span>] = data[<span class="number">0</span>];</span><br><span class="line">		retData[<span class="number">2</span>] = data[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>;x &lt; data.length;x++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(retData[<span class="number">0</span>] &lt; data[x]) &#123;</span><br><span class="line">				retData[<span class="number">0</span>] = data[x];</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">if</span>(retData[<span class="number">1</span>] &gt; data[x]) &#123;</span><br><span class="line">				retData[<span class="number">1</span>] = data[x];</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			retData[<span class="number">2</span>]+=data[x];</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">		retData[<span class="number">3</span>] = retData[<span class="number">2</span>]/data.length;</span><br><span class="line">		<span class="keyword">return</span> retData;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在进行程序开发的时候，主方法不要涉及过于复杂的程序逻辑，只需要关注结果。</p>
+<h1 id="数组案例：数组排序"><a href="#数组案例：数组排序" class="headerlink" title="数组案例：数组排序"></a>数组案例：数组排序</h1><p>在很多的面试题上很多都会出现数组排序的题目。这个时候你千万不要写上<code>java.util.array.sort(数组)</code>,而这种排序都是以我们的升序为主。</p>
+<p>1、基础的排序操作：</p>
+<p>冒泡排序：最终要进行的循环的次数为：n的n-1次方的次数，所以要循环的次数很多，时间复杂度要高。</p>
+<p>范例：数组排序实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组排序实现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array14</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">6</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">5</span>&#125;;</span><br><span class="line">		sort(data);</span><br><span class="line">		printArray(data);</span><br><span class="line">		<span class="comment">//System.out.print(data[0]);</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> data[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; data.length - <span class="number">1</span>;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span> ;j &lt; data.length - i -<span class="number">1</span>;j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(data[j] &gt; data[j+<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">int</span> temp = data[j];</span><br><span class="line">					data[j] = data[j+<span class="number">1</span>];</span><br><span class="line">					data[j+<span class="number">1</span>] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> temp [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; temp.length;x++) &#123;</span><br><span class="line">			System.out.print(temp[x] + <span class="string">"."</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数组案例：数组转置"><a href="#数组案例：数组转置" class="headerlink" title="数组案例：数组转置"></a>数组案例：数组转置</h1><p>所谓的转置最为简单的理解就是首位交换。如果要实现这样的交换有两种实现思路：</p>
+<h2 id="开辟一个新的等长数组，然后将数组倒序保存进去。"><a href="#开辟一个新的等长数组，然后将数组倒序保存进去。" class="headerlink" title="开辟一个新的等长数组，然后将数组倒序保存进去。"></a>开辟一个新的等长数组，然后将数组倒序保存进去。</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组转置</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array15</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> result [] = reserve(data);</span><br><span class="line">		printArray(result);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> [] reserve(<span class="keyword">int</span> data []) &#123;</span><br><span class="line">		<span class="keyword">int</span> result [] = <span class="keyword">new</span> <span class="keyword">int</span> [data.length];</span><br><span class="line">		<span class="keyword">int</span> flat = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = data.length - <span class="number">1</span>;x &gt;= <span class="number">0</span>;x--) &#123;</span><br><span class="line">			result[flat++]=data[x];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> result;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> data [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;data.length;i++) &#123;</span><br><span class="line">			System.out.print(data[i]+<span class="string">","</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/fanzhuan1.PNG" alt></p>
+<p>使用此类模式最大的问题在于开辟了两块相同的堆内存空间，所以造成了空间浪费。</p>
+<h2 id="思路2：在一个数组上完成。"><a href="#思路2：在一个数组上完成。" class="headerlink" title="思路2：在一个数组上完成。"></a>思路2：在一个数组上完成。</h2><p><img src="http://oujvmc3la.bkt.clouddn.com/fanzhuan2.PNG" alt></p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/fanzhuan3.PNG" alt></p>
+<p>这种转换只需要数组长度除以2就可以了。</p>
+<p>实例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组转置,一个数组</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array16</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> result [] = reserve(data);          <span class="comment">//反转</span></span><br><span class="line">		printArray(result);		<span class="comment">//输出</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> [] reserve(<span class="keyword">int</span> data []) &#123;</span><br><span class="line">		<span class="keyword">int</span> center = data.length / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">int</span> head = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> tail = data.length - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; center;x++) &#123;</span><br><span class="line">			<span class="keyword">int</span> temp = data[tail];</span><br><span class="line">			data[tail] = data[head];</span><br><span class="line">			data[head] = temp;</span><br><span class="line">			head++;</span><br><span class="line">			tail--;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> data;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> data [])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;data.length;i++) &#123;</span><br><span class="line">			System.out.print(data[i]+<span class="string">","</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果想要进行二维数组的转置，那么肯定有一个前提：行列相等。</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/fanzhuan4.PNG" alt></p>
+<p>范例：保证中间轴不动（x==y）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//多维数组转置</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array17</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> data [][] = <span class="keyword">new</span> <span class="keyword">int</span> [][] &#123;</span><br><span class="line">			&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;,&#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;&#125;;</span><br><span class="line">		reserve(data);          <span class="comment">//反转</span></span><br><span class="line">		printArray(data);		<span class="comment">//输出</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">reserve</span><span class="params">(<span class="keyword">int</span> data [][])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; data.length;x++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> y = x;y &lt; data[x].length;y++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(x != y) &#123;</span><br><span class="line">					<span class="keyword">int</span> temp = data[x][y];</span><br><span class="line">					data[x][y] = data[y][x];</span><br><span class="line">					data[y][x] = temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printArray</span><span class="params">(<span class="keyword">int</span> data [][])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; data.length;i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; data[i].length;j++) &#123;</span><br><span class="line">				System.out.print(data[i][j]);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数组案例：二分查找"><a href="#数组案例：二分查找" class="headerlink" title="数组案例：二分查找"></a>数组案例：二分查找</h1><p>如果说现在要求你在指定的数组中查询一个数据的位置。那么现在可能想到最简化的实现方法：整体数组遍历。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组查找</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array18</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> search = <span class="number">8</span>;</span><br><span class="line">		<span class="keyword">int</span> data[] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>&#125;;</span><br><span class="line">		System.out.print(index(data,search));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">index</span><span class="params">(<span class="keyword">int</span> data[],<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x= <span class="number">0</span>;x &lt; data.length;x++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(data[x] == key) &#123;</span><br><span class="line">				<span class="keyword">return</span> x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个的时间复杂度是n，也就是说数组中的数据都要进行一次遍历，这样我们才能确定我们需要查找的数据是否存在，那么现在想要进行更加快速的查找方式，最好的方法是进行我们的二分查找（折半查找）。</p>
+<p>二分查找的前提是排序。</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/erfenzz.PNG" alt></p>
+<p>范例：实现二分查找（采用方法递归完成）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组二分法查找</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array19</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="comment">//二分法查找的前提的数组已经排序</span></span><br><span class="line">		<span class="keyword">int</span> data[] = <span class="keyword">new</span> <span class="keyword">int</span> [] &#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line">		<span class="keyword">int</span> search = <span class="number">6</span>;</span><br><span class="line">		System.out.print(binarySearch(data,<span class="number">0</span>,data.length-<span class="number">1</span>,search));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span> arr[],<span class="keyword">int</span> from,<span class="keyword">int</span> to,<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(from &lt; to) &#123;</span><br><span class="line">			<span class="keyword">int</span> mid = (from/<span class="number">2</span>)+(to/<span class="number">2</span>);</span><br><span class="line">			<span class="keyword">if</span>(arr[mid]==key) &#123;</span><br><span class="line">				<span class="keyword">return</span> mid;</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(key &lt; arr[mid]) &#123;</span><br><span class="line">				<span class="keyword">return</span> binarySearch(arr,from,mid-<span class="number">1</span>,key);</span><br><span class="line">			&#125;<span class="keyword">else</span> <span class="keyword">if</span>(key &gt; arr[mid]) &#123;</span><br><span class="line">				<span class="keyword">return</span> binarySearch(arr,mid+<span class="number">1</span>,to,key);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="对象数组（核心）"><a href="#对象数组（核心）" class="headerlink" title="对象数组（核心）"></a>对象数组（核心）</h1><p>在之前所定义的数组都属于基本数据类型的数组，那么对象也可以将其定义为数组，这样的操作形式称为对象数组。</p>
+<p>对象数组往往是以引用数据类型为主的定义，例如：类，接口，而且对象数组也分为两种定义格式：</p>
+<ul>
+<li>对象数组动态初始化：<code>类名称 对象数组名称 [] = new 类名称[长度];</code></li>
+<li>对象数组的静态初始化：<code>类名称 对象数组名称 [] = new 类名称[]{实例化对象,...};</code></li>
+</ul>
+<p>范例：对象数组的动态初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象数组的动态初始化</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"姓名："</span>+name+<span class="string">" ,年龄："</span>+age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span>  <span class="class"><span class="keyword">class</span> <span class="title">Array20</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="comment">//动态初始化之后，对象数组中的每一个元素都是其数据类型的默认值</span></span><br><span class="line">		Person per [] = <span class="keyword">new</span> Person [<span class="number">3</span>];<span class="comment">//动态初始化</span></span><br><span class="line">		per[<span class="number">0</span>] = <span class="keyword">new</span> Person(<span class="string">"王凯"</span>,<span class="number">20</span>);</span><br><span class="line">		per[<span class="number">1</span>] = <span class="keyword">new</span> Person(<span class="string">"云"</span>,<span class="number">21</span>);</span><br><span class="line">		per[<span class="number">2</span>] = <span class="keyword">new</span> Person(<span class="string">"贵"</span>,<span class="number">22</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; per.length;x++) &#123;</span><br><span class="line">			System.out.print(per[x].getInfo());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>范例：静态初始化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象数组的静态初始化</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n,<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">		name = n;</span><br><span class="line">		age = a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"姓名："</span>+name+<span class="string">" ，年龄："</span>+age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Array21</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		Person per [] = <span class="keyword">new</span> Person [] &#123;</span><br><span class="line">				<span class="keyword">new</span> Person(<span class="string">"王凯"</span>,<span class="number">22</span>),</span><br><span class="line">				<span class="keyword">new</span> Person(<span class="string">"云"</span>,<span class="number">21</span>),</span><br><span class="line">				<span class="keyword">new</span> Person(<span class="string">"贵"</span>,<span class="number">23</span>)</span><br><span class="line">		&#125;;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; per.length;x++) &#123;</span><br><span class="line">			System.out.println(per[x].getInfo());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每一个对象可以保存更多的属性，所以对象数组可以保存的内容要比基本数据类型更多。那么应用的也就更多，所有的开发必定都存在对象数组的概念。</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/OBar.PNG" alt></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/02/java/" rel="next" title="Java类与对象">
+                <i class="fa fa-chevron-left"></i> Java类与对象
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/27/java/" rel="prev" title="Java String类的基本特点">
+                Java String类的基本特点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组基本概念"><span class="nav-number">1.</span> <span class="nav-text">数组基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的动态初始化"><span class="nav-number">2.</span> <span class="nav-text">数组的动态初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组引用传递"><span class="nav-number">3.</span> <span class="nav-text">数组引用传递</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的静态初始化"><span class="nav-number">4.</span> <span class="nav-text">数组的静态初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维数组-了解"><span class="nav-number">5.</span> <span class="nav-text">二维数组(了解)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组与方法调用（重点）"><span class="nav-number">6.</span> <span class="nav-text">数组与方法调用（重点）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java对数组的支持"><span class="nav-number">7.</span> <span class="nav-text">java对数组的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组排序：java-util-Arrays-sort-数组名称"><span class="nav-number">7.1.</span> <span class="nav-text">数组排序：java.util.Arrays.sort(数组名称);</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组拷贝"><span class="nav-number">7.2.</span> <span class="nav-text">数组拷贝</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组案例：数组数据统计"><span class="nav-number">8.</span> <span class="nav-text">数组案例：数组数据统计</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组案例：数组排序"><span class="nav-number">9.</span> <span class="nav-text">数组案例：数组排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组案例：数组转置"><span class="nav-number">10.</span> <span class="nav-text">数组案例：数组转置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开辟一个新的等长数组，然后将数组倒序保存进去。"><span class="nav-number">10.1.</span> <span class="nav-text">开辟一个新的等长数组，然后将数组倒序保存进去。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路2：在一个数组上完成。"><span class="nav-number">10.2.</span> <span class="nav-text">思路2：在一个数组上完成。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组案例：二分查找"><span class="nav-number">11.</span> <span class="nav-text">数组案例：二分查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对象数组（核心）"><span class="nav-number">12.</span> <span class="nav-text">对象数组（核心）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

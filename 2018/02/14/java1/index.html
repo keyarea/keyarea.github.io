@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="综合案例：角色与权限设置 要求：  要求可以根据一个员工找到对应的部门，以及该部门对应的角色，以及每个角色对应的权限。 可以根据一个角色找到具备此角色的所有部门，以及该部门下的所有员工。 根据一个权限找到具备该权限的所有角色以及每个角色对应的部门以及每个部门下的所有员工。  进行类的单独描述123456789101112131415161718192021222324252627282930313">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 综合案例:角色与权限设置">
+<meta property="og:url" content="https://blog.loong.io/2018/02/14/java1/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="综合案例：角色与权限设置 要求：  要求可以根据一个员工找到对应的部门，以及该部门对应的角色，以及每个角色对应的权限。 可以根据一个角色找到具备此角色的所有部门，以及该部门下的所有员工。 根据一个权限找到具备该权限的所有角色以及每个角色对应的部门以及每个部门下的所有员工。  进行类的单独描述123456789101112131415161718192021222324252627282930313">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.198Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 综合案例:角色与权限设置">
+<meta name="twitter:description" content="综合案例：角色与权限设置 要求：  要求可以根据一个员工找到对应的部门，以及该部门对应的角色，以及每个角色对应的权限。 可以根据一个角色找到具备此角色的所有部门，以及该部门下的所有员工。 根据一个权限找到具备该权限的所有角色以及每个角色对应的部门以及每个部门下的所有员工。  进行类的单独描述123456789101112131415161718192021222324252627282930313">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2018/02/14/java1/">
+
+
+
+
+
+  <title>Java 综合案例:角色与权限设置 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2018/02/14/java1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java 综合案例:角色与权限设置</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-14T17:16:54+08:00">
+                2018-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>综合案例：角色与权限设置</p>
+<p>要求：</p>
+<ul>
+<li>要求可以根据一个员工找到对应的部门，以及该部门对应的角色，以及每个角色对应的权限。</li>
+<li>可以根据一个角色找到具备此角色的所有部门，以及该部门下的所有员工。</li>
+<li>根据一个权限找到具备该权限的所有角色以及每个角色对应的部门以及每个部门下的所有员工。</li>
+</ul>
+<h1 id="进行类的单独描述"><a href="#进行类的单独描述" class="headerlink" title="进行类的单独描述"></a>进行类的单独描述</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 数据表与简单java类角色与权限;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dept</span></span>&#123;<span class="comment">//部门信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> did;</span><br><span class="line">    <span class="keyword">private</span> String dname;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">(<span class="keyword">int</span> did,String dname)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.did = did;</span><br><span class="line">        <span class="keyword">this</span>.dname = dname;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【部门信息】部门编号："</span>+<span class="keyword">this</span>.did+<span class="string">",部门名称："</span>+<span class="keyword">this</span>.dname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Emp</span></span>&#123;<span class="comment">//雇员信息</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> eid;</span><br><span class="line">   <span class="keyword">private</span> String ename;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Emp</span><span class="params">(<span class="keyword">int</span> eid,String ename)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.eid = eid;</span><br><span class="line">       <span class="keyword">this</span>.ename = ename;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"【雇员信息】雇员编号："</span>+<span class="keyword">this</span>.eid+<span class="string">",雇员姓名："</span>+<span class="keyword">this</span>.ename;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Role</span></span>&#123;<span class="comment">//角色信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> rid;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Role</span><span class="params">(<span class="keyword">int</span> rid,String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rid = rid;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【角色信息】角色编号："</span>+<span class="keyword">this</span>.rid+<span class="string">",角色标题："</span>+<span class="keyword">this</span>.title;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Action</span></span>&#123;<span class="comment">//权限信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> aid;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String flag;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Action</span><span class="params">(<span class="keyword">int</span> aid,String title,String flag)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.aid = aid;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">        <span class="keyword">this</span>.flag = flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【权限信息】权限编号："</span>+<span class="keyword">this</span>.aid+<span class="string">",权限标题："</span>+<span class="keyword">this</span>.title+<span class="string">",权限标记："</span>+<span class="keyword">this</span>.flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="进行关系的描述"><a href="#进行关系的描述" class="headerlink" title="进行关系的描述"></a>进行关系的描述</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 数据表与简单java类角色与权限;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dept</span></span>&#123;<span class="comment">//部门信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> did;</span><br><span class="line">    <span class="keyword">private</span> String dname;</span><br><span class="line">    <span class="keyword">private</span> Emp emps[];<span class="comment">//一个部门有多个雇员</span></span><br><span class="line">    <span class="keyword">private</span> Role role;<span class="comment">//一个部门有一个角色</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">(<span class="keyword">int</span> did,String dname)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.did = did;</span><br><span class="line">        <span class="keyword">this</span>.dname = dname;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmps</span><span class="params">(Emp emps[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.emps = emps;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Emp[] getEmps()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.emps;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRole</span><span class="params">(Role role)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.role = role;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Role <span class="title">getRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.role;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【部门信息】部门编号："</span>+<span class="keyword">this</span>.did+<span class="string">",部门名称："</span>+<span class="keyword">this</span>.dname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Emp</span></span>&#123;<span class="comment">//雇员信息</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> eid;</span><br><span class="line">   <span class="keyword">private</span> String ename;</span><br><span class="line">   <span class="keyword">private</span> Dept dept;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Emp</span><span class="params">(<span class="keyword">int</span> eid,String ename)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.eid = eid;</span><br><span class="line">       <span class="keyword">this</span>.ename = ename;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"【雇员信息】雇员编号："</span>+<span class="keyword">this</span>.eid+<span class="string">",雇员姓名："</span>+<span class="keyword">this</span>.ename;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDept</span><span class="params">(Dept dept)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.dept = dept;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Dept <span class="title">getDept</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.dept;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Role</span></span>&#123;<span class="comment">//角色信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> rid;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> Dept [] depts;<span class="comment">//多个部门拥有一个角色</span></span><br><span class="line">    <span class="keyword">private</span> Action [] actions;<span class="comment">//一个角色拥有多种权限</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Role</span><span class="params">(<span class="keyword">int</span> rid,String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rid = rid;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【角色信息】角色编号："</span>+<span class="keyword">this</span>.rid+<span class="string">",角色标题："</span>+<span class="keyword">this</span>.title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDepts</span><span class="params">(Dept depts[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.depts = depts;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Dept[] getDepts()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.depts;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAction</span><span class="params">(Action actions[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.actions = actions;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Action [] getActions()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.actions;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Action</span></span>&#123;<span class="comment">//权限信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> aid;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String flag;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Action</span><span class="params">(<span class="keyword">int</span> aid,String title,String flag)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.aid = aid;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">        <span class="keyword">this</span>.flag = flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【权限信息】权限编号："</span>+<span class="keyword">this</span>.aid+<span class="string">",权限标题："</span>+<span class="keyword">this</span>.title+<span class="string">",权限标记："</span>+<span class="keyword">this</span>.flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="要根据关系进行测试数据的编写以及完成指定数据的输出"><a href="#要根据关系进行测试数据的编写以及完成指定数据的输出" class="headerlink" title="要根据关系进行测试数据的编写以及完成指定数据的输出"></a>要根据关系进行测试数据的编写以及完成指定数据的输出</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 数据表与简单java类角色与权限;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dept</span></span>&#123;<span class="comment">//部门信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> did;</span><br><span class="line">    <span class="keyword">private</span> String dname;</span><br><span class="line">    <span class="keyword">private</span> Emp emps[];<span class="comment">//一个部门有多个雇员</span></span><br><span class="line">    <span class="keyword">private</span> Role role;<span class="comment">//一个部门有一个角色</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Dept</span><span class="params">(<span class="keyword">int</span> did,String dname)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.did = did;</span><br><span class="line">        <span class="keyword">this</span>.dname = dname;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmps</span><span class="params">(Emp emps[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.emps = emps;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Emp[] getEmps()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.emps;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRole</span><span class="params">(Role role)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.role = role;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Role <span class="title">getRole</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.role;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【部门信息】部门编号："</span>+<span class="keyword">this</span>.did+<span class="string">",部门名称："</span>+<span class="keyword">this</span>.dname;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Emp</span></span>&#123;<span class="comment">//雇员信息</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">int</span> eid;</span><br><span class="line">   <span class="keyword">private</span> String ename;</span><br><span class="line">   <span class="keyword">private</span> Dept dept;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="title">Emp</span><span class="params">(<span class="keyword">int</span> eid,String ename)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.eid = eid;</span><br><span class="line">       <span class="keyword">this</span>.ename = ename;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"【雇员信息】雇员编号："</span>+<span class="keyword">this</span>.eid+<span class="string">",雇员姓名："</span>+<span class="keyword">this</span>.ename;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDept</span><span class="params">(Dept dept)</span></span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.dept = dept;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> Dept <span class="title">getDept</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>.dept;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Role</span></span>&#123;<span class="comment">//角色信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> rid;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> Dept [] depts;<span class="comment">//多个部门拥有一个角色</span></span><br><span class="line">    <span class="keyword">private</span> Action [] actions;<span class="comment">//一个角色拥有多种权限</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Role</span><span class="params">(<span class="keyword">int</span> rid,String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rid = rid;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String  <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【角色信息】角色编号："</span>+<span class="keyword">this</span>.rid+<span class="string">",角色标题："</span>+<span class="keyword">this</span>.title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDepts</span><span class="params">(Dept depts[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.depts = depts;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Dept[] getDepts()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.depts;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAction</span><span class="params">(Action actions[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.actions = actions;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Action [] getActions()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.actions;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Action</span></span>&#123;<span class="comment">//权限信息</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> aid;</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="keyword">private</span> String flag;</span><br><span class="line">    <span class="keyword">private</span> Role roles[];</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Action</span><span class="params">(<span class="keyword">int</span> aid,String title,String flag)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.aid = aid;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">        <span class="keyword">this</span>.flag = flag;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setRoles</span><span class="params">(Role roles[])</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.roles = roles;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> Role [] getRoles()&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.roles;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"【权限信息】权限编号："</span>+<span class="keyword">this</span>.aid+<span class="string">",权限标题："</span>+<span class="keyword">this</span>.title+<span class="string">",权限标记："</span>+<span class="keyword">this</span>.flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        <span class="comment">//第一步：设置数据之间的关系</span></span><br><span class="line">        <span class="comment">//1.创建部门数据</span></span><br><span class="line">        Dept d10 = <span class="keyword">new</span> Dept(<span class="number">10</span>,<span class="string">"技术部"</span>);</span><br><span class="line">        Dept d20 = <span class="keyword">new</span> Dept(<span class="number">20</span>,<span class="string">"市场部"</span>);</span><br><span class="line">        <span class="comment">//2.创建雇员信息</span></span><br><span class="line">        Emp e1 = <span class="keyword">new</span> Emp(<span class="number">1</span>,<span class="string">"kai"</span>);</span><br><span class="line">        Emp e2 = <span class="keyword">new</span> Emp(<span class="number">2</span>,<span class="string">"lei"</span>);</span><br><span class="line">        Emp e3 = <span class="keyword">new</span> Emp(<span class="number">3</span>,<span class="string">"wang"</span>);</span><br><span class="line">        Emp e4 = <span class="keyword">new</span> Emp(<span class="number">4</span>,<span class="string">"xue"</span>);</span><br><span class="line">        Emp e5 = <span class="keyword">new</span> Emp(<span class="number">5</span>,<span class="string">"king"</span>);</span><br><span class="line">        <span class="comment">//3.创建角色信息</span></span><br><span class="line">        Role r100 = <span class="keyword">new</span> Role(<span class="number">100</span>,<span class="string">"管理层"</span>);</span><br><span class="line">        Role r200 = <span class="keyword">new</span> Role(<span class="number">200</span>,<span class="string">"职员层"</span>);</span><br><span class="line">        <span class="comment">//4.创建权限信息</span></span><br><span class="line">        Action a1000 = <span class="keyword">new</span> Action(<span class="number">1000</span>,<span class="string">"职员入职"</span>,<span class="string">"Emp:add"</span>);</span><br><span class="line">        Action a2000 = <span class="keyword">new</span> Action(<span class="number">2000</span>,<span class="string">"职员晋升"</span>,<span class="string">"Emp:Edit"</span>);</span><br><span class="line">        Action a3000 = <span class="keyword">new</span> Action(<span class="number">3000</span>,<span class="string">"发布公告"</span>,<span class="string">"info:add"</span>);</span><br><span class="line">        Action a6000 = <span class="keyword">new</span> Action (<span class="number">6000</span>,<span class="string">"查看客户信息"</span>,<span class="string">"info:look"</span>);</span><br><span class="line">        Action a7000 = <span class="keyword">new</span> Action (<span class="number">7000</span>,<span class="string">"回访记录"</span>,<span class="string">"result:look"</span>);</span><br><span class="line">        <span class="comment">//5.设置角色和权限关系</span></span><br><span class="line">        r100.setAction(<span class="keyword">new</span> Action[]&#123;</span><br><span class="line">                a1000,a2000,a3000,a6000,a7000</span><br><span class="line">        &#125;);</span><br><span class="line">        r200.setAction(<span class="keyword">new</span> Action[]&#123;</span><br><span class="line">                a6000,a7000</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//6.设置角色和权限之间的关系</span></span><br><span class="line">        a1000.setRoles(<span class="keyword">new</span> Role []&#123;</span><br><span class="line">                r100</span><br><span class="line">        &#125;);</span><br><span class="line">        a2000.setRoles(<span class="keyword">new</span> Role []&#123;</span><br><span class="line">                r100</span><br><span class="line">        &#125;);</span><br><span class="line">        a3000.setRoles(<span class="keyword">new</span> Role []&#123;</span><br><span class="line">                r100</span><br><span class="line">        &#125;);</span><br><span class="line">        a6000.setRoles(<span class="keyword">new</span> Role []&#123;</span><br><span class="line">                r100,r200</span><br><span class="line">        &#125;);</span><br><span class="line">        a7000.setRoles(<span class="keyword">new</span> Role []&#123;</span><br><span class="line">                r100,r200</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//7.设置部门和角色之间的关系</span></span><br><span class="line">        d10.setRole(r100);</span><br><span class="line">        d20.setRole(r200);</span><br><span class="line">        <span class="comment">//8.设置角色和部门的关系</span></span><br><span class="line">        r100.setDepts(<span class="keyword">new</span> Dept[]&#123;</span><br><span class="line">                d10</span><br><span class="line">        &#125;);</span><br><span class="line">        r200.setDepts(<span class="keyword">new</span> Dept[]&#123;</span><br><span class="line">                d20</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//9.设置部门和雇员之间的关系</span></span><br><span class="line">        d10.setEmps(<span class="keyword">new</span> Emp[]&#123;</span><br><span class="line">                e1,e2</span><br><span class="line">        &#125;);</span><br><span class="line">        d20.setEmps(<span class="keyword">new</span> Emp[]&#123;</span><br><span class="line">                e3,e4,e5</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">//10.设置雇员和部门之间的关系</span></span><br><span class="line">        e1.setDept(d10);</span><br><span class="line">        e2.setDept(d10);</span><br><span class="line">        e3.setDept(d20);</span><br><span class="line">        e4.setDept(d20);</span><br><span class="line">        e5.setDept(d20);</span><br><span class="line">        <span class="comment">//第二步：取出相应数据</span></span><br><span class="line">        <span class="comment">//要求可以根据一个员工找到对应的部门，以及该部门对应的角色，以及每个角色对应的权限。</span></span><br><span class="line">        System.out.println(e1.getDept().getInfo());</span><br><span class="line">        System.out.println(e1.getDept().getRole().getInfo());</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; e1.getDept().getRole().getActions().length;x++)&#123;</span><br><span class="line">            System.out.println(e1.getDept().getRole().getActions()[x].getInfo());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"*****************************"</span>);</span><br><span class="line">        <span class="comment">//可以根据一个角色找到具备此角色的所有部门，以及该部门下的所有员工</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; r100.getDepts().length;x++)&#123;</span><br><span class="line">            System.out.println(r100.getDepts()[x].getInfo());</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>;y &lt; r100.getDepts()[x].getEmps().length;y++)&#123;</span><br><span class="line">                System.out.println(<span class="string">"\t|-"</span> + r100.getDepts()[x].getEmps()[y].getInfo());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"+++++++++++++++++++++++++++"</span>);</span><br><span class="line">        <span class="comment">//根据一个权限找到具备该权限的所有角色以及每个角色对应的部门以及每个部门下的所有员工。</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>;x &lt; a1000.getRoles().length;x++)&#123;</span><br><span class="line">            System.out.println(a1000.getRoles()[x].getInfo());</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>;y &lt; a1000.getRoles()[x].getDepts().length;y++)&#123;</span><br><span class="line">                System.out.println(<span class="string">"\t|-"</span>+a1000.getRoles()[x].getDepts()[y].getInfo());</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i =<span class="number">0</span>;i &lt; a1000.getRoles()[x].getDepts()[y].getEmps().length;i++)&#123;</span><br><span class="line">                    System.out.println(<span class="string">"\t\t|-"</span>+a1000.getRoles()[x].getDepts()[y].getEmps()[i].getInfo());</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该程序基本上包含了基本上所有可能用到的最复杂的逻辑。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/14/java/" rel="next" title="Java 综合案例：数据表与简单Java类（多对多）">
+                <i class="fa fa-chevron-left"></i> Java 综合案例：数据表与简单Java类（多对多）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/15/java2/" rel="prev" title="Java 内部类的定义和使用">
+                Java 内部类的定义和使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进行类的单独描述"><span class="nav-number">1.</span> <span class="nav-text">进行类的单独描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进行关系的描述"><span class="nav-number">2.</span> <span class="nav-text">进行关系的描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#要根据关系进行测试数据的编写以及完成指定数据的输出"><span class="nav-number">3.</span> <span class="nav-text">要根据关系进行测试数据的编写以及完成指定数据的输出</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

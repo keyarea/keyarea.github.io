@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java Thread,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Java多线程编程进程与线程在Java语言中最大的特点就是支持多线程的开发（也是为数不多支持多线程的编程语言），所以在整个Java技术的学习里面，如果你不能够对多线程的概念有一个全面并且细致的了解，则在以后进行一些项目的设计过程之中尤其并发访问设计的过程之中就会出现严重的技术缺陷。 如果想要理解线程，那么首先就要了解一下进程的概念，在传统的DOS系统的时代，其本身有一个特征：如果你电脑上出现了病毒">
+<meta name="keywords" content="Java Thread">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java多线程编程">
+<meta property="og:url" content="https://blog.loong.io/2019/06/12/Thread/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="Java多线程编程进程与线程在Java语言中最大的特点就是支持多线程的开发（也是为数不多支持多线程的编程语言），所以在整个Java技术的学习里面，如果你不能够对多线程的概念有一个全面并且细致的了解，则在以后进行一些项目的设计过程之中尤其并发访问设计的过程之中就会出现严重的技术缺陷。 如果想要理解线程，那么首先就要了解一下进程的概念，在传统的DOS系统的时代，其本身有一个特征：如果你电脑上出现了病毒">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://imgs.loong.io/image/Thread/ThreadStart0.jpg">
+<meta property="og:image" content="http://imgs.loong.io/image/Thread/ThreadAndRunnable.jpg">
+<meta property="og:image" content="http://imgs.loong.io/image/Thread/ThreadDevelop.jpg">
+<meta property="og:image" content="http://imgs.loong.io/image/Thread/memoryAnalysis.jpg">
+<meta property="og:image" content="http://imgs.loong.io/image/Thread/Callable.jpg">
+<meta property="og:image" content="http://imgs.loong.io/image/Thread/threadStart.jpg">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.353Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java多线程编程">
+<meta name="twitter:description" content="Java多线程编程进程与线程在Java语言中最大的特点就是支持多线程的开发（也是为数不多支持多线程的编程语言），所以在整个Java技术的学习里面，如果你不能够对多线程的概念有一个全面并且细致的了解，则在以后进行一些项目的设计过程之中尤其并发访问设计的过程之中就会出现严重的技术缺陷。 如果想要理解线程，那么首先就要了解一下进程的概念，在传统的DOS系统的时代，其本身有一个特征：如果你电脑上出现了病毒">
+<meta name="twitter:image" content="http://imgs.loong.io/image/Thread/ThreadStart0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2019/06/12/Thread/">
+
+
+
+
+
+  <title>Java多线程编程 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2019/06/12/Thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java多线程编程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-12T21:31:48+08:00">
+                2019-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java多线程编程"><a href="#Java多线程编程" class="headerlink" title="Java多线程编程"></a>Java多线程编程</h1><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><p>在Java语言中最大的特点就是支持多线程的开发（也是为数不多支持多线程的编程语言），所以在整个Java技术的学习里面，如果你不能够对多线程的概念有一个全面并且细致的了解，则在以后进行一些<br>项目的设计过程之中尤其并发访问设计的过程之中就会出现严重的技术缺陷。</p>
+<p>如果想要理解线程，那么首先就要了解一下进程的概念，在传统的DOS系统的时代，其本身有一个特征：如果你电脑上出现了病毒，那么所有的程序将无法执行，因为传统的DOS采用的就是单进程处理，而<br>单进程处理的最大特点就是：在同一时间段上只允许一个程序在执行。</p>
+<p>那么后来到了Windows时代就开启了多进程，于是就表示在一个时间段上可以同时运行多个程序，并且这些程序将进行资源的轮流抢占，所以在同一个时间段上会有多个程序依次执行，但是在同一个时间点上只会有一个<br>进程执行，而后来到了多核的CPU，由于可以处理的CPU多了，那么即便有再多的进程出现，也可以比单核CPU处理的速度有所提升。</p>
+<p>线程是在进程基础之上划分的更小的程序单元，线程是在进程的基础上创建并且使用的，所以线程依赖于进程的支持，但是线程的启动速度要比进程快许多，所以当使用多线程进行并发处理的时候，其执行的性能<br>要高于进程。</p>
+<p>Java是多线程的编程语言，所以Java在进行并发访问处理的时候可以得到更高的处理性能。</p>
+<h2 id="Java多线程的实现"><a href="#Java多线程的实现" class="headerlink" title="Java多线程的实现"></a>Java多线程的实现</h2><p>如果要想在Java之中实现多线程的定义，那么就需要有一个专门的线程主体类进行线程的执行任务的定义，而这个主体类的定义是有要求的，必须实现特定的接口或者继承特定的父类才可以完成。</p>
+<h3 id="继承Thread类实现多线程"><a href="#继承Thread类实现多线程" class="headerlink" title="继承Thread类实现多线程"></a>继承Thread类实现多线程</h3><p>Java里面提供有一个java.lang.Thread的程序类，那么一个类只要继承了此类就表示这个类为线程的主体类，但是并不是说这个类就可以实现多线程处理了，因为还需要覆写Thread类中提供的run()方法，而这个方法就属于线程的主方法。</p>
+<p>范例：多线程主体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 多线程编程;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123; <span class="comment">// 线程的主体类</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// 线程的主体方法</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> x =<span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.title + <span class="string">"运行， x = "</span>  + x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>多线程要执行的功能都应该在run()方法中定义。需要说明的是：在正常情况下如果要想使用一个类中的方法，那么肯定要产生实例化对象，而后去调用类中提供的方法，但是run()方法是不能够被直接调用的，<br>因为这里面牵扯到一个操作系统的调度问题，所以要想启动多线程必须使用start()方法完成。</p>
+<p>范例：多线程启动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 多线程编程;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123; <span class="comment">// 线程的主体类</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// 线程的主体方法</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> x =<span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.title + <span class="string">"运行， x = "</span>  + x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyThread(<span class="string">"线程A"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> MyThread(<span class="string">"线程B"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> MyThread(<span class="string">"线程C"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过此时的调用，你可以发现，虽然调用了start()方法,但是最终执行的是run()方法，并且所有的线程对象都是交替执行的。</p>
+<blockquote>
+<p>疑问：为什么多线程的启动不直接使用run()方法而必须使用Thread类中的start()方法呢？</p>
+<blockquote>
+<p>如果要想清楚这个问题，最好的做法是查看一下start()方法的实现操作，可以直接通过源代码观察。</p>
+</blockquote>
+</blockquote>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (threadStatus != <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalThreadStateException();  <span class="comment">// 抛出了一个异常</span></span><br><span class="line">    group.add(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> started = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        start0();  <span class="comment">// 在start()方法里面调用了start0()这个方法</span></span><br><span class="line">        started = <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!started) &#123;</span><br><span class="line">                group.threadStartFailed(<span class="keyword">this</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Throwable ignore) &#123;</span><br><span class="line">     </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="keyword">private</span> <span class="keyword">native</span> <span class="function"><span class="keyword">void</span> <span class="title">start0</span><span class="params">()</span></span>; <span class="comment">// 只定义了方法名称并没有实现</span></span><br></pre></td></tr></table></figure>
+<p>会发现start()方法里面会抛出一个<code>IllegalThreadStateException</code>异常类对象，但是整个程序并没有使用throws或者明确的try…catch处理，因为该异常一定是RuntimeException的子类，每一个<br>线程类的对象只允许启动一次，如果重复启动则就抛出此异常,例如下面的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 多线程编程;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123; <span class="comment">// 线程的主体类</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// 线程的主体方法</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> x =<span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.title + <span class="string">"运行， x = "</span>  + x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Thread th = <span class="keyword">new</span> MyThread(<span class="string">"线程A"</span>);</span><br><span class="line">        th.start();</span><br><span class="line">        th.start(); <span class="comment">//  重复进行了线程的启动 </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在Java程序的执行过程儿之中，考虑到对于不同层次开发者的需求，所以其支持有本地的操作系统函数调用，而这项技术就被称为JNI技术，但是Java开发之中并不推荐这样使用，利用这项技术<br>可以使用一些操作系统提供的底层函数进行一些特殊处理，而在Thread类里面提供的start0()就表示需要将此方法依赖于不同的操作系统实现。</p>
+<p><img src="http://imgs.loong.io/image/Thread/ThreadStart0.jpg" alt></p>
+<p>任何情况下,只要定义了多线程,多线程的启动永远只有一种方案:Thread类中的start()方法.</p>
+<h2 id="基于Runnable接口实现多线程"><a href="#基于Runnable接口实现多线程" class="headerlink" title="基于Runnable接口实现多线程"></a>基于Runnable接口实现多线程</h2><p>虽然可以通过Thread类的继承来实现多线程的定义,但是在Java程序里面对于继承永远都是存在有单继承局限的,所以在Java里面又提供有第二种多线程的主题结构定义形式:实现java.lang.Runnable接口,<br>此接口定义如下:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123; <span class="comment">// 从jdk1.8引入Lambda表达式之后就变为了函数式接口</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>范例: 通过Runnable实现多线程的主体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通过实现Runnable接口实现多线程</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SecondThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123; <span class="comment">// 线程的主体类</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SecondThread</span><span class="params">(String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// 线程的主体方法</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> x =<span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.title + <span class="string">"运行， x = "</span>  + x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是此时由于不再继承Thread父类了,那么对于此时的SecondThread类中也不再支持有start()这个继承的方法,可是如果不使用start()方法是无法进行多线程启动的,<br>那么这个时候就需要观察一下Thread类提供的构造方法:</p>
+<blockquote>
+<p>构造方法:<code>public Thread(Runnable target);</code></p>
+</blockquote>
+<p>范例: 启动多线程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 通过实现Runnable接口实现多线程</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SecondThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123; <span class="comment">// 线程的主体类</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SecondThread</span><span class="params">(String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// 线程的主体方法</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> x =<span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.title + <span class="string">"运行， x = "</span>  + x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Thread threadA = <span class="keyword">new</span> Thread(<span class="keyword">new</span> SecondThread(<span class="string">"线程A"</span>));</span><br><span class="line">        Thread threadB = <span class="keyword">new</span> Thread(<span class="keyword">new</span> SecondThread(<span class="string">"线程B"</span>));</span><br><span class="line">        Thread threadC = <span class="keyword">new</span> Thread(<span class="keyword">new</span> SecondThread(<span class="string">"线程C"</span>));</span><br><span class="line">        threadA.start(); <span class="comment">// 启动多线程</span></span><br><span class="line">        threadB.start(); <span class="comment">// 启动多线程</span></span><br><span class="line">        threadC.start(); <span class="comment">// 启动多线程</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个时候的多线程实现里面可以发现,由于只是实现了Runnable接口对象,所以此时线程主体类上就不再有单继承的局限了,那么这样的设计才是一个标准性的设计.</p>
+<p>可以发现从jdk1.8开始,Runnable使用了函数式接口定义,所以也可以直接利用Lambda表达式进行线程类的实现.</p>
+<p>范例: 利用Lambda实现多线程定义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 利用Lambda表达式实现多线程</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; <span class="number">3</span>; x++) &#123;</span><br><span class="line">            String title = <span class="string">"进程"</span> + x;</span><br><span class="line">            Runnable run = () -&gt; &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> y = <span class="number">0</span>; y &lt; <span class="number">10</span>; y++)&#123;</span><br><span class="line">                    System.out.println(title + <span class="string">"运行, y = "</span> + y);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">new</span> Thread(run).start();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在以后的开发之中对于多线程的实现,优先考虑的就是Runnable接口实现,并且永恒都是通过Thread类对象启动多线程.</p>
+<h2 id="Thread和Runnable关系"><a href="#Thread和Runnable关系" class="headerlink" title="Thread和Runnable关系"></a>Thread和Runnable关系</h2><p>经过一系列的分析之后可以发现,在多线程的实现过程之中已经有了两种做法:Thread类和Runnable接口,如果从代码本身来讲使用Runnable是最方便的,因为其可以避免单继承的局限,同时也可以更好的进行功能的扩充.</p>
+<p>但是从结构上也需要来观察Thread和Runnable的联系.Thread类的定义:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Thread</span> <span class="keyword">extends</span> <span class="title">Object</span> <span class="title">implements</span> <span class="title">Runnable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>发现Thread类也是Runnable接口的子类,那么在之前继承Thread类的时候实际上覆写的还是Runnable接口的run()方法,此时来观察一下程序的类结构.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 多线程编程;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123; <span class="comment">// 线程的主体类</span></span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyThread</span><span class="params">(String title)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.title = title;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; <span class="comment">// 线程的主体方法</span></span><br><span class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> x =<span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">            System.out.println(<span class="keyword">this</span>.title + <span class="string">"运行， x = "</span>  + x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyThread(<span class="string">"线程A"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> MyThread(<span class="string">"线程B"</span>).start();</span><br><span class="line">        <span class="keyword">new</span> MyThread(<span class="string">"线程C"</span>).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://imgs.loong.io/image/Thread/ThreadAndRunnable.jpg" alt></p>
+<p>多线程的设计之中,使用了代理设计模式的结构,用户自定义的线程主体只是负责项目核心功能的实现,而所有的辅助实现全部交与Thread类来处理.</p>
+<p>在进行Thread类启动多线程的时候调用的是start()方法,而后找到的是run方法,当我们通过Thread类的构造方法传递了Runnable的接口对象的时候,那么该接口对象将会被Thread类中的target属性所保存,在start()<br>方法执行的时候会调用Thread类中的run()方法,而这个run()方法去调用了Runnable接口子类被覆写过的run()方法去了.</p>
+<p>多线程开发实质上是在于多个线程可以进行同一资源的抢占,那么Thread主要描述的是线程,而资源的描述是通过Runnable来完成的.</p>
+<p><img src="http://imgs.loong.io/image/Thread/ThreadDevelop.jpg" alt></p>
+<p>范例: 利用卖票程序来实现多个线程的资源并发访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 多线程编程;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 卖票程序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ThirdThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> ticket = <span class="number">5</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; <span class="number">100</span>; x++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.ticket &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                System.out.println(<span class="string">"现在的票数为:"</span> + <span class="keyword">this</span>.ticket--);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SaleOfTickets</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Runnable run = <span class="keyword">new</span> ThirdThread();</span><br><span class="line">        <span class="keyword">new</span> Thread(run).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(run).start();</span><br><span class="line">        <span class="keyword">new</span> Thread(run).start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过内存分析图来分析本程序的执行结构.</p>
+<p><img src="http://imgs.loong.io/image/Thread/memoryAnalysis.jpg" alt></p>
+<h2 id="Callable实现多线程"><a href="#Callable实现多线程" class="headerlink" title="Callable实现多线程"></a>Callable实现多线程</h2><p>从最传统的开发来讲,如果要进行多线程的实现肯定依靠的就是Runnable,但是Runnable接口有一个缺点:当线程执行完毕之后无法获取一个返,所以从jdk1.5之后就提出了一个新的线程实现<br>接口:java.util.concurrent.Callable接口,首先观察这个接口的定义:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callable</span>&lt;<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> V <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以发现Callable定义的时候可以设置一个泛型,此泛型的类型就是返回数据的类型,这样的好处是可以避免向下转型所带来的安全隐患.</p>
+<p><img src="http://imgs.loong.io/image/Thread/Callable.jpg" alt></p>
+<p>范例: 使用Callable实现多线程处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 多线程编程;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Callable;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.Future;</span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.FutureTask;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FourthThread</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">call</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">            System.out.println(<span class="string">"线程执行, i="</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"线程执行结束"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CallableDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        FutureTask&lt;String&gt; task = <span class="keyword">new</span> FutureTask&lt;&gt;(<span class="keyword">new</span> FourthThread());</span><br><span class="line">        <span class="keyword">new</span> Thread(task).start();</span><br><span class="line">        System.out.println(<span class="string">"线程返回数据:"</span> + task.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Callable与Runnable之前的区别?</p>
+<blockquote>
+<p>Runnable是在jdk1.0的时候提出的多线程的实现接口,而Callable接口是在jdk1.5之后提出的;<br>java.lang.Runnable接口之中只提供有一个run()方法,并且没有返回值;<br>java.util.concurrent.Callable接口提供有call()方法,提供有返回值;</p>
+</blockquote>
+</blockquote>
+<h2 id="多线程的运行状态"><a href="#多线程的运行状态" class="headerlink" title="多线程的运行状态"></a>多线程的运行状态</h2><p>对于多线程的开支而言,编写程序的过程之中总是按照:定义线程主体类,然后通过Threa类进行线程的启动,但是并不意味着你掉用了start()方法,线程就已经开始运行了,因为<br>整体的线程处理有自己的一套运行的状态.</p>
+<p><img src="http://imgs.loong.io/image/Thread/threadStart.jpg" alt></p>
+<ul>
+<li>任何一个线程的对象都应该使用Thread类进行封装,所以线程的启动使用的是start(),但是启动的时候实际上若干个线程都将进入到一种就绪状态,现在并没有执行;</li>
+<li>进入就绪状态之后就需要等待进行资源调度,当某一个线程调度成功之后则进入到运行状态(run()方法),但是所有的线程不可能一直持续执行下去,中间需要产生一些暂停的状态,<br>例如:某个线程执行一段时间之后就需要让出资源,而后这个线程就将进入到阻塞状态,随后重新回归到就绪状态;</li>
+<li>当run()方法执行完毕之后,实际上该线程的主要任务也就结束了,那么此时就可以直接进入到停止状态.</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java-Thread/" rel="tag"># Java Thread</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/11/LinkedList/" rel="next" title="链表">
+                <i class="fa fa-chevron-left"></i> 链表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/07/downloadFile/" rel="prev" title="浏览器直接下载文件而不是尝试打开文件(Nodejs示例)">
+                浏览器直接下载文件而不是尝试打开文件(Nodejs示例) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java多线程编程"><span class="nav-number">1.</span> <span class="nav-text">Java多线程编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.1.</span> <span class="nav-text">进程与线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java多线程的实现"><span class="nav-number">1.2.</span> <span class="nav-text">Java多线程的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承Thread类实现多线程"><span class="nav-number">1.2.1.</span> <span class="nav-text">继承Thread类实现多线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Runnable接口实现多线程"><span class="nav-number">1.3.</span> <span class="nav-text">基于Runnable接口实现多线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thread和Runnable关系"><span class="nav-number">1.4.</span> <span class="nav-text">Thread和Runnable关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Callable实现多线程"><span class="nav-number">1.5.</span> <span class="nav-text">Callable实现多线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程的运行状态"><span class="nav-number">1.6.</span> <span class="nav-text">多线程的运行状态</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="一般情况下，大部分人接触Linux的机会并不多，对Linux平台下的开发更是一无所知。而现在的发展趋势却越来越表明：无论是作为一个优秀的软件开发人员，或是互联网、IT行业的从业人员，掌握Linux是一种很重要的谋生资源与手段，很多迹象表明这是一个很好的加分项。 常用指令 ls　　        显示文件或目录  -l           列出文件详细信息l(list)  -a          列">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux常用命令大全">
+<meta property="og:url" content="https://blog.loong.io/2018/07/08/linux/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="一般情况下，大部分人接触Linux的机会并不多，对Linux平台下的开发更是一无所知。而现在的发展趋势却越来越表明：无论是作为一个优秀的软件开发人员，或是互联网、IT行业的从业人员，掌握Linux是一种很重要的谋生资源与手段，很多迹象表明这是一个很好的加分项。 常用指令 ls　　        显示文件或目录  -l           列出文件详细信息l(list)  -a          列">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/091549405142313.png">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.301Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux常用命令大全">
+<meta name="twitter:description" content="一般情况下，大部分人接触Linux的机会并不多，对Linux平台下的开发更是一无所知。而现在的发展趋势却越来越表明：无论是作为一个优秀的软件开发人员，或是互联网、IT行业的从业人员，掌握Linux是一种很重要的谋生资源与手段，很多迹象表明这是一个很好的加分项。 常用指令 ls　　        显示文件或目录  -l           列出文件详细信息l(list)  -a          列">
+<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/091549405142313.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2018/07/08/linux/">
+
+
+
+
+
+  <title>Linux常用命令大全 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2018/07/08/linux/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux常用命令大全</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T17:16:54+08:00">
+                2018-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>一般情况下，大部分人接触Linux的机会并不多，对Linux平台下的开发更是一无所知。而现在的发展趋势却越来越表明：无论是作为一个优秀的软件开发人员，或是互联网、IT行业的从业人员，掌握Linux是一种很重要的谋生资源与手段，很多迹象表明这是一个很好的加分项。</p>
+<h1 id="常用指令"><a href="#常用指令" class="headerlink" title="常用指令"></a>常用指令</h1><ul>
+<li><p><code>ls</code>　　        显示文件或目录</p>
+<ul>
+<li><p><code>-l</code>           列出文件详细信息l(list)</p>
+</li>
+<li><p><code>-a</code>          列出当前目录下所有文件及目录，包括隐藏的a(all)</p>
+</li>
+</ul>
+</li>
+<li><p><code>mkdir</code>         创建目录</p>
+<ul>
+<li><code>-p</code>           创建目录，若无父目录，则创建p(parent)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>cd</code>               切换目录</p>
+</li>
+<li><p><code>touch</code>          创建空文件</p>
+</li>
+<li><p><code>echo</code>            创建带有内容的文件。</p>
+</li>
+<li><p><code>cat</code>              查看文件内容</p>
+</li>
+<li><p><code>cp</code>                拷贝</p>
+</li>
+<li><p><code>mv</code>               移动或重命名</p>
+</li>
+<li><p><code>rm</code>               删除文件</p>
+<ul>
+<li><p><code>-r</code>          递归删除，可删除子目录及文件</p>
+</li>
+<li><p><code>-f</code>            强制删除</p>
+</li>
+</ul>
+</li>
+<li><p><code>find</code>              在文件系统中搜索某文件</p>
+</li>
+<li><p><code>wc</code>                统计文本中行数、字数、字符数</p>
+</li>
+<li><p><code>grep</code>             在文本文件中查找某个字符串</p>
+</li>
+<li><p><code>rmdir</code>           删除空目录</p>
+</li>
+<li><p><code>tree</code>             树形结构显示目录，需要安装tree包</p>
+</li>
+<li><p><code>pwd</code>              显示当前目录</p>
+</li>
+<li><p><code>ln</code>                  创建链接文件</p>
+</li>
+<li><p><code>more、less</code>  分页显示文本文件内容</p>
+</li>
+<li><p><code>head、tail</code>    显示文件头、尾内容</p>
+</li>
+<li><p><code>ctrl+alt+F1</code>  命令行全屏模式</p>
+</li>
+</ul>
+<h1 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h1><ul>
+<li><p><code>stat</code>              显示指定文件的详细信息，比ls更详细</p>
+</li>
+<li><p><code>who</code>               显示在线登陆用户</p>
+</li>
+<li><p><code>whoami</code>          显示当前操作用户</p>
+</li>
+<li><p><code>hostname</code>      显示主机名</p>
+</li>
+<li><p><code>uname</code>           显示系统信息</p>
+</li>
+<li><p><code>top</code>                动态显示当前耗费资源最多进程信息</p>
+</li>
+<li><p><code>ps</code>                  显示瞬间进程状态 ps -aux</p>
+</li>
+<li><p><code>du</code>                  查看目录大小 du -h /home带有单位显示目录信息</p>
+</li>
+<li><p><code>df</code>                  查看磁盘大小 df -h 带有单位显示磁盘信息</p>
+</li>
+<li><p><code>ifconfig</code>          查看网络情况</p>
+</li>
+<li><p><code>ping</code>               测试网络连通</p>
+</li>
+<li><p><code>netstat</code>          显示网络状态信息</p>
+</li>
+<li><p><code>man</code>                命令不会用了，找男人  如：man ls</p>
+</li>
+<li><p><code>clear</code>              清屏</p>
+</li>
+<li><p><code>alias</code>               对命令重命名 如：alias showmeit=”ps -aux” ，另外解除使用unaliax showmeit</p>
+</li>
+<li><p><code>kill</code>                 杀死进程，可以先用ps 或 top命令查看进程的id，然后再用kill命令杀死进程。</p>
+</li>
+</ul>
+<h1 id="打包压缩相关命令"><a href="#打包压缩相关命令" class="headerlink" title="打包压缩相关命令"></a>打包压缩相关命令</h1><ul>
+<li><p><code>gzip</code>：</p>
+</li>
+<li><p><code>bzip2</code>：</p>
+</li>
+<li><p><code>tar</code>:                打包压缩</p>
+<ul>
+<li><p><code>-c</code>              归档文件</p>
+</li>
+<li><p><code>-x</code>              压缩文件</p>
+</li>
+<li><p><code>-z</code>              gzip压缩文件</p>
+</li>
+<li><p><code>-j</code>             bzip2压缩文件</p>
+</li>
+<li><p><code>-v</code>              显示压缩或解压缩过程 v(view)</p>
+</li>
+<li><p><code>-f</code>              使用档名</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>例：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf /home/abc<span class="selector-class">.tar</span> /home/abc              <span class="comment">//只打包，不压缩</span></span><br><span class="line"></span><br><span class="line">tar -zcvf /home/abc<span class="selector-class">.tar</span><span class="selector-class">.gz</span> /home/abc        <span class="comment">//打包，并用gzip压缩</span></span><br><span class="line"></span><br><span class="line">tar -jcvf /home/abc<span class="selector-class">.tar</span><span class="selector-class">.bz2</span> /home/abc      <span class="comment">//打包，并用bzip2压缩</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当然，如果想解压缩，就直接替换上面的命令  tar -cvf  / tar -zcvf  / tar -jcvf 中的“c” 换成“x” 就可以了。</p>
+</blockquote>
+<h1 id="关机-重启机器"><a href="#关机-重启机器" class="headerlink" title="关机/重启机器"></a>关机/重启机器</h1><ul>
+<li><p><code>shutdown</code></p>
+<ul>
+<li><p><code>-r</code>             关机重启</p>
+</li>
+<li><p><code>-h</code>             关机不重启</p>
+</li>
+<li><p><code>now</code>         立刻关机</p>
+</li>
+</ul>
+</li>
+<li><p><code>halt</code>               关机</p>
+</li>
+<li><p><code>reboot</code>          重启</p>
+</li>
+</ul>
+<h1 id="Linux管道"><a href="#Linux管道" class="headerlink" title="Linux管道"></a>Linux管道</h1><p>将一个命令的标准输出作为另一个命令的标准输入。也就是把几个命令组合起来使用，后一个命令除以前一个命令的结果。</p>
+<p>例：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> -r <span class="string">"close"</span> <span class="regexp">/home/</span>* | more       <span class="comment">//在home目录下所有文件中查找，包括close的文件，并分页输出。</span></span><br></pre></td></tr></table></figure>
+<h1 id="Linux软件包管理"><a href="#Linux软件包管理" class="headerlink" title="Linux软件包管理"></a>Linux软件包管理</h1><p>dpkg (Debian Package)管理工具，软件包名以.deb后缀。这种方法适合系统不能联网的情况下。</p>
+<p>比如安装tree命令的安装包，先将tree.deb传到Linux系统中。再使用如下命令安装。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -<span class="selector-tag">i</span> tree_1.<span class="number">5.3</span>-<span class="number">1</span>_i386<span class="selector-class">.deb</span>         <span class="comment">//安装软件</span></span><br><span class="line"></span><br><span class="line">sudo dpkg -r tree                          <span class="comment">// 卸载软件</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：将tree.deb传到Linux系统中，有多种方式。VMwareTool，使用挂载方式；使用winSCP工具等；</p>
+</blockquote>
+<p>APT（Advanced Packaging Tool）高级软件工具。这种方法适合系统能够连接互联网的情况。</p>
+<p>依然以tree为例</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="built_in">get</span> install tree                    <span class="comment">//     安装tree</span></span><br><span class="line"></span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="built_in">remove</span> tree                       <span class="comment">//卸载tree</span></span><br><span class="line"></span><br><span class="line">sudo apt-<span class="built_in">get</span> update                              <span class="comment">//   更新软件</span></span><br><span class="line"></span><br><span class="line">sudo apt-<span class="built_in">get</span> upgrade</span><br></pre></td></tr></table></figure>
+<p>将.rpm文件转为.deb文件</p>
+<p>.rpm为RedHat使用的软件格式。在Ubuntu下不能直接使用，所以需要转换一下。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">alien</span> <span class="selector-tag">abc</span><span class="selector-class">.rpm</span></span><br></pre></td></tr></table></figure>
+<h1 id="vim使用"><a href="#vim使用" class="headerlink" title="vim使用"></a>vim使用</h1><p>vim三种模式：命令模式、插入模式、编辑模式。使用ESC或i或：来切换模式。</p>
+<p>命令模式下：</p>
+<ul>
+<li><p><code>:q</code>                      退出</p>
+</li>
+<li><p><code>:q!</code>                     强制退出</p>
+</li>
+<li><p><code>:wq</code>                   保存并退出</p>
+</li>
+<li><p><code>:set number</code>     显示行号</p>
+</li>
+<li><p><code>:set nonumber</code>  隐藏行号</p>
+</li>
+<li><p><code>/apache</code>            在文档中查找apache 按n跳到下一个，shift+n上一个</p>
+</li>
+<li><p><code>yyp</code>                   复制光标所在行，并粘贴</p>
+</li>
+<li><p><code>h</code>(左移一个字符←)、<code>j</code>(下一行↓)、<code>k</code>(上一行↑)、<code>l</code>(右移一个字符→)</p>
+</li>
+</ul>
+<h1 id="用户及用户组管理"><a href="#用户及用户组管理" class="headerlink" title="用户及用户组管理"></a>用户及用户组管理</h1><ul>
+<li><p><code>/etc/passwd</code>    存储用户账号</p>
+</li>
+<li><p><code>/etc/group</code>       存储组账号</p>
+</li>
+<li><p><code>/etc/shadow</code>    存储用户账号的密码</p>
+</li>
+<li><p><code>/etc/gshadow</code>  存储用户组账号的密码</p>
+</li>
+<li><p><code>useradd</code> 用户名</p>
+</li>
+<li><p><code>userdel</code> 用户名</p>
+</li>
+<li><p><code>adduser</code> 用户名</p>
+</li>
+<li><p><code>groupadd</code> 组名</p>
+</li>
+<li><p><code>groupde</code>l 组名</p>
+</li>
+<li><p><code>passwd root</code>     给root设置密码</p>
+</li>
+<li><p><code>su root</code></p>
+</li>
+<li><p><code>su - root</code></p>
+</li>
+<li><p><code>/etc/profile</code>     系统环境变量</p>
+</li>
+<li><p><code>bash_profile</code>     用户环境变量</p>
+</li>
+<li><p><code>.bashrc</code>             用户环境变量</p>
+</li>
+<li><p><code>su user</code>              切换用户，加载配置文件.bashrc</p>
+</li>
+<li><p><code>su - user</code>            切换用户，加载配置文件/etc/profile ，加载bash_profile</p>
+</li>
+</ul>
+<h2 id="更改文件的用户及用户组"><a href="#更改文件的用户及用户组" class="headerlink" title="更改文件的用户及用户组"></a>更改文件的用户及用户组</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown <span class="string">[-R]</span> owner<span class="string">[:group]</span> &#123;File|Directory&#125;</span><br></pre></td></tr></table></figure>
+<p>例如：还以jdk-7u21-linux-i586.tar.gz为例。属于用户hadoop，组hadoop</p>
+<p>要想切换此文件所属的用户及组。可以使用命令。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">chown</span> <span class="selector-tag">root</span><span class="selector-pseudo">:root</span> <span class="selector-tag">jdk-7u21-linux-i586</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+<h1 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a>文件权限管理</h1><p>三种基本权限</p>
+<ul>
+<li><p>r           读         数值表示为4</p>
+</li>
+<li><p>w         写         数值表示为2</p>
+</li>
+<li><p>x           可执行  数值表示为1</p>
+</li>
+</ul>
+<p>如图所示，jdk-7u21-linux-i586.tar.gz文件的权限为-rw-rw-r–</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/091549405142313.png" alt></p>
+<p>-rw-rw-r–一共十个字符，分成四段。</p>
+<p>第一个字符<code>-</code>表示普通文件；这个位置还可能会出现“l”链接；“d”表示目录</p>
+<p>第二三四个字符<code>rw-</code>表示当前所属用户的权限。   所以用数值表示为4+2=6</p>
+<p>第五六七个字符<code>rw-</code>表示当前所属组的权限。      所以用数值表示为4+2=6</p>
+<p>第八九十个字符<code>r--</code>表示其他用户权限。              所以用数值表示为4</p>
+<p>所以操作此文件的权限用数值表示为664</p>
+<h2 id="更改权限"><a href="#更改权限" class="headerlink" title="更改权限"></a>更改权限</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod <span class="string">[u所属用户  g所属组  o其他用户  a所有用户]</span>  <span class="string">[+增加权限  -减少权限]</span>  <span class="string">[r  w  x]</span>   目录名</span><br></pre></td></tr></table></figure>
+<p>例如：有一个文件filename，权限为“-rw-r—-x” ,将权限值改为”-rwxrw-r-x”，用数值表示为765</p>
+<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod u+<span class="keyword">x</span> g+w o+r  filename</span><br></pre></td></tr></table></figure>
+<p>上面的例子可以用数值表示</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod <span class="number">765</span> filename</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/08/deepcopy/" rel="next" title="JavaScript深度克隆">
+                <i class="fa fa-chevron-left"></i> JavaScript深度克隆
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/10/package/" rel="prev" title="npm package.json属性详解">
+                npm package.json属性详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常用指令"><span class="nav-number">1.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统管理命令"><span class="nav-number">2.</span> <span class="nav-text">系统管理命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#打包压缩相关命令"><span class="nav-number">3.</span> <span class="nav-text">打包压缩相关命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关机-重启机器"><span class="nav-number">4.</span> <span class="nav-text">关机/重启机器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux管道"><span class="nav-number">5.</span> <span class="nav-text">Linux管道</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux软件包管理"><span class="nav-number">6.</span> <span class="nav-text">Linux软件包管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim使用"><span class="nav-number">7.</span> <span class="nav-text">vim使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户及用户组管理"><span class="nav-number">8.</span> <span class="nav-text">用户及用户组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改文件的用户及用户组"><span class="nav-number">8.1.</span> <span class="nav-text">更改文件的用户及用户组</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件权限管理"><span class="nav-number">9.</span> <span class="nav-text">文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#更改权限"><span class="nav-number">9.1.</span> <span class="nav-text">更改权限</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

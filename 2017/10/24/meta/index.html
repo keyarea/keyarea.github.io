@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="meta是html语言head区的一个辅助性标签。也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，meta标签的作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等！ html的meta总结meta标签的组成：meta标签共有两个属性，它们分别是http-equiv">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html标签中meta属性使用介绍">
+<meta property="og:url" content="https://blog.loong.io/2017/10/24/meta/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="meta是html语言head区的一个辅助性标签。也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，meta标签的作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等！ html的meta总结meta标签的组成：meta标签共有两个属性，它们分别是http-equiv">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.169Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html标签中meta属性使用介绍">
+<meta name="twitter:description" content="meta是html语言head区的一个辅助性标签。也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，meta标签的作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等！ html的meta总结meta标签的组成：meta标签共有两个属性，它们分别是http-equiv">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2017/10/24/meta/">
+
+
+
+
+
+  <title>html标签中meta属性使用介绍 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2017/10/24/meta/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">html标签中meta属性使用介绍</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T08:16:54+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTML/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>meta是html语言head区的一个辅助性标签。也许你认为这些代码可有可无。其实如果你能够用好meta标签，会给你带来意想不到的效果，meta标签的作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并指向新的页面，实现网页转换时的动态效果，控制页面缓冲，网页定级评价，控制网页显示的窗口等！</p>
+<h1 id="html的meta总结"><a href="#html的meta总结" class="headerlink" title="html的meta总结"></a>html的meta总结</h1><p>meta标签的组成：meta标签共有两个属性，它们分别是http-equiv属性和name属性，不同的属性又有不同的参数值，这些不同的参数值就实现了不同的网页功能。</p>
+<h2 id="1、name属性"><a href="#1、name属性" class="headerlink" title="1、name属性"></a>1、name属性</h2><p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。</p>
+<p>meta标签的name属性语法格式是：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metaname=<span class="string">"参数"</span><span class="built_in">content</span>=<span class="string">"具体的参数值"</span>&gt;。</span><br></pre></td></tr></table></figure>
+<p>其中name属性主要有以下几种参数：</p>
+<h3 id="A、Keywords-关键字"><a href="#A、Keywords-关键字" class="headerlink" title="A、Keywords(关键字)"></a>A、Keywords(关键字)</h3><p>说明：keywords用来告诉搜索引擎你网页的关键字是什么。</p>
+<p>举例：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metaname=<span class="string">"keywords"</span><span class="built_in">content</span>=<span class="string">"meta总结,html meta,meta属性,meta跳转"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="B、description-网站内容描述"><a href="#B、description-网站内容描述" class="headerlink" title="B、description(网站内容描述)"></a>B、description(网站内容描述)</h3><p>说明：description用来告诉搜索引擎你的网站主要内容。</p>
+<p>举例：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metaname=<span class="string">"description"</span><span class="built_in">content</span>=<span class="string">"haorooms博客,html的meta总结，meta是html语言head区的一个辅助性标签。"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="C、robots-机器人向导"><a href="#C、robots-机器人向导" class="headerlink" title="C、robots(机器人向导)"></a>C、robots(机器人向导)</h3><p>说明：robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。</p>
+<p>content的参数有all,none,index,noindex,follow,nofollow。默认是all。</p>
+<p>举例：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metaname=<span class="string">"robots"</span><span class="built_in">content</span>=<span class="string">"none"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>具体参数如下：</p>
+<p>信息参数为all：文件将被检索，且页面上的链接可以被查询；</p>
+<p>信息参数为none：文件将不被检索，且页面上的链接不可以被查询；</p>
+<p>信息参数为index：文件将被检索；</p>
+<p>信息参数为follow：页面上的链接可以被查询；</p>
+<p>信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；</p>
+<p>信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；</p>
+<h3 id="D、author-作者"><a href="#D、author-作者" class="headerlink" title="D、author(作者)"></a>D、author(作者)</h3><p>说明：标注网页的作者</p>
+<p>举例：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metaname=<span class="string">"author"</span><span class="built_in">content</span>=<span class="string">"root,root@xxxx.com"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="E、generator"><a href="#E、generator" class="headerlink" title="E、generator"></a>E、generator</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metaname=<span class="string">"generator"</span><span class="built_in">content</span>=<span class="string">"信息参数"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>meta标签的generator的信息参数，代表说明网站的采用的什么软件制作。</p>
+<h3 id="F、COPYRIGHT"><a href="#F、COPYRIGHT" class="headerlink" title="F、COPYRIGHT"></a>F、COPYRIGHT</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="attribute">METANAME</span>=<span class="string">"COPYRIGHT"</span>CONTENT="信息参数"&gt;</span><br></pre></td></tr></table></figure>
+<p>meta标签的COPYRIGHT的信息参数，代表说明网站版权信息。</p>
+<h3 id="G、revisit-after"><a href="#G、revisit-after" class="headerlink" title="G、revisit-after"></a>G、revisit-after</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="attribute">METAname</span>=<span class="string">"revisit-after"</span>CONTENT="7days"&gt;</span><br></pre></td></tr></table></figure>
+<p>revisit-after代表网站重访,7days代表7天，依此类推。</p>
+<h2 id="2、http-equiv属性"><a href="#2、http-equiv属性" class="headerlink" title="2、http-equiv属性"></a>2、http-equiv属性</h2><p>http-equiv顾名思义，相当于http的文件头作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。</p>
+<p>meta标签的http-equiv属性语法格式是：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"参数"</span><span class="built_in">content</span>=<span class="string">"参数变量值"</span>&gt;；</span><br></pre></td></tr></table></figure>
+<p>其中http-equiv属性主要有以下几种参数：</p>
+<h3 id="A、Expires-期限"><a href="#A、Expires-期限" class="headerlink" title="A、Expires(期限)"></a>A、Expires(期限)</h3><p>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</p>
+<p>用法：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"expires"</span><span class="built_in">content</span>=<span class="string">"Fri,12Jan200118:18:18GMT"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：必须使用GMT的时间格式。</p>
+<h3 id="B、Pragma-cache模式"><a href="#B、Pragma-cache模式" class="headerlink" title="B、Pragma(cache模式)"></a>B、Pragma(cache模式)</h3><p>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</p>
+<p>用法：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"Pragma"</span><span class="built_in">content</span>=<span class="string">"no-cache"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：这样设定，访问者将无法脱机浏览。</p>
+<h3 id="C、Refresh-刷新"><a href="#C、Refresh-刷新" class="headerlink" title="C、Refresh(刷新)"></a>C、Refresh(刷新)</h3><p>说明：自动刷新并指向新页面。</p>
+<p>用法：</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"Refresh"</span>content=<span class="string">"2;URL=http://www.haorooms.com"</span>&gt; <span class="comment">//(注意后面的引号，分别在秒数的前面和网址的后面)</span></span><br></pre></td></tr></table></figure>
+<p>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</p>
+<h3 id="D、Set-Cookie-cookie设定"><a href="#D、Set-Cookie-cookie设定" class="headerlink" title="D、Set-Cookie(cookie设定)"></a>D、Set-Cookie(cookie设定)</h3><p>说明：如果网页过期，那么存盘的cookie将被删除。</p>
+<p>用法：</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="attribute">metahttp-equiv</span>=<span class="string">"Set-Cookie"</span>content="cookie <span class="attribute">value</span>=xxx;expires=Friday,12-Jan-200118:18:18GMT；path=/"&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：必须使用GMT的时间格式。</p>
+<h3 id="E、Window-target-显示窗口的设定"><a href="#E、Window-target-显示窗口的设定" class="headerlink" title="E、Window-target(显示窗口的设定)"></a>E、Window-target(显示窗口的设定)</h3><p>说明：强制页面在当前窗口以独立页面显示。</p>
+<p>用法：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"Window-target"</span><span class="built_in">content</span>=<span class="string">"_top"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>注意：用来防止别人在框架里调用自己的页面。</p>
+<h3 id="F、content-Type-显示字符集的设定"><a href="#F、content-Type-显示字符集的设定" class="headerlink" title="F、content-Type(显示字符集的设定)"></a>F、content-Type(显示字符集的设定)</h3><p>说明：设定页面使用的字符集。</p>
+<p>用法：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"content-Type"</span><span class="built_in">content</span>=<span class="string">"text/html;charset=gb2312"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>具体如下：</p>
+<p>meta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；</p>
+<p>meta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；</p>
+<p>meta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；</p>
+<p>meta标签的charset的信息参数如ks_c_5601时，代表说明网站是采用的编码是韩文；</p>
+<p>meta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；</p>
+<p>meta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；</p>
+<h3 id="G、content-Language（显示语言的设定）"><a href="#G、content-Language（显示语言的设定）" class="headerlink" title="G、content-Language（显示语言的设定）"></a>G、content-Language（显示语言的设定）</h3><p>用法：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"Content-Language"</span><span class="built_in">content</span>=<span class="string">"zh-cn"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="H、Cache-Control指定请求和响应遵循的缓存机制。"><a href="#H、Cache-Control指定请求和响应遵循的缓存机制。" class="headerlink" title="H、Cache-Control指定请求和响应遵循的缓存机制。"></a>H、Cache-Control指定请求和响应遵循的缓存机制。</h3><p>Cache-Control指定请求和响应遵循的缓存机制。在请求消息或响应消息中设置Cache-Control并不会修改另一个消息处理过程中的缓存处理过程。请求时的缓存指令包括no-cache、no-store、max-age、max-stale、min-fresh、on</p>
+<p>ly-if-cached，响应消息中的指令包括public、private、no-cache、no-store、no-transform、must-revalidate、proxy-revalidate、max-age。各个消息中的指令含义如下</p>
+<p>Public指示响应可被任何缓存区缓存</p>
+<p>Private指示对于单个用户的整个或部分响应消息，不能被共享缓存处理。这允许服务器仅仅描述当用户的部分响应消息，此响应消息对于其他用户的请求无效</p>
+<p>no-cache指示请求或响应消息不能缓存</p>
+<p>no-store用于防止重要的信息被无意的发布。在请求消息中发送将使得请求和响应消息都不使用缓存。</p>
+<p>max-age指示客户机可以接收生存期不大于指定时间（以秒为单位）的响应</p>
+<p>min-fresh指示客户机可以接收响应时间小于当前时间加上指定时间的响应</p>
+<p>max-stale指示客户机可以接收超出超时期间的响应消息。如果指定max-stale消息的值，那么客户机可以接收超出超时期指定值之内的响应消息。</p>
+<h3 id="J、http-equiv-”imagetoolbar”"><a href="#J、http-equiv-”imagetoolbar”" class="headerlink" title="J、http-equiv=”imagetoolbar”"></a>J、http-equiv=”imagetoolbar”</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;metahttp-equiv=<span class="string">"imagetoolbar"</span><span class="built_in">content</span>=<span class="string">"false"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>指定是否显示图片工具栏，当为false代表不显示，当为true代表显示。</p>
+<h3 id="K、Content-Script-Type"><a href="#K、Content-Script-Type" class="headerlink" title="K、Content-Script-Type"></a>K、Content-Script-Type</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="attribute">Metahttp-equiv</span>=<span class="string">"Content-Script-Type"</span>Content="text/javascript"&gt;</span><br></pre></td></tr></table></figure>
+<p>W3C网页规范，指明页面中脚本的类型。</p>
+<h3 id="L-页面跳转，只用于IE"><a href="#L-页面跳转，只用于IE" class="headerlink" title="L 页面跳转，只用于IE"></a>L 页面跳转，只用于IE</h3><p>具体请看 <a href="http://www.haorooms.com/post/liulanq_think_ie" target="_blank" rel="noopener">http://www.haorooms.com/post/liulanq_think_ie</a></p>
+<p>HTML &lt; base &gt; 标签</p>
+<p>为页面上所有链接指定默认打开方式：</p>
+<p>例如：</p>
+<p>&lt;basetarget=”_self”&gt;</p>
+<p>指定页面中所有标签都是本页打开！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/23/node/" rel="next" title="Node.js导论">
+                <i class="fa fa-chevron-left"></i> Node.js导论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/25/cors/" rel="prev" title="跨域">
+                跨域 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#html的meta总结"><span class="nav-number">1.</span> <span class="nav-text">html的meta总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、name属性"><span class="nav-number">1.1.</span> <span class="nav-text">1、name属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A、Keywords-关键字"><span class="nav-number">1.1.1.</span> <span class="nav-text">A、Keywords(关键字)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B、description-网站内容描述"><span class="nav-number">1.1.2.</span> <span class="nav-text">B、description(网站内容描述)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C、robots-机器人向导"><span class="nav-number">1.1.3.</span> <span class="nav-text">C、robots(机器人向导)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D、author-作者"><span class="nav-number">1.1.4.</span> <span class="nav-text">D、author(作者)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E、generator"><span class="nav-number">1.1.5.</span> <span class="nav-text">E、generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F、COPYRIGHT"><span class="nav-number">1.1.6.</span> <span class="nav-text">F、COPYRIGHT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G、revisit-after"><span class="nav-number">1.1.7.</span> <span class="nav-text">G、revisit-after</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、http-equiv属性"><span class="nav-number">1.2.</span> <span class="nav-text">2、http-equiv属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A、Expires-期限"><span class="nav-number">1.2.1.</span> <span class="nav-text">A、Expires(期限)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B、Pragma-cache模式"><span class="nav-number">1.2.2.</span> <span class="nav-text">B、Pragma(cache模式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C、Refresh-刷新"><span class="nav-number">1.2.3.</span> <span class="nav-text">C、Refresh(刷新)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D、Set-Cookie-cookie设定"><span class="nav-number">1.2.4.</span> <span class="nav-text">D、Set-Cookie(cookie设定)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#E、Window-target-显示窗口的设定"><span class="nav-number">1.2.5.</span> <span class="nav-text">E、Window-target(显示窗口的设定)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#F、content-Type-显示字符集的设定"><span class="nav-number">1.2.6.</span> <span class="nav-text">F、content-Type(显示字符集的设定)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G、content-Language（显示语言的设定）"><span class="nav-number">1.2.7.</span> <span class="nav-text">G、content-Language（显示语言的设定）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#H、Cache-Control指定请求和响应遵循的缓存机制。"><span class="nav-number">1.2.8.</span> <span class="nav-text">H、Cache-Control指定请求和响应遵循的缓存机制。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#J、http-equiv-”imagetoolbar”"><span class="nav-number">1.2.9.</span> <span class="nav-text">J、http-equiv=”imagetoolbar”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#K、Content-Script-Type"><span class="nav-number">1.2.10.</span> <span class="nav-text">K、Content-Script-Type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#L-页面跳转，只用于IE"><span class="nav-number">1.2.11.</span> <span class="nav-text">L 页面跳转，只用于IE</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

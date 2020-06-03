@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,CSS,CSS3,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="CSS3是层叠样式表(Cascading Style Sheets)语言的最新进展,目的在于扩展CSS2.1.它为我们带来了许多期待已久的新特性， 例如圆角，阴影，gradients(渐变)，transitions(过渡) 或 animations(动画) ， 当然还有新的布局如 multi-columns ， flexible box 或 grid layouts。 这些实验性的内容带有 ven">
+<meta name="keywords" content="HTML,CSS,CSS3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS3新特性">
+<meta property="og:url" content="https://blog.loong.io/2017/08/31/css3/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="CSS3是层叠样式表(Cascading Style Sheets)语言的最新进展,目的在于扩展CSS2.1.它为我们带来了许多期待已久的新特性， 例如圆角，阴影，gradients(渐变)，transitions(过渡) 或 animations(动画) ， 当然还有新的布局如 multi-columns ， flexible box 或 grid layouts。 这些实验性的内容带有 ven">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/text.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/text1.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/border.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/linear-gradient.png">
+<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/linear-gradient1.png">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.137Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS3新特性">
+<meta name="twitter:description" content="CSS3是层叠样式表(Cascading Style Sheets)语言的最新进展,目的在于扩展CSS2.1.它为我们带来了许多期待已久的新特性， 例如圆角，阴影，gradients(渐变)，transitions(过渡) 或 animations(动画) ， 当然还有新的布局如 multi-columns ， flexible box 或 grid layouts。 这些实验性的内容带有 ven">
+<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/text.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2017/08/31/css3/">
+
+
+
+
+
+  <title>CSS3新特性 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2017/08/31/css3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">CSS3新特性</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T08:16:54+08:00">
+                2017-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>CSS3是层叠样式表(Cascading Style Sheets)语言的最新进展,目的在于扩展CSS2.1.它为我们带来了许多期待已久的新特性， 例如圆角，阴影，gradients(渐变)，transitions(过渡) 或 animations(动画) ， 当然还有新的布局如 multi-columns ， flexible box 或 grid layouts。 这些实验性的内容带有 vendor-prefixed(提供商前缀)， 并且尽量不要在生产环境中使用， 即便要用， 也要时刻谨记： 这些内容的语法和语义在未来很有可能会改变。<br>CSS3是CSS2的进化版，新增了许多特性，是为了让web开发更加快捷和高效。</p>
+<h2 id="CSS3选择器"><a href="#CSS3选择器" class="headerlink" title="CSS3选择器"></a>CSS3选择器</h2><ul>
+<li>关系选择器</li>
+</ul>
+<ol>
+<li>包含选择符(E F)</li>
+<li>子选择符(E&gt;F)</li>
+<li>相邻选择符(E+F)</li>
+<li>兄弟选择符(E~F)</li>
+</ol>
+<ul>
+<li>属性选择器</li>
+</ul>
+<ol>
+<li><code>E[att]</code></li>
+<li><code>E[att=“val”]</code></li>
+<li><code>E[att~=“val”]</code></li>
+<li><code>E[att^=“val”]</code></li>
+<li><code>E[att$=“val”]</code></li>
+<li><code>E[att*=“val”]</code></li>
+<li><code>E[att|=“val”]</code></li>
+</ol>
+<ul>
+<li>伪类选择器<br>常用：</li>
+</ul>
+<ol>
+<li><code>E:link</code></li>
+<li><code>E:visited</code></li>
+<li><code>E:hover</code></li>
+<li><code>E:active</code></li>
+<li><code>E:focus</code></li>
+<li><code>E:first-child</code></li>
+<li><code>E:last-child</code></li>
+<li><code>E:nth-child</code></li>
+<li><code>E:empty</code>:没有匹配到任何子元素(包括text节点)的元素E.</li>
+<li><code>E:checked</code>:匹配用户界面上处于选中状态的元素E。(用于input type为radio与checkbox时)</li>
+<li><code>E:target</code> :匹配相关URL指向的E元素。解释：URL后面跟锚点#，指向文档内某个具体的元素。这个被链接的元素就是目标元素(target element)，:target选择器用于选取当前活动的目标元素。</li>
+</ol>
+<ul>
+<li>伪元素</li>
+</ul>
+<ol>
+<li><code>E:first-letter/E::first-letter</code>:设置对象内的第一个字符的样式.此伪对象仅仅作用于块对象.</li>
+<li><code>E:first-line/E::first-line</code>:设置对象内的第一行的样式。此伪对象仅作用于块对象。</li>
+<li><code>E:before/E::before</code></li>
+<li><code>E:after/E::after</code></li>
+<li><code>E::placeholder</code>:设置对象文字占位符的样式.::placeholder 伪元素用于控制表单输入框占位符的外观，它允许开发者/设计师改变文字占位符的样式，默认的文字占位符为浅灰色。<br>当表单背景色为类似的颜色时它可能效果并不是很明显，那么就可以使用这个伪元素来改变文字占位符的颜色。</li>
+<li><code>E::selection</code>:设置对象被选择时的样式。需要注意的是，<code>::selection</code>只能定义被选择时的<code>background-color</code>，<code>color</code>及<code>text-shadow</code></li>
+</ol>
+<h2 id="CSS3颜色"><a href="#CSS3颜色" class="headerlink" title="CSS3颜色"></a>CSS3颜色</h2><h3 id="透明度"><a href="#透明度" class="headerlink" title="透明度"></a>透明度</h3><p>透明度 opacity<br>使用浮点数指定对象的不透明度。值被约束在[0.0-1.0]范围内，如果超过了这个范围，其计算结果将截取到与之最相近的值。<br>比如：<code>opacity: 0.6</code>;</p>
+<h3 id="RGBA"><a href="#RGBA" class="headerlink" title="RGBA"></a>RGBA</h3><p>Red、Green、Blue、Alpha 即RGBA<br>R、G、B 取值范围0~255 A 为透明度 取值范围[0.0-1.0].<br>比如:<code>background: rgba(255, 0, 0, 0.5);</code></p>
+<blockquote>
+<p><code>opacity</code>会影响后代的透明度,也就是会继承.而<code>rgba</code>则不会,他影响的只有自己.</p>
+</blockquote>
+<h3 id="hsla"><a href="#hsla" class="headerlink" title="hsla"></a>hsla</h3><p>Hue、Saturation、Lightness、Alpha即HSLA<br>H 色调: 取值范围0~360，0/360表示红色、120表示绿色、240表示蓝色<br>S 饱和度: 取值范围0%~100%<br>L 亮度: 取值范围0%~100%<br>A 透明度: 取值范围0~1</p>
+<h2 id="CSS3文本"><a href="#CSS3文本" class="headerlink" title="CSS3文本"></a>CSS3文本</h2><p><code>text-shadow</code>，可分别设置偏移量、模糊度、颜色（可设透明度）。最多4个参数,如下:</p>
+<ol>
+<li>水平偏移量 正值向右 负值向左。</li>
+<li>垂直偏移量 正值向下 负值向上。</li>
+<li>模糊度是不能为负值。</li>
+<li>使用逗号分割可以设置多重效果。</li>
+</ol>
+<p>比如:<br><code>text-shadow: -5px -5px 2px red, 10px 10px 2px green;</code><br>显示如下:</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/text.png" alt></p>
+<p><code>text-shadow: -1px -1px 1px #000, 1px 1px 1px #FFF;</code><br><img src="http://oujvmc3la.bkt.clouddn.com/text1.png" alt></p>
+<h2 id="CSS3边框"><a href="#CSS3边框" class="headerlink" title="CSS3边框"></a>CSS3边框</h2><p>边框圆角、边框阴影属性，应用十分广泛，兼容性也相对较好，具有符合渐进增强原则的特征，我们需要重点掌握。</p>
+<h3 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h3><p>border-radius: 设置边框圆角<br>border-radius: 宽度|百分比 / 宽度|百分比<br>可分别设置长、短半径，以“/”进行分隔，遵循“1，2，3，4”规则，“/”前面的1~4个用来设置横轴半径（分别对应横轴1、2、3、4位置 ），“/”后面1~4个参数用来设置纵轴半径（分别对应纵轴1、2、3、4位置 ）<br>设置顺序： 1,2,3,4<br>比如：<br>border-radius: 10px ;<br>border-radius: 10px 11px;<br>border-radius: 10px/11px;</p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/border.png" alt></p>
+<h3 id="边框阴影"><a href="#边框阴影" class="headerlink" title="边框阴影"></a>边框阴影</h3><p><code>box-shadow</code>:边框阴影  </p>
+<blockquote>
+<p>1、水平偏移量 正值向右负值向左。<br>2、垂直偏移量 正值向下负值向上。<br>3、模糊度是不能为负值。<br>4、inset可以设置内阴影。</p>
+</blockquote>
+<p>设置边框阴影不会改变盒子的大小，即不会影响其兄弟元素的布局。<br>可以设置多重边框阴影，实现更好的效果，增强立体感。<br>比如：<br><code>box-shadow: 2px 2px 8px gray;</code><br>内阴影设置为:<br><code>box-shadow:2px 2px 5px 1px rgba(0,0,0,.6) inset;</code></p>
+<h2 id="CSS3渐变"><a href="#CSS3渐变" class="headerlink" title="CSS3渐变"></a>CSS3渐变</h2><p>CSS 渐变是在CSS3 Image Module 中新增加的类型.使用CSS渐变可以在两种颜色之间制造出平滑的渐变效果,用它代替图片,可以加快页面的载入时间,减小宽带占用.同时,因为渐变是由浏览器直接生成的,他在页面缩放时的效果比图片更好,因此你可以更加灵活,便捷的调整页面布局.</p>
+<h3 id="线性渐变"><a href="#线性渐变" class="headerlink" title="线性渐变"></a>线性渐变</h3><p>为了创造一个线性渐变,你需要设置一个起始点和一个方向(指定为一个角度)的渐变效果.你还要定义终止色.终止色就是你想让它去平滑的过渡,并且你必须指定至少两种,当然也会可以指定更多的颜色去创造更复杂的渐变效果.<br><code>background:linear-gradient(180deg, #fff, #333);</code>       </p>
+<ul>
+<li><code>180deg</code>:用角度值指定渐变的方向或者角度.还可以设置:<code>to left</code>:设置渐变从右到左,相当于<code>270deg</code>.<code>to right</code>:设置渐变从左到右,相当于<code>90deg</code>.<code>to top</code>设置渐变从下到上,相当于<code>0deg</code>.<code>to bottom</code>设置渐变从右到左,相当于<code>180deg</code>.默认值为从上到下,等同于留空不写.</li>
+<li><code>#fff</code>: 起始颜色.后面可以加结束位置,百分比和像素值都可以,比如:<code>background:linear-gradient(180deg, #fff 150px, #333);</code>,<code>background:linear-gradient(180deg, #fff 80%, #333);</code>.起始颜色和结束位置以空格隔开.</li>
+<li><code>#333</code>:终止颜色.后面的结束位置不可改变.</li>
+</ul>
+<blockquote>
+<p>注意:起始颜色和终止颜色之间可以添加颜色,属性和起始颜色相同,注意要以英文逗号隔开.例如:<code>background:linear-gradient(180deg, #fff, #666, #333);</code></p>
+</blockquote>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/linear-gradient.png" alt></p>
+<p><img src="http://oujvmc3la.bkt.clouddn.com/linear-gradient1.png" alt></p>
+<h3 id="径向渐变"><a href="#径向渐变" class="headerlink" title="径向渐变"></a>径向渐变</h3><p>径向渐变使用<code>radial-gradient</code>函数语法.这个语法和线性渐变很类似,除了你可以指定渐变结束时的形状(可能是一个圆形或者一个椭圆形)以及它的大小.默认来说,结束形状是椭圆形并且和容器的大小比例保持一致.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+            <a href="/tags/CSS3/" rel="tag"># CSS3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/31/media/" rel="next" title="媒体查询">
+                <i class="fa fa-chevron-left"></i> 媒体查询
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/10/hack/" rel="prev" title="CSS ">
+                CSS  <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3选择器"><span class="nav-number">1.</span> <span class="nav-text">CSS3选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3颜色"><span class="nav-number">2.</span> <span class="nav-text">CSS3颜色</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度"><span class="nav-number">2.1.</span> <span class="nav-text">透明度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RGBA"><span class="nav-number">2.2.</span> <span class="nav-text">RGBA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hsla"><span class="nav-number">2.3.</span> <span class="nav-text">hsla</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3文本"><span class="nav-number">3.</span> <span class="nav-text">CSS3文本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3边框"><span class="nav-number">4.</span> <span class="nav-text">CSS3边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#圆角边框"><span class="nav-number">4.1.</span> <span class="nav-text">圆角边框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边框阴影"><span class="nav-number">4.2.</span> <span class="nav-text">边框阴影</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3渐变"><span class="nav-number">5.</span> <span class="nav-text">CSS3渐变</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性渐变"><span class="nav-number">5.1.</span> <span class="nav-text">线性渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#径向渐变"><span class="nav-number">5.2.</span> <span class="nav-text">径向渐变</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

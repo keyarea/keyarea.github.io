@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Java基础类库StringBuffer类String类是项目开发之中一定会使用到的一个功能类，并且这个类拥有如下的特点：  每一个字符串常量都属于一个String类的匿名对象，并且不可更改； String有两个常量池：静态常量池、运行时常量池； String类对象的实例化建议使用直接赋值的形式完成，这样可以直接将对象保存在对象池之中以方便下次重用；  虽然String类很好用，但是如果认真去思考">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 基础类库">
+<meta property="og:url" content="https://blog.loong.io/2019/09/02/java-base-class/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="Java基础类库StringBuffer类String类是项目开发之中一定会使用到的一个功能类，并且这个类拥有如下的特点：  每一个字符串常量都属于一个String类的匿名对象，并且不可更改； String有两个常量池：静态常量池、运行时常量池； String类对象的实例化建议使用直接赋值的形式完成，这样可以直接将对象保存在对象池之中以方便下次重用；  虽然String类很好用，但是如果认真去思考">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://imgs.loong.io/20190901133929_g9g485_Screenshot.jpeg">
+<meta property="og:image" content="http://imgs.loong.io/20190901142730_jYHVWN_Screenshot.jpeg">
+<meta property="og:image" content="http://imgs.loong.io/20190901144631_8WimLJ_Screenshot.jpeg">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 基础类库">
+<meta name="twitter:description" content="Java基础类库StringBuffer类String类是项目开发之中一定会使用到的一个功能类，并且这个类拥有如下的特点：  每一个字符串常量都属于一个String类的匿名对象，并且不可更改； String有两个常量池：静态常量池、运行时常量池； String类对象的实例化建议使用直接赋值的形式完成，这样可以直接将对象保存在对象池之中以方便下次重用；  虽然String类很好用，但是如果认真去思考">
+<meta name="twitter:image" content="http://imgs.loong.io/20190901133929_g9g485_Screenshot.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2019/09/02/java-base-class/">
+
+
+
+
+
+  <title>Java 基础类库 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2019/09/02/java-base-class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java 基础类库</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-02T22:18:23+08:00">
+                2019-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  13
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java基础类库"><a href="#Java基础类库" class="headerlink" title="Java基础类库"></a>Java基础类库</h1><h2 id="StringBuffer类"><a href="#StringBuffer类" class="headerlink" title="StringBuffer类"></a>StringBuffer类</h2><p>String类是项目开发之中一定会使用到的一个功能类，并且这个类拥有如下的特点：</p>
+<ul>
+<li>每一个字符串常量都属于一个String类的匿名对象，并且不可更改；</li>
+<li>String有两个常量池：静态常量池、运行时常量池；</li>
+<li>String类对象的实例化建议使用直接赋值的形式完成，这样可以直接将对象保存在对象池之中以方便下次重用；</li>
+</ul>
+<p>虽然String类很好用，但是如果认真去思考也会发现其最大的弊端：内容不允许修改，虽然大部分情况下都不会涉及到字符串内容的频繁修改，但是依然可能会出现这样的情况，所以为了解决此问题，所以专门提供了StringBuffer类，<br>可以实现字符串内容的修改处理。</p>
+<p>StringBuffer并不像String类那样拥有两种对象实例化方式，StringBuffer必须像普通类对象那样首先进行对象的实例化，而后才可以调用方法去执行，而这个时候<br>可以考虑使用StringBuffer类中的如下方法：</p>
+<ul>
+<li>构造方法：public StringBuffer()</li>
+<li>构造方法：public StringBuffer(String str) ,接收初始化字符串内容</li>
+<li>数据追加: public StringBuffer append(数据类型 变量): 相当于字符串的加操作；</li>
+</ul>
+<p>范例：观察String与StringBuffer的对比</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Java基础类库;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * String类的引用传递</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaApiDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String hello = <span class="string">"Hello"</span>;</span><br><span class="line">        change(hello);</span><br><span class="line">        System.out.println(hello); <span class="comment">// hello字符串并没有发生改变</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">change</span><span class="params">(String temp)</span> </span>&#123;</span><br><span class="line">        temp += <span class="string">" World"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上大部分情况下，很少会出现字符串内容的改变，这种改变并不是针对于静态常量池的改变。</p>
+<p>范例： 分析一下已有问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Java基础类库;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaApiDemo2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        String str1 = <span class="string">"Hello World"</span>;</span><br><span class="line">        String str2 = <span class="string">"Hello "</span> + <span class="string">"World"</span>;</span><br><span class="line">        System.out.println(str1 == str2); <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个时候的str2并不算是改变，或者更加严格的意义上来讲，对于现在str2当程序编译之后会变为如下的形式：</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">StringBuffer </span><span class="keyword">bug </span>= new <span class="keyword">StringBuffer();</span></span><br><span class="line"><span class="keyword">buf,append("Hello </span><span class="string">").append("</span>World<span class="string">"):</span></span><br></pre></td></tr></table></figure>
+<p>所有的”+“方法在编译之后都变为了StringBuffer中的append()方法，并且在程序之中StringBuffer与String类对象之间本来就可以直接互相转换：</p>
+<ul>
+<li>String类对象变为StringBuffer类对象可以依靠StringBuffer类的构造方法或者使用append方法；</li>
+<li>所有的类对象都可以通过toString()方法将其变为String类型。</li>
+</ul>
+<p>在StringBuffer类里面除了可以支持有字符串内容的修改之外，实际上也提供有String类所不具备的方法：</p>
+<ul>
+<li>插入数据： public  StringBuffer insert(int offset, 数据类型 b);</li>
+<li>删除指定范围的数据： public StringBuffer delete(int start, int end);</li>
+<li>字符串反转： public StringBuffer reverse();</li>
+</ul>
+<p>实际上还有一个与StringBuffer类类似的功能类：StringBuilder类，这个类是在jdk1.5之后提供的。该类与StringBuffer类提供的功能相同，最大的区别在于StringBuffer类<br>中的方法属于线程安全的，全部使用了synchronized关键字进行标注，而StringBuilder属于非线程安全的。</p>
+<ul>
+<li>String类是字符串的首选类型，其最大的特点是不允许修改；</li>
+<li>StringBuffer和StringBuilder类的内容允许修改；</li>
+<li>StringBuffer是在JDK1.0的时候提供的，属于线程安全的操作，而StringBuilder是在JDK1.5之后提供的，属于非线程安全的操作。</li>
+</ul>
+<h2 id="CharSequence接口"><a href="#CharSequence接口" class="headerlink" title="CharSequence接口"></a>CharSequence接口</h2><blockquote>
+<p>CharSequence是一个描述字符串结构的接口,在这个接口中我们可以发现三种常用的子类:</p>
+</blockquote>
+<blockquote>
+<p>String类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">String</span></span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">Serializable</span>, <span class="title">Comparable</span>&lt;<span class="title">String</span>&gt;, <span class="title">CharSequence</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>StringBuffer类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuffer</span></span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">Serializable</span>, <span class="title">CharSequence</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>StringBuilder类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">StringBuilder</span></span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">Object</span></span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">Serializable</span>, <span class="title">CharSequence</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="http://imgs.loong.io/20190901133929_g9g485_Screenshot.jpeg" alt></p>
+<blockquote>
+<p>现在只要有字符串就可以为CharSequence接口实例化.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharSequenceTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        CharSequence str = <span class="string">"Hello"</span>; <span class="comment">// 子类实例向父类接口转型</span></span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>CharSequence本身是一个接口,在该接口中也定义有如下的操作方法:</p>
+</blockquote>
+<ul>
+<li>获取指定索引字符:<code>public char charAt(int index)</code>;</li>
+<li>获取字符串的长度: <code>public int length()</code>;</li>
+<li>截取部分字符串: <code>public CharSequence subSequence(int start, int end)</code>;</li>
+</ul>
+<p>范例: 字符串的截取</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharSequenceTest1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        CharSequence str = <span class="string">"helloworld"</span>;</span><br><span class="line">        CharSequence sub = str.subSequence(<span class="number">5</span>, <span class="number">10</span>);</span><br><span class="line">        System.out.println(sub); <span class="comment">// world</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以后看见CharSequence描述的就是一个字符串.</p>
+</blockquote>
+<h2 id="AutoCloseable接口"><a href="#AutoCloseable接口" class="headerlink" title="AutoCloseable接口"></a>AutoCloseable接口</h2><blockquote>
+<p>AutoCloseable主要是用于日后进行资源开发的处理上,以实现资源的自动关闭(释放资源),例如:在以后进行文件,<br>网络,数据库的开发过程之后由于服务器的资源有限,所以实用之后一定要关闭资源,这样才可以被更多的使用者所使用.</p>
+<p>下面为了更好的说明资源的问题,将通过一个消息的发送处理来完成. </p>
+</blockquote>
+<p>范例: 手工实现资源的处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoCloseableTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        NetMessage msg = <span class="keyword">new</span> NetMessage(<span class="string">"hello world"</span>);</span><br><span class="line">        msg.send();</span><br><span class="line">        msg.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMessage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetMessage</span> <span class="keyword">implements</span> <span class="title">IMessage</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NetMessage</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">open</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[open]获取消息发送链接资源"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[close]关闭消息发送链接资源"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.open()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"[send]发送消息"</span> + <span class="keyword">this</span>.msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>既然所有的资源处理完成之后都必须进行关闭操作,那么能否实现一种自动关闭的功能呢?</p>
+<p>在这种的情况下,推出了AutoCloseable访问接口,这个接口是在JDK1.7的时候提供的,并且该接口只提供有一个方法:</p>
+<ul>
+<li>关闭方法: <code>public void close() throws Exception;</code></li>
+</ul>
+</blockquote>
+<p><img src="http://imgs.loong.io/20190901142730_jYHVWN_Screenshot.jpeg" alt></p>
+<blockquote>
+<p>要想实现自动关闭的处理,除了要使用AutoCloseable之外,还需要结合异常处理语句完成才可以正常调用.</p>
+</blockquote>
+<p>范例: 实现自动关闭处理</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoCloseableTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span>(IMessage msg = <span class="keyword">new</span> NetMessage(<span class="string">"hello"</span>)) &#123;</span><br><span class="line">            msg.send();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMessage</span> <span class="keyword">extends</span> <span class="title">AutoCloseable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NetMessage</span> <span class="keyword">implements</span> <span class="title">IMessage</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String msg;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NetMessage</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.msg = msg;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">open</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[open]获取消息发送链接资源"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"[close]关闭消息发送链接资源"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.open()) &#123;</span><br><span class="line">            System.out.println(<span class="string">"[send]发送消息"</span> + <span class="keyword">this</span>.msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在以后接触到资源的关闭问题,往往都会见到AutoCloseable接口的使用.</p>
+</blockquote>
+<h2 id="Runtime类"><a href="#Runtime类" class="headerlink" title="Runtime类"></a>Runtime类</h2><blockquote>
+<p>Runtime描述的是运行时的状态,也就说在整个的JVM之中,Runtime是唯一一个与JVM运行状态有关的类,并且来讲都会默认提供有一个该类的实例化对象.</p>
+<p>由于在每一个JVM进程里面只允许提供有一个Runtime类的对象,所以这个类的构造方法被默认私有化了,那么就证明该类使用的是单例设计模式,并且每一个单例设计模式一定会提供有一个static方法获取本类<br>实例.</p>
+</blockquote>
+<p><img src="http://imgs.loong.io/20190901144631_8WimLJ_Screenshot.jpeg" alt></p>
+<blockquote>
+<p>由于Runtime类属于单例设计模式,如果想要获取实例化对象,那么就可以依靠类中的getRuntime()方法完成</p>
+<ul>
+<li>获取实例化对象: <code>public static Runtime getRuntime();</code></li>
+</ul>
+<p>通过Runtime类中的availableProcessors()方法可以获取本机的CPU内核数</p>
+</blockquote>
+<p>范例: 获取Runtime对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RuntimeTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Runtime run = Runtime.getRuntime(); <span class="comment">// 获取实例化对象</span></span><br><span class="line">        System.out.println(run.availableProcessors()); <span class="comment">// 12</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>除了以上的方法之外,在Runtime类中还提供有如下的四个重要方法:</p>
+<ul>
+<li>获取最大可用内存空间: <code>public long maxMemory()</code>, 默认配置为系统最大内存的四分之一;</li>
+<li>获取可用内存空间: <code>public long totalMemory()</code>, 默认为系统的64份之一;</li>
+<li>获取空闲内存空间: <code>public long freeMemory()</code>;</li>
+<li>手工进行GC处理: <code>public void gc()</code>;</li>
+</ul>
+</blockquote>
+<p>范例: 观察内存的使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RuntimeTest2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Runtime run = Runtime.getRuntime();</span><br><span class="line">        System.out.println(<span class="string">"[1]MAX_MEMORY: "</span> + run.maxMemory());</span><br><span class="line">        System.out.println(<span class="string">"[1]TOTAL_MEMORY: "</span> + run.totalMemory());</span><br><span class="line">        System.out.println(<span class="string">"[1]FREE_MEMORY: "</span> + run.freeMemory());</span><br><span class="line"></span><br><span class="line">        String str = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">2000</span>; i++) &#123;</span><br><span class="line">            str += i; <span class="comment">// 产生大量垃圾空间</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"[2]MAX_MEMORY: "</span> + run.maxMemory());</span><br><span class="line">        System.out.println(<span class="string">"[2]TOTAL_MEMORY: "</span> + run.totalMemory());</span><br><span class="line">        System.out.println(<span class="string">"[2]FREE_MEMORY: "</span> + run.freeMemory());</span><br><span class="line"></span><br><span class="line">        run.gc();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"[3]MAX_MEMORY: "</span> + run.maxMemory());</span><br><span class="line">        System.out.println(<span class="string">"[3]TOTAL_MEMORY: "</span> + run.totalMemory());</span><br><span class="line">        System.out.println(<span class="string">"[3]FREE_MEMORY: "</span> + run.freeMemory());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>GC(Garbage Collector)垃圾收集器, 是可以由系统自动调用的垃圾释放功能,或者使用Runtime类中的gc()手工调用.</p>
+</blockquote>
+<h2 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h2><blockquote>
+<p>System是一直陪伴着我们的程序类,之前的输出就是采用System类中的方法,在System类中也定义有一些其他的处理方法:</p>
+<ul>
+<li>数组拷贝:<code>public static void arraycopy(Object src,int srcPos,Object dest,int destPos,int length)</code>;</li>
+<li>获取当前的时间日期数值: <code>public static long currentTimeMillis()</code>;</li>
+<li>进行垃圾回收: <code>public static void gc()</code>;</li>
+</ul>
+</blockquote>
+<p>范例: 操作耗时的统计</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">        String str = <span class="string">"1"</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt; <span class="number">30000</span>; i++) &#123;</span><br><span class="line">            str += i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">        System.out.println(<span class="string">"操作耗时: "</span> + (end - start));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在System类中也提供有一个gc()方法,但是这个gc()方法并不是定义的新方法,而是继续调用了Runtime类中的gc()方法(Runtime.getRuntime().gc()).</p>
+</blockquote>
+<h2 id="Cleaner类"><a href="#Cleaner类" class="headerlink" title="Cleaner类"></a>Cleaner类</h2><blockquote>
+<p>Cleaner类是在JDK1.9之后提供的一个对象的清理操作,其主要的功能是进行finalize()方法的替代.在C++中有两种特殊的函数:构造函数,析构函数(对象的手工回收),<br>在Java之中所有的垃圾空间都是通过GC自动回收的,所以很多情况下是不需要使用这类析构函数的,也正是因为如此,所以Java并没有提供这方面的支持.</p>
+<p>但是Java本身依然给用户提供了收尾的操作,每一个实例化对象在回收之前至少给他一个喘息的机会,最初实现对象收尾处理方法是Object类中所提供的finalize()方法,这个方法的定义如下:</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Deprecated</span>(since=<span class="string">"9"</span>)</span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>已经不建议继续使用这个方法了,而是说子类可以继续使用这个方法名称,但是这个方法上最大的特征就是抛出了一个Throwable异常类型,而这个异常类型分为两个子类型:Error, Exception,平常所处理的一般就是Exception.</p>
+</blockquote>
+<p>范例: 观察传统的回收操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FinalizeTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Member m = <span class="keyword">new</span> Member();</span><br><span class="line">        m = <span class="keyword">null</span>; <span class="comment">// 成为垃圾</span></span><br><span class="line">        System.gc();</span><br><span class="line">        System.out.println(<span class="string">"照常运行"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Member</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Member</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"类诞生了!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"类回收"</span>);</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"我还活着"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是从JDK1.9开始,这一操作已经不建议使用了,而对于对象的回收释放.从JDK1.9开始建议开发者使用AutoCloseable或者使用java.lang.ref.Cleaner类进行回收处理(Cleaner也支持AutoCloseable的处理).</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Java基础类库;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.ref.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Example</span> <span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"该类被创建了"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"我还活着"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExampleCleaner</span> <span class="keyword">implements</span> <span class="title">AutoCloseable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Cleaner cleaner = Cleaner.create();</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Example example;</span><br><span class="line">    <span class="keyword">private</span> Cleanable cleanable;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ExampleCleaner</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.example = <span class="keyword">new</span> Example(); <span class="comment">// 创建新对象</span></span><br><span class="line">        <span class="keyword">this</span>.cleanable = <span class="keyword">this</span>.cleaner.register(<span class="keyword">this</span>, <span class="keyword">this</span>.example); <span class="comment">// 注册使用的对象</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cleanable.clean(); <span class="comment">// 启动多线程</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CleanerTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>(ExampleCleaner ec = <span class="keyword">new</span> ExampleCleaner()) &#123;</span><br><span class="line">            <span class="comment">// 执行相关代码</span></span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在新的清除回收处理的过程之中,更多的情况下考虑的是多线程的使用,即为了防止有可能造成的延迟处理,所以许多对象回收前的处理都是单独通过一个线程完成的.</p>
+</blockquote>
+<h2 id="对象克隆"><a href="#对象克隆" class="headerlink" title="对象克隆"></a>对象克隆</h2><blockquote>
+<p>所谓的对象克隆指的就是对象的复制,而且属于全新的复制.即:使用已有的对象内容创建一个新的对象,如果要想进行对象克隆需要使用到Object类中提供的clone()方法:</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>所有的类都会继承Object父类,所以所有的类都一定会有clone方法,但是并不是所有的类都希望被克隆.所以如果要想实现对象克隆,那么对象所在的类需要实现一个Cloneable接口,此接口并没有任何的方法提供,<br>是因为它描述的是一种能力.</p>
+</blockquote>
+<p>范例: 实现对象克隆</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CloneTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Person p = <span class="keyword">new</span> Person(<span class="string">"王五"</span>, <span class="number">25</span>);</span><br><span class="line">        Person p1 = (Person) p.clone();</span><br><span class="line">        System.out.println(p1);</span><br><span class="line">        System.out.println(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"["</span> + <span class="keyword">super</span>.toString() + <span class="string">"]"</span> + <span class="string">"name:"</span> + <span class="keyword">this</span>.name + <span class="string">" age: "</span> + <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.clone();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在实际的开发之中不是非常特殊的情况下,很少会出现对象克隆的需求.</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/02/java-math/" rel="next" title="Java数字操作类">
+                <i class="fa fa-chevron-left"></i> Java数字操作类
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/02/java-thread-method/" rel="prev" title="Java 线程常用操作方法">
+                Java 线程常用操作方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java基础类库"><span class="nav-number">1.</span> <span class="nav-text">Java基础类库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer类"><span class="nav-number">1.1.</span> <span class="nav-text">StringBuffer类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CharSequence接口"><span class="nav-number">1.2.</span> <span class="nav-text">CharSequence接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AutoCloseable接口"><span class="nav-number">1.3.</span> <span class="nav-text">AutoCloseable接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime类"><span class="nav-number">1.4.</span> <span class="nav-text">Runtime类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System类"><span class="nav-number">1.5.</span> <span class="nav-text">System类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cleaner类"><span class="nav-number">1.6.</span> <span class="nav-text">Cleaner类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象克隆"><span class="nav-number">1.7.</span> <span class="nav-text">对象克隆</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux,Shell,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="文件信息1-rw-rw-r-- 1 linux linux   43 6月  26 13:45  file  rw-rw-r---rw-rw-r--一共十个字符，分成四段。第一个字符-表示普通文件；这个位置还可能会出现l链接；d表示目录 b块设备文件  c字符设备文件   s套接字文件  p管道文件第二三四个字符“rw-”表示当前所属用户的权限。   所以用数值表示为4+2=6第五六七个字符“rw">
+<meta name="keywords" content="Linux,Shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Shell脚本">
+<meta property="og:url" content="https://blog.loong.io/2017/06/26/shell/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="文件信息1-rw-rw-r-- 1 linux linux   43 6月  26 13:45  file  rw-rw-r---rw-rw-r--一共十个字符，分成四段。第一个字符-表示普通文件；这个位置还可能会出现l链接；d表示目录 b块设备文件  c字符设备文件   s套接字文件  p管道文件第二三四个字符“rw-”表示当前所属用户的权限。   所以用数值表示为4+2=6第五六七个字符“rw">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux Shell脚本">
+<meta name="twitter:description" content="文件信息1-rw-rw-r-- 1 linux linux   43 6月  26 13:45  file  rw-rw-r---rw-rw-r--一共十个字符，分成四段。第一个字符-表示普通文件；这个位置还可能会出现l链接；d表示目录 b块设备文件  c字符设备文件   s套接字文件  p管道文件第二三四个字符“rw-”表示当前所属用户的权限。   所以用数值表示为4+2=6第五六七个字符“rw">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2017/06/26/shell/">
+
+
+
+
+
+  <title>Linux Shell脚本 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2017/06/26/shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux Shell脚本</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-26T17:14:54+08:00">
+                2017-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="文件信息"><a href="#文件信息" class="headerlink" title="文件信息"></a>文件信息</h1><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-rw-rw-r--<span class="number"> 1 </span>linux linux  <span class="number"> 43 </span>6月 <span class="number"> 26 </span>13:45  file</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>rw-rw-r--</code><br><code>-rw-rw-r--</code>一共十个字符，分成四段。<br>第一个字符<code>-</code>表示普通文件；这个位置还可能会出现<code>l</code>链接；<code>d</code>表示目录 <code>b</code>块设备文件  <code>c</code>字符设备文件   <code>s</code>套接字文件  <code>p</code>管道文件<br>第二三四个字符“rw-”表示当前所属用户的权限。   所以用数值表示为4+2=6<br>第五六七个字符“rw-”表示当前所属组的权限。      所以用数值表示为4+2=6<br>第八九十个字符“r–”表示其他用户权限。              所以用数值表示为2<br>所以操作此文件的权限用数值表示为662<br>更改权限<br>sudo chmod [u所属用户  g所属组  o其他用户  a所有用户]  [+增加权限  -减少权限]  [r  w  x]   目录名<br>例如：有一个文件filename，权限为“-rw-r—-x” ,将权限值改为”-rwxrw-r-x”，用数值表示为765<br>sudo chmod u+x g+w o+r  filename<br>上面的例子可以用数值表示<br>sudo chmod 765 filename</li>
+<li>两个<code>linux</code>,第一个代表所属用户,第二个代表所属用户组</li>
+<li><code>43</code>代表着文件或者文件夹的大小</li>
+<li><code>6月  26 13:45</code> 代表着文件的创建日期或者文件的最后修改日期</li>
+<li><code>file</code> 代表着文件的名字</li>
+</ul>
+<h1 id="linux基础命令"><a href="#linux基础命令" class="headerlink" title="linux基础命令"></a>linux基础命令</h1><h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"hello world hello kitty"</span> &gt; filename</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat filename</span></span><br><span class="line">hello world hello kitty</span><br></pre></td></tr></table></figure>
+<p>简单创建一个文件,用<code>gerp</code>命令搜索文本.<br><code>grep</code>Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> grep hello filename</span></span><br><span class="line">hello world hello kitty</span><br></pre></td></tr></table></figure></p>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linux<span class="variable">@os</span><span class="symbol">:~/kai/shell</span><span class="variable">$ </span>ls</span><br><span class="line">date.sh  file  file1  file1<span class="number">0</span>  file3  file4  filename  test.sh  日期</span><br></pre></td></tr></table></figure>
+<p>shell文件夹下有一个叫filename的普通文件,用find命令查找到它<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">linux@os:~/kai$ find <span class="keyword">shell</span><span class="bash"> -name filename</span></span><br><span class="line"><span class="bash">shell/filename</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>whoami               <span class="comment">#用于查看当前有效用户名的命令</span></span><br><span class="line">linux</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>which atom          <span class="comment">#which命令的作用是，在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。</span></span><br><span class="line">/usr/bin/atom</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>whereis atom             <span class="comment">#whereis命令只能用于程序名的搜索,如果省略参数，则返回所有信息。</span></span><br><span class="line"><span class="symbol">atom:</span> /usr/bin/atom</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ifconfig                       <span class="comment">#ifconfig 命令用来查看和配置网络设备。</span></span><br><span class="line">enp3s<span class="number">0</span>    Link <span class="symbol">encap:</span>以太网  硬件地址 <span class="number">38</span><span class="symbol">:d5</span><span class="symbol">:</span><span class="number">47</span><span class="symbol">:</span><span class="number">1</span><span class="symbol">c:</span><span class="symbol">e0:</span>b<span class="number">0</span>  </span><br><span class="line">          inet 地址<span class="symbol">:</span><span class="number">10.2</span>.<span class="number">1.102</span>  广播<span class="symbol">:</span><span class="number">10.2</span>.<span class="number">1.255</span>  掩码<span class="symbol">:</span><span class="number">255.255</span>.<span class="number">255.0</span></span><br><span class="line">          inet6 地址: <span class="symbol">fe80:</span><span class="symbol">:bd5b</span><span class="symbol">:</span><span class="number">999</span><span class="symbol">b:</span><span class="number">4</span><span class="symbol">f29:</span><span class="number">7361</span>/<span class="number">64</span> <span class="symbol">Scope:</span>Link</span><br><span class="line">          UP BROADCAST RUNNING MULTICAST  <span class="symbol">MTU:</span><span class="number">1500</span>  跃点数<span class="symbol">:</span><span class="number">1</span></span><br><span class="line">          接收数据包<span class="symbol">:</span><span class="number">183918</span> 错误<span class="symbol">:</span><span class="number">0</span> 丢弃<span class="symbol">:</span><span class="number">0</span> 过载<span class="symbol">:</span><span class="number">0</span> 帧数<span class="symbol">:</span><span class="number">0</span></span><br><span class="line">          发送数据包<span class="symbol">:</span><span class="number">132203</span> 错误<span class="symbol">:</span><span class="number">0</span> 丢弃<span class="symbol">:</span><span class="number">0</span> 过载<span class="symbol">:</span><span class="number">0</span> 载波<span class="symbol">:</span><span class="number">0</span></span><br><span class="line">          碰撞<span class="symbol">:</span><span class="number">0</span> 发送队列长度<span class="symbol">:</span><span class="number">1000</span></span><br><span class="line">          接收字节<span class="symbol">:</span><span class="number">218562131</span> (<span class="number">218.5</span> MB)  发送字节<span class="symbol">:</span><span class="number">17921553</span> (<span class="number">17.9</span> MB)</span><br><span class="line"></span><br><span class="line">lo        Link <span class="symbol">encap:</span>本地环回  </span><br><span class="line">          inet 地址<span class="symbol">:</span><span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>  掩码<span class="symbol">:</span><span class="number">255.0</span>.<span class="number">0</span>.<span class="number">0</span></span><br><span class="line">          inet6 地址: <span class="symbol">:</span><span class="symbol">:</span><span class="number">1</span>/<span class="number">128</span> <span class="symbol">Scope:</span>Host</span><br><span class="line">          UP LOOPBACK RUNNING  <span class="symbol">MTU:</span><span class="number">65536</span>  跃点数<span class="symbol">:</span><span class="number">1</span></span><br><span class="line">          接收数据包<span class="symbol">:</span><span class="number">2829</span> 错误<span class="symbol">:</span><span class="number">0</span> 丢弃<span class="symbol">:</span><span class="number">0</span> 过载<span class="symbol">:</span><span class="number">0</span> 帧数<span class="symbol">:</span><span class="number">0</span></span><br><span class="line">          发送数据包<span class="symbol">:</span><span class="number">2829</span> 错误<span class="symbol">:</span><span class="number">0</span> 丢弃<span class="symbol">:</span><span class="number">0</span> 过载<span class="symbol">:</span><span class="number">0</span> 载波<span class="symbol">:</span><span class="number">0</span></span><br><span class="line">          碰撞<span class="symbol">:</span><span class="number">0</span> 发送队列长度<span class="symbol">:</span><span class="number">1</span></span><br><span class="line">          接收字节<span class="symbol">:</span><span class="number">408470</span> (<span class="number">408.4</span> KB)  发送字节<span class="symbol">:</span><span class="number">408470</span> (<span class="number">408.4</span> KB)</span><br><span class="line"></span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ping fangcun.net                  <span class="comment">#它通常用来测试与目标主机的连通性</span></span><br><span class="line">PING fangcun.net (<span class="number">118.89</span>.<span class="number">227.74</span>) <span class="number">56</span>(<span class="number">84</span>) bytes of data.</span><br><span class="line"><span class="number">64</span> bytes from <span class="number">118.89</span>.<span class="number">227.74</span>: icmp_seq=<span class="number">1</span> ttl=<span class="number">52</span> time=<span class="number">6.71</span> ms</span><br><span class="line"><span class="number">64</span> bytes from <span class="number">118.89</span>.<span class="number">227.74</span>: icmp_seq=<span class="number">2</span> ttl=<span class="number">52</span> time=<span class="number">6.64</span> ms</span><br><span class="line"><span class="number">64</span> bytes from <span class="number">118.89</span>.<span class="number">227.74</span>: icmp_seq=<span class="number">3</span> ttl=<span class="number">52</span> time=<span class="number">6.40</span> ms</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>wc zhuye.html</span><br><span class="line"> <span class="number">103</span>  <span class="number">273</span> <span class="number">6377</span> zhuye.html</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>sudo su                      <span class="comment">#进入超级用户权限</span></span><br><span class="line">[sudo] linux 的密码：</span><br><span class="line">root<span class="variable">@os</span><span class="symbol">:/home/linux</span><span class="comment"># exit                    #输入exit退出超级用户权限</span></span><br><span class="line">exit</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>echo <span class="string">"hello world"</span> &gt; file            <span class="comment">#用echo创建一个简单的文件,里面有hello world的简单语句.</span></span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ls                                                                                                 <span class="comment">#列出家目录下的文件</span></span><br><span class="line">blog              file         my-awesome-site    zhuye.html  视频  下载</span><br><span class="line">Desktop           jekyll_demo  package-lock.json  公共的      图片  音乐</span><br><span class="line">examples.desktop  kai          software           模板        文档  桌面</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ln file link                                                                                       <span class="comment">#给file文件加一个硬链接</span></span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ls</span><br><span class="line">blog              file         link               software    模板  文档  桌面</span><br><span class="line">Desktop           jekyll_demo  my-awesome-site    zhuye.html  视频  下载</span><br><span class="line">examples.desktop  kai          package-lock.json  公共的      图片  音乐</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>cat link                                                                                              <span class="comment">#可以看到链接文件的输出同file文件一样</span></span><br><span class="line">hello world</span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ln -s  file link1                                                                        <span class="comment">#这是给file文件创建一个软链接,当file文件被删除时,软链接会没有输出,而硬链接则不会.</span></span><br><span class="line">linux<span class="variable">@os</span><span class="symbol">:~</span><span class="variable">$ </span>ls</span><br><span class="line">blog              jekyll_demo  my-awesome-site    公共的  文档</span><br><span class="line">Desktop           kai          package-lock.json  模板    下载</span><br><span class="line">examples.desktop  link         software           视频    音乐</span><br><span class="line">file              link1        zhuye.html         图片    桌面</span><br></pre></td></tr></table></figure>
+<h2 id="deb文件"><a href="#deb文件" class="headerlink" title="deb文件"></a>deb文件</h2><p>1.本地安装 2.在线安装<br>相关配置文件：</p>
+<ul>
+<li>/etc/apt/sources.list  包含deb软件包源的文件</li>
+<li>/var/lib/apt/list/* 对软件源进行更新之后的本地文件</li>
+<li>/var/cache/apt/archive  在线安装时软件包的下载目录</li>
+<li>/var/log/dpkg.log , 本地软件包管理的日志文件</li>
+<li>/var/log/apt/×,log, 在线软件包管理的日志文件<h3 id="名称组成"><a href="#名称组成" class="headerlink" title="名称组成"></a>名称组成</h3>比如：sl_3.03-17_amd64.deb<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sl</span> 软件包名称   <span class="number">3.03</span>-<span class="number">17</span> 表示版本号和修订版本号  amd64 表示 运行平台的架构 <span class="keyword">deb</span>，表示<span class="keyword">deb</span>软件包的后缀名</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="本地deb软件包的操作命令"><a href="#本地deb软件包的操作命令" class="headerlink" title="本地deb软件包的操作命令"></a>本地deb软件包的操作命令</h3><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> 软件包的安装  dpkg -i sl_3.<span class="number">03</span>-<span class="number">17</span>_amd64.<span class="keyword">deb</span></span><br><span class="line">软件包的卸载  dpkg -r <span class="keyword">sl</span></span><br><span class="line"> 软件包的彻底卸载，移除所有配置文件 dpkg -<span class="keyword">P</span> <span class="keyword">sl</span></span><br><span class="line">查看软件包的安装状态 dpkg -s <span class="keyword">sl</span></span><br><span class="line">查看软件包的安装路径 dpkg -L <span class="keyword">sl</span></span><br><span class="line"> 列出所有安装的软件包 dpkg --<span class="built_in">get</span>-selections</span><br></pre></td></tr></table></figure>
+<h3 id="在线管理操作命令"><a href="#在线管理操作命令" class="headerlink" title="在线管理操作命令"></a>在线管理操作命令</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">更新本地软件包  apt-<span class="builtin-name">get</span> update</span><br><span class="line">软件包的安装 apt-<span class="builtin-name">get</span> install sl</span><br><span class="line">软件包的卸载 apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> sl</span><br><span class="line">软件包的彻底卸载 apt-<span class="builtin-name">get</span> <span class="builtin-name">remove</span> --purge sl</span><br><span class="line">二进制软件包的下载 apt-<span class="builtin-name">get</span> download sl</span><br><span class="line"> 软件包源码下载  apt-<span class="builtin-name">get</span> source sl</span><br><span class="line">查看软件包的安装状态 apt-cache<span class="built_in"> policy </span>sl</span><br><span class="line">查看软件包的信息 apt-cache show sl</span><br><span class="line">升级软件包  apt-<span class="builtin-name">get</span> upgrade</span><br></pre></td></tr></table></figure>
+<h1 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h1><p><code>*</code>代表着任意字符<br><code>?</code>代表着任一字符</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm <span class="built_in">file</span>[<span class="number">1</span>,<span class="number">3</span>]                 <span class="comment">#文件列表中file1和file3会被删除</span></span><br><span class="line">rm <span class="built_in">file</span>[!<span class="number">1</span>,<span class="number">3</span>]               <span class="comment">#文件列表中除了file1和file3不会被删除,其他file?都会被删.</span></span><br><span class="line">rm <span class="built_in">file</span>[<span class="number">1</span><span class="number">-9</span>]                   <span class="comment">#文件列表中file1到file9都会被删除</span></span><br><span class="line">rm <span class="built_in">file</span>[<span class="keyword">a</span>-zA-Z]             <span class="comment">#与上面类似</span></span><br></pre></td></tr></table></figure>
+<h1 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h1><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo <span class="string">"hello world"</span> &gt; file           #创建一个file文件,里面第一行有hello world的文本.`&gt;`的作用是覆盖第一行文本.</span><br><span class="line">echo <span class="string">"hello world"</span> &gt;&gt; file           #`&gt;&gt;`会在第二行追加hello world文本</span><br></pre></td></tr></table></figure>
+<h1 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h1><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ls</span> | grep <span class="string">"music"</span>            <span class="comment">#把第一个命令的输出作为第二个命令的输入</span></span><br></pre></td></tr></table></figure>
+<h1 id="shell-脚本"><a href="#shell-脚本" class="headerlink" title="shell 脚本"></a>shell 脚本</h1><p>shell脚本:shell命令的有序结合</p>
+<h2 id="创建一个shell脚本"><a href="#创建一个shell脚本" class="headerlink" title="创建一个shell脚本"></a>创建一个shell脚本</h2><p>shell脚本是一个以<code>.sh</code>为结尾的文件,比如:test.sh<br><figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash      #指明解释器所在的位置</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure></p>
+<p>以上就是一个最简单的shell脚本.</p>
+<h2 id="执行shell脚本"><a href="#执行shell脚本" class="headerlink" title="执行shell脚本"></a>执行shell脚本</h2><ol>
+<li>bash test.sh</li>
+<li>修改文件权限  chomd 755 test.sh      然后<code>./test.sh</code>执行.<h2 id="变量的命名"><a href="#变量的命名" class="headerlink" title="变量的命名"></a>变量的命名</h2></li>
+</ol>
+<ul>
+<li>数字字母下划线(有的编程语言可以用$)</li>
+<li>不能以数字开头(但是我们也不鼓励普通标识符用_开头)</li>
+<li>不能和当前使用的语言的关键字(保留字)重名<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vlaue=1                       <span class="comment">#给变量赋值,等号两边不能有空格</span></span><br><span class="line">value1=2</span><br><span class="line"><span class="built_in">unset</span> value                    <span class="comment">#用unset来注销一个变量</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value</span> <span class="variable">$value1</span>           <span class="comment">#用echo输出两个变量</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出结果:<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">bash </span>value.<span class="keyword">sh</span></span><br><span class="line"><span class="keyword">2</span></span><br></pre></td></tr></table></figure></p>
+<p>echo 后面的语句不加引号和加<code>&#39;`</code>“`截然不同.例如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">value1=1</span><br><span class="line"><span class="built_in">echo</span> hello          kitty  <span class="variable">$value1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"hello            kitty  <span class="variable">$value1</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'hello           kitty $value1'</span></span><br></pre></td></tr></table></figure></p>
+<p>输出结果:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hello</span> kitty <span class="number">1</span>                      <span class="comment">#没有加引号,可以看出把多个空格缩为一个,把变量解释了</span></span><br><span class="line">hello            kitty  <span class="number">1</span>                 <span class="comment">#双引号,把变量解释了</span></span><br><span class="line">hello           kitty <span class="variable">$value1</span>              <span class="comment">#单引号,直接引用原句</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="位置变量"><a href="#位置变量" class="headerlink" title="位置变量"></a>位置变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$1 = <span class="variable">$1</span>"</span></span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$10 = <span class="variable">$&#123;10&#125;</span>"</span></span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$# = <span class="variable">$#</span>"</span> <span class="comment">#输入参数的个数</span></span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$@ = <span class="variable">$@</span>"</span> <span class="comment">#输出所有参数</span></span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$* = $*"</span>     <span class="comment">#同上面类似</span></span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$$ = $$"</span>        <span class="comment">#打印当前进程的进程号</span></span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"\$? = $?"</span>        <span class="comment">#$?是上一个命令的运行结果，0表示成功，其他值是失败。</span></span><br></pre></td></tr></table></figure>
+<p>执行结果:</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">linux@os:~/kai/shell$ bash date.sh<span class="number"> 1 </span>2<span class="number"> 3 </span>4<span class="number"> 5 </span>6<span class="number"> 7 </span>8<span class="number"> 9 </span>10</span><br><span class="line">$1 = 1</span><br><span class="line">$10 = 10</span><br><span class="line">$<span class="comment"># = 10</span></span><br><span class="line">$@ =<span class="number"> 1 </span>2<span class="number"> 3 </span>4<span class="number"> 5 </span>6<span class="number"> 7 </span>8<span class="number"> 9 </span>10</span><br><span class="line">$* =<span class="number"> 1 </span>2<span class="number"> 3 </span>4<span class="number"> 5 </span>6<span class="number"> 7 </span>8<span class="number"> 9 </span>10</span><br><span class="line">$$ = 6647</span><br><span class="line">$? = 0</span><br></pre></td></tr></table></figure>
+<h3 id="关键字read"><a href="#关键字read" class="headerlink" title="关键字read"></a>关键字read</h3><p>一个read对应一个回车</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">read</span> value</span><br><span class="line"><span class="built_in">read</span> value1</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$value</span> <span class="variable">$value1</span></span><br></pre></td></tr></table></figure>
+<p>他会等待输入两个参数,然后一行打印出来.</p>
+<h1 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h1><ol>
+<li>理解进制转换  学会chmod修改权限的命令</li>
+<li>环境变量.ip.dns.子网掩码.网关 这些词的含义</li>
+<li>从那几个方面解决电脑卡顿,为什么?</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Shell/" rel="tag"># Shell</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/27/bashshell/" rel="prev" title="Linux Shell脚本-2">
+                Linux Shell脚本-2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件信息"><span class="nav-number">1.</span> <span class="nav-text">文件信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux基础命令"><span class="nav-number">2.</span> <span class="nav-text">linux基础命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#grep"><span class="nav-number">2.1.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">2.2.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他命令"><span class="nav-number">2.3.</span> <span class="nav-text">其他命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deb文件"><span class="nav-number">2.4.</span> <span class="nav-text">deb文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#名称组成"><span class="nav-number">2.4.1.</span> <span class="nav-text">名称组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地deb软件包的操作命令"><span class="nav-number">2.4.2.</span> <span class="nav-text">本地deb软件包的操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在线管理操作命令"><span class="nav-number">2.4.3.</span> <span class="nav-text">在线管理操作命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通配符"><span class="nav-number">3.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入输出重定向"><span class="nav-number">4.</span> <span class="nav-text">输入输出重定向</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#管道"><span class="nav-number">5.</span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shell-脚本"><span class="nav-number">6.</span> <span class="nav-text">shell 脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个shell脚本"><span class="nav-number">6.1.</span> <span class="nav-text">创建一个shell脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行shell脚本"><span class="nav-number">6.2.</span> <span class="nav-text">执行shell脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的命名"><span class="nav-number">6.3.</span> <span class="nav-text">变量的命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">6.4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位置变量"><span class="nav-number">6.4.1.</span> <span class="nav-text">位置变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字read"><span class="nav-number">6.4.2.</span> <span class="nav-text">关键字read</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业"><span class="nav-number">7.</span> <span class="nav-text">作业</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

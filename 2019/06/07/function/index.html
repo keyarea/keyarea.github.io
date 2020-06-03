@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/facicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Java Lambda,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Key" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="函数式编程Lambda表达式从JDK1.8开始为了简化使用者进行代码的开发，专门提供有Lambda表达式的支持，利用此操作形式可以实现函数式的编程。利用函数式的编程可以避免掉面向对象编程之中的一些繁琐的处理问题。 面向对象在其长期的发展的过程之中，一直有一部分的反对者，这些反对者认为面向对象的设计过于复杂了，并且过于繁琐了。 以一个最简单的程序为例： 范例：观察传统开发中的问题 123456789">
+<meta name="keywords" content="Java Lambda">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java函数式编程">
+<meta property="og:url" content="https://blog.loong.io/2019/06/07/function/index.html">
+<meta property="og:site_name" content="Key">
+<meta property="og:description" content="函数式编程Lambda表达式从JDK1.8开始为了简化使用者进行代码的开发，专门提供有Lambda表达式的支持，利用此操作形式可以实现函数式的编程。利用函数式的编程可以避免掉面向对象编程之中的一些繁琐的处理问题。 面向对象在其长期的发展的过程之中，一直有一部分的反对者，这些反对者认为面向对象的设计过于复杂了，并且过于繁琐了。 以一个最简单的程序为例： 范例：观察传统开发中的问题 123456789">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-06-03T02:37:45.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java函数式编程">
+<meta name="twitter:description" content="函数式编程Lambda表达式从JDK1.8开始为了简化使用者进行代码的开发，专门提供有Lambda表达式的支持，利用此操作形式可以实现函数式的编程。利用函数式的编程可以避免掉面向对象编程之中的一些繁琐的处理问题。 面向对象在其长期的发展的过程之中，一直有一部分的反对者，这些反对者认为面向对象的设计过于复杂了，并且过于繁琐了。 以一个最简单的程序为例： 范例：观察传统开发中的问题 123456789">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.loong.io/2019/06/07/function/">
+
+
+
+
+
+  <title>Java函数式编程 | Key</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Key</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.loong.io/2019/06/07/function/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Key">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Key">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Java函数式编程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-07T14:10:43+08:00">
+                2019-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="函数式编程"><a href="#函数式编程" class="headerlink" title="函数式编程"></a>函数式编程</h1><h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><p>从JDK1.8开始为了简化使用者进行代码的开发，专门提供有Lambda表达式的支持，利用此操作形式可以实现函数式的编程。利用函数式的编程可以避免掉面向对象编程之中的一些繁琐的处理问题。</p>
+<p>面向对象在其长期的发展的过程之中，一直有一部分的反对者，这些反对者认为面向对象的设计过于复杂了，并且过于繁琐了。</p>
+<p>以一个最简单的程序为例：</p>
+<p>范例：观察传统开发中的问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">// 函数式接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMessage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">send</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        IMessage message = <span class="keyword">new</span> IMessage() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"消息发送："</span> + str);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        message.send(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在这样一个程序里面，实际上核心的功能只有一条语句<code>System.out.println(&quot;消息发送：&quot; + str);</code><br>但是为了这一条核心语句依然需要按照完整的面向对象给出的设计结构进行开发。</p>
+<p>于是这些问题随着技术的不断发展也是越来越突出了。</p>
+<p>范例：使用Lambda表达式实现与之前完全一样的功能</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        IMessage message = str -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">"发送消息："</span> + str);</span><br><span class="line">        &#125;;</span><br><span class="line">        message.send(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>利用这种形式就避免了复杂的面向对象结构化的要求。</p>
+<blockquote>
+<p>Lambda表达式如果要想使用，那么就必须有一个重要的实现要求：ASM（Single Abstract Method），<br>只有一个抽象方法，以之前IMessage接口为例，在这个接口里面发现只是提供有一个send()方法，<br>除此之外没有任何的其他方法的定义，所以这样的接口又被称之为函数式接口，而只有函数式的接口才可以<br>被Lambda表达式所使用。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">// 函数式接口注解</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMessage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">send</span><span class="params">(String str)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LambdaDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        IMessage message = str -&gt; &#123;</span><br><span class="line">            System.out.println(<span class="string">"发送消息："</span> + str);</span><br><span class="line">        &#125;;</span><br><span class="line">        message.send(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于Lambda表达式而言，提供有如下的几种格式：</p>
+<ul>
+<li>方法没有参数: <code>()-&gt;{};</code></li>
+<li>方法有参数：<code>(参数,参数)-&gt;{};</code></li>
+<li>如果现在只有一行语句返回：<code>(参数,参数)-&gt;语句;</code></li>
+</ul>
+<p>范例：定义没有参数的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IPrint</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NoArgumentsDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        IPrint print = ()-&gt;&#123;</span><br><span class="line">            System.out.println(<span class="string">"hello world!!"</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">        print.print();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>范例：定义有参数的处理形式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMath</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArgsDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        IMath math = (x, y)-&gt;&#123;</span><br><span class="line">            <span class="keyword">return</span> x + y;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        System.out.println(math.add(<span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上的表达式之中你会发现只有一行语句，这个时候也可以进一步简化。</p>
+<p>范例：简化Lambda操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMath</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArgsDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line"><span class="comment">//        IMath math = (x, y)-&gt;&#123;</span></span><br><span class="line"><span class="comment">//            return x + y;</span></span><br><span class="line"><span class="comment">//        &#125;;</span></span><br><span class="line">        IMath math = (x, y)-&gt;x +y;</span><br><span class="line"></span><br><span class="line">        System.out.println(math.add(<span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>利用Lambda表达式的确可以摆脱传统面向对象之中关于结构的限制，使得代码更加的简便。</p>
+<h2 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h2><p>引用数据类型最大的特点是可以进行内存的指向处理,但是在传统的开发之中一直使用的只是对象引用操作,<br>而jdk1.8之后也提供有方法的引用,即:不同的方法名称可以描述同一个方法.如果要进行方法的引用在Java<br>里面提供有如下的四种形式:</p>
+<ul>
+<li>引用静态方法: <code>类名称::static 方法名称;</code></li>
+<li>引用某个实例对象: <code>实例化对象 :: 普通方法;</code></li>
+<li>应用特定类型的方法: <code>特定类 :: 普通方法;</code></li>
+<li>引用构造方法: <code>类名称 :: new;</code></li>
+</ul>
+<h3 id="引用静态方法"><a href="#引用静态方法" class="headerlink" title="引用静态方法"></a>引用静态方法</h3><p>范例: 引用静态方法</p>
+<blockquote>
+<p>在<code>String</code>类里面提供有<code>String.valueOf()</code>方法,这个方法就属于静态方法.</p>
+<blockquote>
+<p>方法定义: <code>public static String valueOf(int i)</code>,该方法有参数,并且还有返回值.</p>
+</blockquote>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// P描述的是参数,R描述的是返回值</span></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">// 函数式接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IFunction</span>&lt;<span class="title">P</span>,<span class="title">R</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">change</span><span class="params">(P p)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodReferenceDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        IFunction&lt;Integer, String&gt; fun = String :: valueOf;</span><br><span class="line">        String str = fun.change(<span class="number">100</span>);</span><br><span class="line">        System.out.println(str.length());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用方法引用这一概念可以为一个方法定义多个名字,但是要求必须是函数式接口.</p>
+</blockquote>
+<h3 id="引用实例化对象的方法"><a href="#引用实例化对象的方法" class="headerlink" title="引用实例化对象的方法"></a>引用实例化对象的方法</h3><p>范例:引用实例化对象中的方法</p>
+<blockquote>
+<p>在<code>String</code>类里面有一个转大写的方法: <code>public String toUpperCase();</code></p>
+<blockquote>
+<p>这个方法是必须在有实例化对象提供的情况下才可以调用;</p>
+</blockquote>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">// 函数式接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IMethod</span>&lt;<span class="title">R</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">upper</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodReferenceDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 方法引用,实例化对象方法</span></span><br><span class="line">        IMethod&lt;String&gt; method = <span class="string">"hello world"</span> :: toUpperCase;</span><br><span class="line">        String upperStr = method.upper();</span><br><span class="line">        System.out.println(upperStr);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="应用特定类型的方法"><a href="#应用特定类型的方法" class="headerlink" title="应用特定类型的方法"></a>应用特定类型的方法</h3><p>在进行方法的引用的时候也可以引用特定类中的一些操作方法, 在String类里面提供有一个字符串大小<br>关系的比较;</p>
+<blockquote>
+<p>比较大小: <code>public int compareTo(String anotherString);</code></p>
+</blockquote>
+<p>这是一个普通方法,如果要引用普通方法,则往往都需要实例化对象,但是如果说现在你不想给出实力化<br>对象,只是想引用这个方法,则就可以使用特定类进行引用处理.</p>
+<p>范例: 引用指定类中的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span> <span class="comment">//函数式接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICompare</span>&lt;<span class="title">P</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(P p1, P p2)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodReferenceDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 引用特定类中方法</span></span><br><span class="line">        ICompare&lt;String&gt; function = String::compareTo;</span><br><span class="line">        <span class="keyword">int</span> num = function.compare(<span class="string">"A"</span>, <span class="string">"a"</span>);</span><br><span class="line">        System.out.println(num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="构造方法的引用"><a href="#构造方法的引用" class="headerlink" title="构造方法的引用"></a>构造方法的引用</h3><p>范例:引用构造方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名:"</span> + <span class="keyword">this</span>.name + <span class="string">", 年龄: "</span> + <span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">ICreate</span>&lt;<span class="title">R</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">create</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodReferenceDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 引用构造方法</span></span><br><span class="line">        ICreate&lt;Person&gt; f = Person::<span class="keyword">new</span>;</span><br><span class="line">        System.out.println(f.create(<span class="string">"王五"</span>, <span class="number">23</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>提供方法引用的概念更多的情况下也只是弥补了对于引用的支持功能.</p>
+<h2 id="内建函数式接口"><a href="#内建函数式接口" class="headerlink" title="内建函数式接口"></a>内建函数式接口</h2><p>在JDK1.8之中提供有 Lambda表达式也提供有方法引用,但是你会发现如果由开发者自己定义<br>函数式接口,往往都需要使用<code>@FunctionInterface</code>注解来进行大量声明,于是很多的情况下<br>如果为了方便则可以引用系统中提供的函数式接口.</p>
+<p>在系统之中专门提供有一个<code>java.util.function</code>的开发包,里面可以直接使用函数式接口.<br>在这个包下面一共有如下的几个核心接口供我们使用:</p>
+<h3 id="功能性函数式接口"><a href="#功能性函数式接口" class="headerlink" title="功能性函数式接口"></a>功能性函数式接口</h3><h4 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Function</span>&lt;<span class="title">T</span>,<span class="title">R</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> R <span class="title">apply</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接口的使用"><a href="#接口的使用" class="headerlink" title="接口的使用"></a>接口的使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"><span class="keyword">import</span> java.util.function.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildInFunctionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 功能性函数式接口</span></span><br><span class="line">        Function&lt;String, Boolean&gt; fun = <span class="string">"**Hello"</span>::startsWith;</span><br><span class="line">        System.out.println(fun.apply(<span class="string">"**"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="消费性函数式接口"><a href="#消费性函数式接口" class="headerlink" title="消费性函数式接口"></a>消费性函数式接口</h3><blockquote>
+<p>只能供进行数据的处理操作,而没有任何的返回;</p>
+<blockquote>
+<p>在进行系统数据输出的时候使用的是:<code>System.out.println();</code></p>
+</blockquote>
+</blockquote>
+<h4 id="接口的定义"><a href="#接口的定义" class="headerlink" title="接口的定义"></a>接口的定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Consumer</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接口的使用-1"><a href="#接口的使用-1" class="headerlink" title="接口的使用"></a>接口的使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"><span class="keyword">import</span> java.util.function.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildInFunctionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 消费性函数式接口</span></span><br><span class="line">        Consumer&lt;String&gt; con = System.out::println;</span><br><span class="line">        con.accept(<span class="string">"hello world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="供给型函数式接口"><a href="#供给型函数式接口" class="headerlink" title="供给型函数式接口"></a>供给型函数式接口</h3><blockquote>
+<p>在<code>String</code>类中提供有转小写的方法,这个方法没有接收参数,但是有返回值;</p>
+<blockquote>
+<p>方法: <code>public String toLowerCase()</code></p>
+</blockquote>
+</blockquote>
+<h4 id="接口的定义-1"><a href="#接口的定义-1" class="headerlink" title="接口的定义"></a>接口的定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Supplier</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接口的使用-2"><a href="#接口的使用-2" class="headerlink" title="接口的使用"></a>接口的使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"><span class="keyword">import</span> java.util.function.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildInFunctionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 供给性函数式接口</span></span><br><span class="line">        Supplier&lt;String&gt; supplier = <span class="string">"HELLO"</span>::toLowerCase;</span><br><span class="line">        String str = supplier.get();</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="断言性函数式接口"><a href="#断言性函数式接口" class="headerlink" title="断言性函数式接口"></a>断言性函数式接口</h3><blockquote>
+<p>进行判断处理</p>
+<blockquote>
+<p>在<code>String</code>类中有一个<code>equalsIgnoreCase()</code>方法</p>
+</blockquote>
+</blockquote>
+<h4 id="接口的定义-2"><a href="#接口的定义-2" class="headerlink" title="接口的定义"></a>接口的定义</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="接口的使用-3"><a href="#接口的使用-3" class="headerlink" title="接口的使用"></a>接口的使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Lambda;</span><br><span class="line"><span class="keyword">import</span> java.util.function.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BuildInFunctionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 断言性函数式接口</span></span><br><span class="line">        Predicate&lt;String&gt; predicate = <span class="string">"hello"</span>::equalsIgnoreCase;</span><br><span class="line">        System.out.println(predicate.test(<span class="string">"HELLO"</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以后对于实际项目开发之中,如果JDK本身提供的函数式接口可以被我们所使用,那么就没有必要重新定义了.</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="Key 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Key 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java-Lambda/" rel="tag"># Java Lambda</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/17/reflect/" rel="next" title="Java反射机制">
+                <i class="fa fa-chevron-left"></i> Java反射机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/11/LinkedList/" rel="prev" title="链表">
+                链表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Key">
+            
+              <p class="site-author-name" itemprop="name">Key</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/keyarea" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式编程"><span class="nav-number">1.</span> <span class="nav-text">函数式编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">1.1.</span> <span class="nav-text">Lambda表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法引用"><span class="nav-number">1.2.</span> <span class="nav-text">方法引用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#引用静态方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">引用静态方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用实例化对象的方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">引用实例化对象的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用特定类型的方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">应用特定类型的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法的引用"><span class="nav-number">1.2.4.</span> <span class="nav-text">构造方法的引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内建函数式接口"><span class="nav-number">1.3.</span> <span class="nav-text">内建函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能性函数式接口"><span class="nav-number">1.3.1.</span> <span class="nav-text">功能性函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口定义"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">接口定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的使用"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">接口的使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消费性函数式接口"><span class="nav-number">1.3.2.</span> <span class="nav-text">消费性函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的定义"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">接口的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的使用-1"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">接口的使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#供给型函数式接口"><span class="nav-number">1.3.3.</span> <span class="nav-text">供给型函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的定义-1"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">接口的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的使用-2"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">接口的使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#断言性函数式接口"><span class="nav-number">1.3.4.</span> <span class="nav-text">断言性函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的定义-2"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">接口的定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口的使用-3"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">接口的使用</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Key</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">182.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
