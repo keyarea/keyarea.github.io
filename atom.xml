@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://blog.loong.io/"/>
+  <link href="https://blog.qipo.net/"/>
   <updated>2020-06-03T02:37:45.378Z</updated>
-  <id>https://blog.loong.io/</id>
+  <id>https://blog.qipo.net/</id>
   
   <author>
     <name>Key</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java开发常用类库</title>
-    <link href="https://blog.loong.io/2019/09/09/java-common-class/"/>
-    <id>https://blog.loong.io/2019/09/09/java-common-class/</id>
+    <link href="https://blog.qipo.net/2019/09/09/java-common-class/"/>
+    <id>https://blog.qipo.net/2019/09/09/java-common-class/</id>
     <published>2019-09-09T03:10:04.000Z</published>
     <updated>2020-06-03T02:37:45.378Z</updated>
     
@@ -35,17 +35,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 正则表达式</title>
-    <link href="https://blog.loong.io/2019/09/04/java-regex/"/>
-    <id>https://blog.loong.io/2019/09/04/java-regex/</id>
+    <link href="https://blog.qipo.net/2019/09/04/java-regex/"/>
+    <id>https://blog.qipo.net/2019/09/04/java-regex/</id>
     <published>2019-09-04T08:53:33.000Z</published>
     <updated>2020-06-03T02:37:45.376Z</updated>
     
@@ -61,19 +61,19 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
-      <category term="regex" scheme="https://blog.loong.io/tags/regex/"/>
+      <category term="regex" scheme="https://blog.qipo.net/tags/regex/"/>
     
   </entry>
   
   <entry>
     <title>Java 时间处理类</title>
-    <link href="https://blog.loong.io/2019/09/03/java-date/"/>
-    <id>https://blog.loong.io/2019/09/03/java-date/</id>
+    <link href="https://blog.qipo.net/2019/09/03/java-date/"/>
+    <id>https://blog.qipo.net/2019/09/03/java-date/</id>
     <published>2019-09-03T08:11:22.000Z</published>
     <updated>2020-06-03T02:37:45.375Z</updated>
     
@@ -89,17 +89,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 多线程相关案例</title>
-    <link href="https://blog.loong.io/2019/09/02/java-thread-case/"/>
-    <id>https://blog.loong.io/2019/09/02/java-thread-case/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-thread-case/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-thread-case/</id>
     <published>2019-09-02T14:34:32.000Z</published>
     <updated>2020-06-03T02:37:45.365Z</updated>
     
@@ -114,19 +114,19 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
-      <category term="Thread" scheme="https://blog.loong.io/tags/Thread/"/>
+      <category term="Thread" scheme="https://blog.qipo.net/tags/Thread/"/>
     
   </entry>
   
   <entry>
     <title>Java 线程深入话题</title>
-    <link href="https://blog.loong.io/2019/09/02/java-thread-hight-level/"/>
-    <id>https://blog.loong.io/2019/09/02/java-thread-hight-level/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-thread-hight-level/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-thread-hight-level/</id>
     <published>2019-09-02T14:32:42.000Z</published>
     <updated>2020-06-03T02:37:45.367Z</updated>
     
@@ -141,19 +141,19 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
-      <category term="Thread" scheme="https://blog.loong.io/tags/Thread/"/>
+      <category term="Thread" scheme="https://blog.qipo.net/tags/Thread/"/>
     
   </entry>
   
   <entry>
     <title>Java 线程 生产者与消费者模型</title>
-    <link href="https://blog.loong.io/2019/09/02/java-thread-producerAndconsumer/"/>
-    <id>https://blog.loong.io/2019/09/02/java-thread-producerAndconsumer/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-thread-producerAndconsumer/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-thread-producerAndconsumer/</id>
     <published>2019-09-02T14:30:24.000Z</published>
     <updated>2020-06-03T02:37:45.371Z</updated>
     
@@ -168,19 +168,19 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
-      <category term="Thread" scheme="https://blog.loong.io/tags/Thread/"/>
+      <category term="Thread" scheme="https://blog.qipo.net/tags/Thread/"/>
     
   </entry>
   
   <entry>
     <title>Java 线程的同步与死锁</title>
-    <link href="https://blog.loong.io/2019/09/02/java-thread-synchronized/"/>
-    <id>https://blog.loong.io/2019/09/02/java-thread-synchronized/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-thread-synchronized/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-thread-synchronized/</id>
     <published>2019-09-02T14:27:09.000Z</published>
     <updated>2020-06-03T02:37:45.372Z</updated>
     
@@ -195,19 +195,19 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
-      <category term="Thread" scheme="https://blog.loong.io/tags/Thread/"/>
+      <category term="Thread" scheme="https://blog.qipo.net/tags/Thread/"/>
     
   </entry>
   
   <entry>
     <title>Java 线程常用操作方法</title>
-    <link href="https://blog.loong.io/2019/09/02/java-thread-method/"/>
-    <id>https://blog.loong.io/2019/09/02/java-thread-method/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-thread-method/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-thread-method/</id>
     <published>2019-09-02T14:23:21.000Z</published>
     <updated>2020-06-03T02:37:45.369Z</updated>
     
@@ -223,19 +223,19 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
-      <category term="Thread" scheme="https://blog.loong.io/tags/Thread/"/>
+      <category term="Thread" scheme="https://blog.qipo.net/tags/Thread/"/>
     
   </entry>
   
   <entry>
     <title>Java 基础类库</title>
-    <link href="https://blog.loong.io/2019/09/02/java-base-class/"/>
-    <id>https://blog.loong.io/2019/09/02/java-base-class/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-base-class/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-base-class/</id>
     <published>2019-09-02T14:18:23.000Z</published>
     <updated>2020-06-03T02:37:45.361Z</updated>
     
@@ -250,17 +250,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java数字操作类</title>
-    <link href="https://blog.loong.io/2019/09/02/java-math/"/>
-    <id>https://blog.loong.io/2019/09/02/java-math/</id>
+    <link href="https://blog.qipo.net/2019/09/02/java-math/"/>
+    <id>https://blog.qipo.net/2019/09/02/java-math/</id>
     <published>2019-09-02T13:59:40.000Z</published>
     <updated>2020-06-03T02:37:45.363Z</updated>
     
@@ -276,17 +276,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>centos7 离线安装Nginx</title>
-    <link href="https://blog.loong.io/2019/08/26/nginx/"/>
-    <id>https://blog.loong.io/2019/08/26/nginx/</id>
+    <link href="https://blog.qipo.net/2019/08/26/nginx/"/>
+    <id>https://blog.qipo.net/2019/08/26/nginx/</id>
     <published>2019-08-26T00:06:46.000Z</published>
     <updated>2020-06-03T02:37:45.359Z</updated>
     
@@ -301,19 +301,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://blog.loong.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://blog.loong.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/tags/Linux/"/>
     
-      <category term="Nginx" scheme="https://blog.loong.io/tags/Nginx/"/>
+      <category term="Nginx" scheme="https://blog.qipo.net/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>断点续传（Nodejs示例）</title>
-    <link href="https://blog.loong.io/2019/08/07/breakpointResume/"/>
-    <id>https://blog.loong.io/2019/08/07/breakpointResume/</id>
+    <link href="https://blog.qipo.net/2019/08/07/breakpointResume/"/>
+    <id>https://blog.qipo.net/2019/08/07/breakpointResume/</id>
     <published>2019-08-07T07:42:05.000Z</published>
     <updated>2020-06-03T02:37:45.355Z</updated>
     
@@ -330,19 +330,19 @@
     
     </summary>
     
-      <category term="HTTP" scheme="https://blog.loong.io/categories/HTTP/"/>
+      <category term="HTTP" scheme="https://blog.qipo.net/categories/HTTP/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="Node.js" scheme="https://blog.loong.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/tags/Node-js/"/>
     
   </entry>
   
   <entry>
     <title>浏览器直接下载文件而不是尝试打开文件(Nodejs示例)</title>
-    <link href="https://blog.loong.io/2019/08/07/downloadFile/"/>
-    <id>https://blog.loong.io/2019/08/07/downloadFile/</id>
+    <link href="https://blog.qipo.net/2019/08/07/downloadFile/"/>
+    <id>https://blog.qipo.net/2019/08/07/downloadFile/</id>
     <published>2019-08-07T07:40:42.000Z</published>
     <updated>2020-06-03T02:37:45.357Z</updated>
     
@@ -358,21 +358,21 @@
     
     </summary>
     
-      <category term="HTTP" scheme="https://blog.loong.io/categories/HTTP/"/>
+      <category term="HTTP" scheme="https://blog.qipo.net/categories/HTTP/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="HTTP" scheme="https://blog.loong.io/tags/HTTP/"/>
+      <category term="HTTP" scheme="https://blog.qipo.net/tags/HTTP/"/>
     
-      <category term="Node.js" scheme="https://blog.loong.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/tags/Node-js/"/>
     
   </entry>
   
   <entry>
     <title>Java多线程编程</title>
-    <link href="https://blog.loong.io/2019/06/12/Thread/"/>
-    <id>https://blog.loong.io/2019/06/12/Thread/</id>
+    <link href="https://blog.qipo.net/2019/06/12/Thread/"/>
+    <id>https://blog.qipo.net/2019/06/12/Thread/</id>
     <published>2019-06-12T13:31:48.000Z</published>
     <updated>2020-06-03T02:37:45.353Z</updated>
     
@@ -387,17 +387,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java Thread" scheme="https://blog.loong.io/tags/Java-Thread/"/>
+      <category term="Java Thread" scheme="https://blog.qipo.net/tags/Java-Thread/"/>
     
   </entry>
   
   <entry>
     <title>链表</title>
-    <link href="https://blog.loong.io/2019/06/11/LinkedList/"/>
-    <id>https://blog.loong.io/2019/06/11/LinkedList/</id>
+    <link href="https://blog.qipo.net/2019/06/11/LinkedList/"/>
+    <id>https://blog.qipo.net/2019/06/11/LinkedList/</id>
     <published>2019-06-11T02:41:13.000Z</published>
     <updated>2020-06-03T02:37:45.347Z</updated>
     
@@ -413,17 +413,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java函数式编程</title>
-    <link href="https://blog.loong.io/2019/06/07/function/"/>
-    <id>https://blog.loong.io/2019/06/07/function/</id>
+    <link href="https://blog.qipo.net/2019/06/07/function/"/>
+    <id>https://blog.qipo.net/2019/06/07/function/</id>
     <published>2019-06-07T06:10:43.000Z</published>
     <updated>2020-06-03T02:37:45.344Z</updated>
     
@@ -438,17 +438,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java Lambda" scheme="https://blog.loong.io/tags/Java-Lambda/"/>
+      <category term="Java Lambda" scheme="https://blog.qipo.net/tags/Java-Lambda/"/>
     
   </entry>
   
   <entry>
     <title>Java反射机制</title>
-    <link href="https://blog.loong.io/2019/05/17/reflect/"/>
-    <id>https://blog.loong.io/2019/05/17/reflect/</id>
+    <link href="https://blog.qipo.net/2019/05/17/reflect/"/>
+    <id>https://blog.qipo.net/2019/05/17/reflect/</id>
     <published>2019-05-17T09:40:28.000Z</published>
     <updated>2020-06-03T02:37:45.342Z</updated>
     
@@ -464,17 +464,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java reflect" scheme="https://blog.loong.io/tags/Java-reflect/"/>
+      <category term="Java reflect" scheme="https://blog.qipo.net/tags/Java-reflect/"/>
     
   </entry>
   
   <entry>
     <title>Android中活动（Activity）中的基本用法</title>
-    <link href="https://blog.loong.io/2019/05/04/activityBasic/"/>
-    <id>https://blog.loong.io/2019/05/04/activityBasic/</id>
+    <link href="https://blog.qipo.net/2019/05/04/activityBasic/"/>
+    <id>https://blog.qipo.net/2019/05/04/activityBasic/</id>
     <published>2019-05-04T12:47:38.000Z</published>
     <updated>2020-06-03T02:37:45.341Z</updated>
     
@@ -489,17 +489,17 @@
     
     </summary>
     
-      <category term="Android" scheme="https://blog.loong.io/categories/Android/"/>
+      <category term="Android" scheme="https://blog.qipo.net/categories/Android/"/>
     
     
-      <category term="Java Android" scheme="https://blog.loong.io/tags/Java-Android/"/>
+      <category term="Java Android" scheme="https://blog.qipo.net/tags/Java-Android/"/>
     
   </entry>
   
   <entry>
     <title>Android的日志工具Log</title>
-    <link href="https://blog.loong.io/2019/05/02/androidLog/"/>
-    <id>https://blog.loong.io/2019/05/02/androidLog/</id>
+    <link href="https://blog.qipo.net/2019/05/02/androidLog/"/>
+    <id>https://blog.qipo.net/2019/05/02/androidLog/</id>
     <published>2019-05-02T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.340Z</updated>
     
@@ -515,17 +515,17 @@
     
     </summary>
     
-      <category term="Android" scheme="https://blog.loong.io/categories/Android/"/>
+      <category term="Android" scheme="https://blog.qipo.net/categories/Android/"/>
     
     
-      <category term="Java Android" scheme="https://blog.loong.io/tags/Java-Android/"/>
+      <category term="Java Android" scheme="https://blog.qipo.net/tags/Java-Android/"/>
     
   </entry>
   
   <entry>
     <title>Android 简介</title>
-    <link href="https://blog.loong.io/2019/05/01/android/"/>
-    <id>https://blog.loong.io/2019/05/01/android/</id>
+    <link href="https://blog.qipo.net/2019/05/01/android/"/>
+    <id>https://blog.qipo.net/2019/05/01/android/</id>
     <published>2019-05-01T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.339Z</updated>
     
@@ -541,17 +541,17 @@
     
     </summary>
     
-      <category term="Android" scheme="https://blog.loong.io/categories/Android/"/>
+      <category term="Android" scheme="https://blog.qipo.net/categories/Android/"/>
     
     
-      <category term="Java Android" scheme="https://blog.loong.io/tags/Java-Android/"/>
+      <category term="Java Android" scheme="https://blog.qipo.net/tags/Java-Android/"/>
     
   </entry>
   
   <entry>
     <title>Java 异常的捕获与处理</title>
-    <link href="https://blog.loong.io/2019/04/29/Exception/"/>
-    <id>https://blog.loong.io/2019/04/29/Exception/</id>
+    <link href="https://blog.qipo.net/2019/04/29/Exception/"/>
+    <id>https://blog.qipo.net/2019/04/29/Exception/</id>
     <published>2019-04-29T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.338Z</updated>
     
@@ -567,17 +567,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java中的访问控制权限</title>
-    <link href="https://blog.loong.io/2019/04/25/control/"/>
-    <id>https://blog.loong.io/2019/04/25/control/</id>
+    <link href="https://blog.qipo.net/2019/04/25/control/"/>
+    <id>https://blog.qipo.net/2019/04/25/control/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.319Z</updated>
     
@@ -592,17 +592,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java中的jar命令</title>
-    <link href="https://blog.loong.io/2019/04/25/jar/"/>
-    <id>https://blog.loong.io/2019/04/25/jar/</id>
+    <link href="https://blog.qipo.net/2019/04/25/jar/"/>
+    <id>https://blog.qipo.net/2019/04/25/jar/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.334Z</updated>
     
@@ -618,17 +618,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java中的package</title>
-    <link href="https://blog.loong.io/2019/04/25/package/"/>
-    <id>https://blog.loong.io/2019/04/25/package/</id>
+    <link href="https://blog.qipo.net/2019/04/25/package/"/>
+    <id>https://blog.qipo.net/2019/04/25/package/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.311Z</updated>
     
@@ -643,17 +643,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java设计模式-单例设计模式</title>
-    <link href="https://blog.loong.io/2019/04/25/singleton/"/>
-    <id>https://blog.loong.io/2019/04/25/singleton/</id>
+    <link href="https://blog.qipo.net/2019/04/25/singleton/"/>
+    <id>https://blog.qipo.net/2019/04/25/singleton/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.337Z</updated>
     
@@ -670,17 +670,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java设计模式-多例设计模式</title>
-    <link href="https://blog.loong.io/2019/04/25/multiton/"/>
-    <id>https://blog.loong.io/2019/04/25/multiton/</id>
+    <link href="https://blog.qipo.net/2019/04/25/multiton/"/>
+    <id>https://blog.qipo.net/2019/04/25/multiton/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.336Z</updated>
     
@@ -697,17 +697,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java Object类</title>
-    <link href="https://blog.loong.io/2019/04/25/Object/"/>
-    <id>https://blog.loong.io/2019/04/25/Object/</id>
+    <link href="https://blog.qipo.net/2019/04/25/Object/"/>
+    <id>https://blog.qipo.net/2019/04/25/Object/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.312Z</updated>
     
@@ -722,17 +722,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java中的注解</title>
-    <link href="https://blog.loong.io/2019/04/25/annotation/"/>
-    <id>https://blog.loong.io/2019/04/25/annotation/</id>
+    <link href="https://blog.qipo.net/2019/04/25/annotation/"/>
+    <id>https://blog.qipo.net/2019/04/25/annotation/</id>
     <published>2019-04-25T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.316Z</updated>
     
@@ -747,17 +747,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>海康摄像头rtsp</title>
-    <link href="https://blog.loong.io/2018/11/23/rtsp/"/>
-    <id>https://blog.loong.io/2018/11/23/rtsp/</id>
+    <link href="https://blog.qipo.net/2018/11/23/rtsp/"/>
+    <id>https://blog.qipo.net/2018/11/23/rtsp/</id>
     <published>2018-11-23T06:44:27.000Z</published>
     <updated>2020-06-03T02:37:45.310Z</updated>
     
@@ -773,17 +773,17 @@
     
     </summary>
     
-      <category term="rtsp" scheme="https://blog.loong.io/categories/rtsp/"/>
+      <category term="rtsp" scheme="https://blog.qipo.net/categories/rtsp/"/>
     
     
-      <category term="rtsp" scheme="https://blog.loong.io/tags/rtsp/"/>
+      <category term="rtsp" scheme="https://blog.qipo.net/tags/rtsp/"/>
     
   </entry>
   
   <entry>
     <title>Ionic3打包APP</title>
-    <link href="https://blog.loong.io/2018/10/24/ionic3/"/>
-    <id>https://blog.loong.io/2018/10/24/ionic3/</id>
+    <link href="https://blog.qipo.net/2018/10/24/ionic3/"/>
+    <id>https://blog.qipo.net/2018/10/24/ionic3/</id>
     <published>2018-10-24T06:42:50.000Z</published>
     <updated>2020-06-03T02:37:45.309Z</updated>
     
@@ -799,17 +799,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="Ionic" scheme="https://blog.loong.io/tags/Ionic/"/>
+      <category term="Ionic" scheme="https://blog.qipo.net/tags/Ionic/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript正则表达式完美实现身份证校验功能</title>
-    <link href="https://blog.loong.io/2018/09/29/js-verify/"/>
-    <id>https://blog.loong.io/2018/09/29/js-verify/</id>
+    <link href="https://blog.qipo.net/2018/09/29/js-verify/"/>
+    <id>https://blog.qipo.net/2018/09/29/js-verify/</id>
     <published>2018-09-29T02:56:50.000Z</published>
     <updated>2020-06-03T02:37:45.308Z</updated>
     
@@ -830,19 +830,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="regexp" scheme="https://blog.loong.io/tags/regexp/"/>
+      <category term="regexp" scheme="https://blog.qipo.net/tags/regexp/"/>
     
   </entry>
   
   <entry>
     <title>接口</title>
-    <link href="https://blog.loong.io/2018/09/18/interface/"/>
-    <id>https://blog.loong.io/2018/09/18/interface/</id>
+    <link href="https://blog.qipo.net/2018/09/18/interface/"/>
+    <id>https://blog.qipo.net/2018/09/18/interface/</id>
     <published>2018-09-18T12:37:57.000Z</published>
     <updated>2020-06-03T02:37:45.307Z</updated>
     
@@ -858,17 +858,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>包装类</title>
-    <link href="https://blog.loong.io/2018/09/14/wrapperClass/"/>
-    <id>https://blog.loong.io/2018/09/14/wrapperClass/</id>
+    <link href="https://blog.qipo.net/2018/09/14/wrapperClass/"/>
+    <id>https://blog.qipo.net/2018/09/14/wrapperClass/</id>
     <published>2018-09-14T13:21:39.000Z</published>
     <updated>2020-06-03T02:37:45.306Z</updated>
     
@@ -883,17 +883,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>markdown</title>
-    <link href="https://blog.loong.io/2018/09/11/markdown/"/>
-    <id>https://blog.loong.io/2018/09/11/markdown/</id>
+    <link href="https://blog.qipo.net/2018/09/11/markdown/"/>
+    <id>https://blog.qipo.net/2018/09/11/markdown/</id>
     <published>2018-09-11T12:43:30.000Z</published>
     <updated>2020-06-03T02:37:45.305Z</updated>
     
@@ -909,17 +909,17 @@
     
     </summary>
     
-      <category term="markdown" scheme="https://blog.loong.io/categories/markdown/"/>
+      <category term="markdown" scheme="https://blog.qipo.net/categories/markdown/"/>
     
     
-      <category term="markdown" scheme="https://blog.loong.io/tags/markdown/"/>
+      <category term="markdown" scheme="https://blog.qipo.net/tags/markdown/"/>
     
   </entry>
   
   <entry>
     <title>npm package.json属性详解</title>
-    <link href="https://blog.loong.io/2018/09/10/package/"/>
-    <id>https://blog.loong.io/2018/09/10/package/</id>
+    <link href="https://blog.qipo.net/2018/09/10/package/"/>
+    <id>https://blog.qipo.net/2018/09/10/package/</id>
     <published>2018-09-10T13:07:25.000Z</published>
     <updated>2020-06-03T02:37:45.304Z</updated>
     
@@ -934,19 +934,19 @@
     
     </summary>
     
-      <category term="Node.js" scheme="https://blog.loong.io/categories/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/categories/Node-js/"/>
     
     
-      <category term="Node.js" scheme="https://blog.loong.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/tags/Node-js/"/>
     
-      <category term="NPM" scheme="https://blog.loong.io/tags/NPM/"/>
+      <category term="NPM" scheme="https://blog.qipo.net/tags/NPM/"/>
     
   </entry>
   
   <entry>
     <title>Linux常用命令大全</title>
-    <link href="https://blog.loong.io/2018/07/08/linux/"/>
-    <id>https://blog.loong.io/2018/07/08/linux/</id>
+    <link href="https://blog.qipo.net/2018/07/08/linux/"/>
+    <id>https://blog.qipo.net/2018/07/08/linux/</id>
     <published>2018-07-08T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.301Z</updated>
     
@@ -962,17 +962,17 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://blog.loong.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://blog.loong.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript深度克隆</title>
-    <link href="https://blog.loong.io/2018/07/08/deepcopy/"/>
-    <id>https://blog.loong.io/2018/07/08/deepcopy/</id>
+    <link href="https://blog.qipo.net/2018/07/08/deepcopy/"/>
+    <id>https://blog.qipo.net/2018/07/08/deepcopy/</id>
     <published>2018-07-08T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.282Z</updated>
     
@@ -989,17 +989,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>NPM 国内慢的问题解决</title>
-    <link href="https://blog.loong.io/2018/06/26/npm/"/>
-    <id>https://blog.loong.io/2018/06/26/npm/</id>
+    <link href="https://blog.qipo.net/2018/06/26/npm/"/>
+    <id>https://blog.qipo.net/2018/06/26/npm/</id>
     <published>2018-06-26T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.279Z</updated>
     
@@ -1016,19 +1016,19 @@
     
     </summary>
     
-      <category term="Node.js" scheme="https://blog.loong.io/categories/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/categories/Node-js/"/>
     
     
-      <category term="Node.js" scheme="https://blog.loong.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/tags/Node-js/"/>
     
-      <category term="NPM" scheme="https://blog.loong.io/tags/NPM/"/>
+      <category term="NPM" scheme="https://blog.qipo.net/tags/NPM/"/>
     
   </entry>
   
   <entry>
     <title>Linux Node.js安装方式</title>
-    <link href="https://blog.loong.io/2018/06/22/node/"/>
-    <id>https://blog.loong.io/2018/06/22/node/</id>
+    <link href="https://blog.qipo.net/2018/06/22/node/"/>
+    <id>https://blog.qipo.net/2018/06/22/node/</id>
     <published>2018-06-22T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.278Z</updated>
     
@@ -1044,19 +1044,19 @@
     
     </summary>
     
-      <category term="Node.js" scheme="https://blog.loong.io/categories/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/categories/Node-js/"/>
     
     
-      <category term="Linux" scheme="https://blog.loong.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/tags/Linux/"/>
     
-      <category term="Node.js" scheme="https://blog.loong.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/tags/Node-js/"/>
     
   </entry>
   
   <entry>
     <title>Java 抽象类的定义以及使用</title>
-    <link href="https://blog.loong.io/2018/03/08/java/"/>
-    <id>https://blog.loong.io/2018/03/08/java/</id>
+    <link href="https://blog.qipo.net/2018/03/08/java/"/>
+    <id>https://blog.qipo.net/2018/03/08/java/</id>
     <published>2018-03-08T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.277Z</updated>
     
@@ -1072,17 +1072,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 覆写</title>
-    <link href="https://blog.loong.io/2018/02/17/java/"/>
-    <id>https://blog.loong.io/2018/02/17/java/</id>
+    <link href="https://blog.qipo.net/2018/02/17/java/"/>
+    <id>https://blog.qipo.net/2018/02/17/java/</id>
     <published>2018-02-17T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.273Z</updated>
     
@@ -1098,17 +1098,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 多态性</title>
-    <link href="https://blog.loong.io/2018/02/17/java3/"/>
-    <id>https://blog.loong.io/2018/02/17/java3/</id>
+    <link href="https://blog.qipo.net/2018/02/17/java3/"/>
+    <id>https://blog.qipo.net/2018/02/17/java3/</id>
     <published>2018-02-17T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.276Z</updated>
     
@@ -1127,17 +1127,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 综合案例：数组操作</title>
-    <link href="https://blog.loong.io/2018/02/17/java1/"/>
-    <id>https://blog.loong.io/2018/02/17/java1/</id>
+    <link href="https://blog.qipo.net/2018/02/17/java1/"/>
+    <id>https://blog.qipo.net/2018/02/17/java1/</id>
     <published>2018-02-17T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.274Z</updated>
     
@@ -1156,17 +1156,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java final关键字</title>
-    <link href="https://blog.loong.io/2018/02/17/java2/"/>
-    <id>https://blog.loong.io/2018/02/17/java2/</id>
+    <link href="https://blog.qipo.net/2018/02/17/java2/"/>
+    <id>https://blog.qipo.net/2018/02/17/java2/</id>
     <published>2018-02-17T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.275Z</updated>
     
@@ -1182,17 +1182,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 继承的定义与使用</title>
-    <link href="https://blog.loong.io/2018/02/16/java/"/>
-    <id>https://blog.loong.io/2018/02/16/java/</id>
+    <link href="https://blog.qipo.net/2018/02/16/java/"/>
+    <id>https://blog.qipo.net/2018/02/16/java/</id>
     <published>2018-02-16T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.272Z</updated>
     
@@ -1208,17 +1208,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 代码块</title>
-    <link href="https://blog.loong.io/2018/02/15/java1/"/>
-    <id>https://blog.loong.io/2018/02/15/java1/</id>
+    <link href="https://blog.qipo.net/2018/02/15/java1/"/>
+    <id>https://blog.qipo.net/2018/02/15/java1/</id>
     <published>2018-02-15T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.269Z</updated>
     
@@ -1234,17 +1234,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java static关键字</title>
-    <link href="https://blog.loong.io/2018/02/15/java/"/>
-    <id>https://blog.loong.io/2018/02/15/java/</id>
+    <link href="https://blog.qipo.net/2018/02/15/java/"/>
+    <id>https://blog.qipo.net/2018/02/15/java/</id>
     <published>2018-02-15T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.211Z</updated>
     
@@ -1260,17 +1260,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 内部类的定义和使用</title>
-    <link href="https://blog.loong.io/2018/02/15/java2/"/>
-    <id>https://blog.loong.io/2018/02/15/java2/</id>
+    <link href="https://blog.qipo.net/2018/02/15/java2/"/>
+    <id>https://blog.qipo.net/2018/02/15/java2/</id>
     <published>2018-02-15T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.271Z</updated>
     
@@ -1286,17 +1286,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 综合案例:角色与权限设置</title>
-    <link href="https://blog.loong.io/2018/02/14/java1/"/>
-    <id>https://blog.loong.io/2018/02/14/java1/</id>
+    <link href="https://blog.qipo.net/2018/02/14/java1/"/>
+    <id>https://blog.qipo.net/2018/02/14/java1/</id>
     <published>2018-02-14T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.198Z</updated>
     
@@ -1316,17 +1316,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 综合案例：数据表与简单Java类（多对多）</title>
-    <link href="https://blog.loong.io/2018/02/14/java/"/>
-    <id>https://blog.loong.io/2018/02/14/java/</id>
+    <link href="https://blog.qipo.net/2018/02/14/java/"/>
+    <id>https://blog.qipo.net/2018/02/14/java/</id>
     <published>2018-02-14T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.210Z</updated>
     
@@ -1346,17 +1346,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 引用传递分析</title>
-    <link href="https://blog.loong.io/2018/02/13/java/"/>
-    <id>https://blog.loong.io/2018/02/13/java/</id>
+    <link href="https://blog.qipo.net/2018/02/13/java/"/>
+    <id>https://blog.qipo.net/2018/02/13/java/</id>
     <published>2018-02-13T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.203Z</updated>
     
@@ -1373,17 +1373,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java this关键字</title>
-    <link href="https://blog.loong.io/2018/02/13/java/"/>
-    <id>https://blog.loong.io/2018/02/13/java/</id>
+    <link href="https://blog.qipo.net/2018/02/13/java/"/>
+    <id>https://blog.qipo.net/2018/02/13/java/</id>
     <published>2018-02-13T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.204Z</updated>
     
@@ -1404,17 +1404,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 引用传递实际应用</title>
-    <link href="https://blog.loong.io/2018/02/13/java2/"/>
-    <id>https://blog.loong.io/2018/02/13/java2/</id>
+    <link href="https://blog.qipo.net/2018/02/13/java2/"/>
+    <id>https://blog.qipo.net/2018/02/13/java2/</id>
     <published>2018-02-13T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.207Z</updated>
     
@@ -1431,17 +1431,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 综合案例：对象比较</title>
-    <link href="https://blog.loong.io/2018/02/13/java1/"/>
-    <id>https://blog.loong.io/2018/02/13/java1/</id>
+    <link href="https://blog.qipo.net/2018/02/13/java1/"/>
+    <id>https://blog.qipo.net/2018/02/13/java1/</id>
     <published>2018-02-13T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.206Z</updated>
     
@@ -1458,17 +1458,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java 综合案例：数据表与简单Java类（一对多）</title>
-    <link href="https://blog.loong.io/2018/02/13/java3/"/>
-    <id>https://blog.loong.io/2018/02/13/java3/</id>
+    <link href="https://blog.qipo.net/2018/02/13/java3/"/>
+    <id>https://blog.qipo.net/2018/02/13/java3/</id>
     <published>2018-02-13T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.208Z</updated>
     
@@ -1487,17 +1487,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java String类的常用方法</title>
-    <link href="https://blog.loong.io/2018/01/31/java/"/>
-    <id>https://blog.loong.io/2018/01/31/java/</id>
+    <link href="https://blog.qipo.net/2018/01/31/java/"/>
+    <id>https://blog.qipo.net/2018/01/31/java/</id>
     <published>2018-01-31T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.202Z</updated>
     
@@ -1514,17 +1514,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java String类的基本特点</title>
-    <link href="https://blog.loong.io/2018/01/27/java/"/>
-    <id>https://blog.loong.io/2018/01/27/java/</id>
+    <link href="https://blog.qipo.net/2018/01/27/java/"/>
+    <id>https://blog.qipo.net/2018/01/27/java/</id>
     <published>2018-01-27T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.200Z</updated>
     
@@ -1540,17 +1540,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java数组的定义与使用</title>
-    <link href="https://blog.loong.io/2018/01/03/java/"/>
-    <id>https://blog.loong.io/2018/01/03/java/</id>
+    <link href="https://blog.qipo.net/2018/01/03/java/"/>
+    <id>https://blog.qipo.net/2018/01/03/java/</id>
     <published>2018-01-03T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.197Z</updated>
     
@@ -1566,17 +1566,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java类与对象</title>
-    <link href="https://blog.loong.io/2018/01/02/java/"/>
-    <id>https://blog.loong.io/2018/01/02/java/</id>
+    <link href="https://blog.qipo.net/2018/01/02/java/"/>
+    <id>https://blog.qipo.net/2018/01/02/java/</id>
     <published>2018-01-02T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.194Z</updated>
     
@@ -1592,17 +1592,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java面向对象简介</title>
-    <link href="https://blog.loong.io/2018/01/01/java/"/>
-    <id>https://blog.loong.io/2018/01/01/java/</id>
+    <link href="https://blog.qipo.net/2018/01/01/java/"/>
+    <id>https://blog.qipo.net/2018/01/01/java/</id>
     <published>2018-01-01T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.189Z</updated>
     
@@ -1618,17 +1618,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java运算符</title>
-    <link href="https://blog.loong.io/2017/12/23/java/"/>
-    <id>https://blog.loong.io/2017/12/23/java/</id>
+    <link href="https://blog.qipo.net/2017/12/23/java/"/>
+    <id>https://blog.qipo.net/2017/12/23/java/</id>
     <published>2017-12-23T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.180Z</updated>
     
@@ -1644,17 +1644,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java程序逻辑控制</title>
-    <link href="https://blog.loong.io/2017/12/22/java/"/>
-    <id>https://blog.loong.io/2017/12/22/java/</id>
+    <link href="https://blog.qipo.net/2017/12/22/java/"/>
+    <id>https://blog.qipo.net/2017/12/22/java/</id>
     <published>2017-12-22T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.180Z</updated>
     
@@ -1670,17 +1670,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java方法的定义和使用</title>
-    <link href="https://blog.loong.io/2017/12/21/java/"/>
-    <id>https://blog.loong.io/2017/12/21/java/</id>
+    <link href="https://blog.qipo.net/2017/12/21/java/"/>
+    <id>https://blog.qipo.net/2017/12/21/java/</id>
     <published>2017-12-21T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.180Z</updated>
     
@@ -1696,17 +1696,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java基本数据类型划分</title>
-    <link href="https://blog.loong.io/2017/11/03/java/"/>
-    <id>https://blog.loong.io/2017/11/03/java/</id>
+    <link href="https://blog.qipo.net/2017/11/03/java/"/>
+    <id>https://blog.qipo.net/2017/11/03/java/</id>
     <published>2017-11-03T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.179Z</updated>
     
@@ -1722,17 +1722,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java程序基本概念</title>
-    <link href="https://blog.loong.io/2017/11/02/java/"/>
-    <id>https://blog.loong.io/2017/11/02/java/</id>
+    <link href="https://blog.qipo.net/2017/11/02/java/"/>
+    <id>https://blog.qipo.net/2017/11/02/java/</id>
     <published>2017-11-02T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.177Z</updated>
     
@@ -1748,17 +1748,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java入门</title>
-    <link href="https://blog.loong.io/2017/11/01/java/"/>
-    <id>https://blog.loong.io/2017/11/01/java/</id>
+    <link href="https://blog.qipo.net/2017/11/01/java/"/>
+    <id>https://blog.qipo.net/2017/11/01/java/</id>
     <published>2017-11-01T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.175Z</updated>
     
@@ -1773,17 +1773,17 @@
     
     </summary>
     
-      <category term="Java" scheme="https://blog.loong.io/categories/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://blog.loong.io/tags/Java/"/>
+      <category term="Java" scheme="https://blog.qipo.net/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>前端必备demo演示网站</title>
-    <link href="https://blog.loong.io/2017/10/27/demo/"/>
-    <id>https://blog.loong.io/2017/10/27/demo/</id>
+    <link href="https://blog.qipo.net/2017/10/27/demo/"/>
+    <id>https://blog.qipo.net/2017/10/27/demo/</id>
     <published>2017-10-27T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.173Z</updated>
     
@@ -1798,21 +1798,21 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>跨域</title>
-    <link href="https://blog.loong.io/2017/10/25/cors/"/>
-    <id>https://blog.loong.io/2017/10/25/cors/</id>
+    <link href="https://blog.qipo.net/2017/10/25/cors/"/>
+    <id>https://blog.qipo.net/2017/10/25/cors/</id>
     <published>2017-10-25T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.171Z</updated>
     
@@ -1828,17 +1828,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>html标签中meta属性使用介绍</title>
-    <link href="https://blog.loong.io/2017/10/24/meta/"/>
-    <id>https://blog.loong.io/2017/10/24/meta/</id>
+    <link href="https://blog.qipo.net/2017/10/24/meta/"/>
+    <id>https://blog.qipo.net/2017/10/24/meta/</id>
     <published>2017-10-24T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.169Z</updated>
     
@@ -1853,17 +1853,17 @@
     
     </summary>
     
-      <category term="HTML" scheme="https://blog.loong.io/categories/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/categories/HTML/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>Node.js导论</title>
-    <link href="https://blog.loong.io/2017/10/23/node/"/>
-    <id>https://blog.loong.io/2017/10/23/node/</id>
+    <link href="https://blog.qipo.net/2017/10/23/node/"/>
+    <id>https://blog.qipo.net/2017/10/23/node/</id>
     <published>2017-10-23T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.167Z</updated>
     
@@ -1878,19 +1878,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="Node.js" scheme="https://blog.loong.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="https://blog.qipo.net/tags/Node-js/"/>
     
   </entry>
   
   <entry>
     <title>元素位置操作</title>
-    <link href="https://blog.loong.io/2017/10/10/offsetscroll/"/>
-    <id>https://blog.loong.io/2017/10/10/offsetscroll/</id>
+    <link href="https://blog.qipo.net/2017/10/10/offsetscroll/"/>
+    <id>https://blog.qipo.net/2017/10/10/offsetscroll/</id>
     <published>2017-10-10T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.165Z</updated>
     
@@ -1906,19 +1906,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>JSON XML</title>
-    <link href="https://blog.loong.io/2017/09/21/JSON/"/>
-    <id>https://blog.loong.io/2017/09/21/JSON/</id>
+    <link href="https://blog.qipo.net/2017/09/21/JSON/"/>
+    <id>https://blog.qipo.net/2017/09/21/JSON/</id>
     <published>2017-09-21T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.162Z</updated>
     
@@ -1933,21 +1933,21 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="JSON" scheme="https://blog.loong.io/tags/JSON/"/>
+      <category term="JSON" scheme="https://blog.qipo.net/tags/JSON/"/>
     
-      <category term="XML" scheme="https://blog.loong.io/tags/XML/"/>
+      <category term="XML" scheme="https://blog.qipo.net/tags/XML/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript面向对象</title>
-    <link href="https://blog.loong.io/2017/09/21/object/"/>
-    <id>https://blog.loong.io/2017/09/21/object/</id>
+    <link href="https://blog.qipo.net/2017/09/21/object/"/>
+    <id>https://blog.qipo.net/2017/09/21/object/</id>
     <published>2017-09-21T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.159Z</updated>
     
@@ -1962,17 +1962,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript闭包</title>
-    <link href="https://blog.loong.io/2017/09/21/closure/"/>
-    <id>https://blog.loong.io/2017/09/21/closure/</id>
+    <link href="https://blog.qipo.net/2017/09/21/closure/"/>
+    <id>https://blog.qipo.net/2017/09/21/closure/</id>
     <published>2017-09-21T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.156Z</updated>
     
@@ -1988,17 +1988,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript内置对象Math,Date</title>
-    <link href="https://blog.loong.io/2017/09/20/date/"/>
-    <id>https://blog.loong.io/2017/09/20/date/</id>
+    <link href="https://blog.qipo.net/2017/09/20/date/"/>
+    <id>https://blog.qipo.net/2017/09/20/date/</id>
     <published>2017-09-20T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.154Z</updated>
     
@@ -2013,17 +2013,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScriptDOM对象和jQuery对象的互相转换</title>
-    <link href="https://blog.loong.io/2017/09/19/object/"/>
-    <id>https://blog.loong.io/2017/09/19/object/</id>
+    <link href="https://blog.qipo.net/2017/09/19/object/"/>
+    <id>https://blog.qipo.net/2017/09/19/object/</id>
     <published>2017-09-19T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.151Z</updated>
     
@@ -2042,19 +2042,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript字符串</title>
-    <link href="https://blog.loong.io/2017/09/12/string/"/>
-    <id>https://blog.loong.io/2017/09/12/string/</id>
+    <link href="https://blog.qipo.net/2017/09/12/string/"/>
+    <id>https://blog.qipo.net/2017/09/12/string/</id>
     <published>2017-09-12T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.150Z</updated>
     
@@ -2071,17 +2071,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript基础进阶</title>
-    <link href="https://blog.loong.io/2017/09/12/JAVAScript-2/"/>
-    <id>https://blog.loong.io/2017/09/12/JAVAScript-2/</id>
+    <link href="https://blog.qipo.net/2017/09/12/JAVAScript-2/"/>
+    <id>https://blog.qipo.net/2017/09/12/JAVAScript-2/</id>
     <published>2017-09-12T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.146Z</updated>
     
@@ -2096,17 +2096,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript定时器</title>
-    <link href="https://blog.loong.io/2017/09/12/time/"/>
-    <id>https://blog.loong.io/2017/09/12/time/</id>
+    <link href="https://blog.qipo.net/2017/09/12/time/"/>
+    <id>https://blog.qipo.net/2017/09/12/time/</id>
     <published>2017-09-12T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.152Z</updated>
     
@@ -2122,17 +2122,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>浏览器兼容问题</title>
-    <link href="https://blog.loong.io/2017/09/10/fx/"/>
-    <id>https://blog.loong.io/2017/09/10/fx/</id>
+    <link href="https://blog.qipo.net/2017/09/10/fx/"/>
+    <id>https://blog.qipo.net/2017/09/10/fx/</id>
     <published>2017-09-10T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.143Z</updated>
     
@@ -2147,19 +2147,19 @@
     
     </summary>
     
-      <category term="HTML" scheme="https://blog.loong.io/categories/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/categories/HTML/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>引入多个不同版本的jQuery</title>
-    <link href="https://blog.loong.io/2017/09/10/conflict/"/>
-    <id>https://blog.loong.io/2017/09/10/conflict/</id>
+    <link href="https://blog.qipo.net/2017/09/10/conflict/"/>
+    <id>https://blog.qipo.net/2017/09/10/conflict/</id>
     <published>2017-09-10T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.142Z</updated>
     
@@ -2174,19 +2174,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>CSS </title>
-    <link href="https://blog.loong.io/2017/09/10/hack/"/>
-    <id>https://blog.loong.io/2017/09/10/hack/</id>
+    <link href="https://blog.qipo.net/2017/09/10/hack/"/>
+    <id>https://blog.qipo.net/2017/09/10/hack/</id>
     <published>2017-09-10T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.144Z</updated>
     
@@ -2202,19 +2202,19 @@
     
     </summary>
     
-      <category term="HTML" scheme="https://blog.loong.io/categories/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/categories/HTML/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>CSS3新特性</title>
-    <link href="https://blog.loong.io/2017/08/31/css3/"/>
-    <id>https://blog.loong.io/2017/08/31/css3/</id>
+    <link href="https://blog.qipo.net/2017/08/31/css3/"/>
+    <id>https://blog.qipo.net/2017/08/31/css3/</id>
     <published>2017-08-31T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.137Z</updated>
     
@@ -2229,21 +2229,21 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://blog.loong.io/categories/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/categories/CSS/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
-      <category term="CSS3" scheme="https://blog.loong.io/tags/CSS3/"/>
+      <category term="CSS3" scheme="https://blog.qipo.net/tags/CSS3/"/>
     
   </entry>
   
   <entry>
     <title>媒体查询</title>
-    <link href="https://blog.loong.io/2017/08/31/media/"/>
-    <id>https://blog.loong.io/2017/08/31/media/</id>
+    <link href="https://blog.qipo.net/2017/08/31/media/"/>
+    <id>https://blog.qipo.net/2017/08/31/media/</id>
     <published>2017-08-31T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.140Z</updated>
     
@@ -2258,21 +2258,21 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://blog.loong.io/categories/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/categories/CSS/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
-      <category term="CSS3" scheme="https://blog.loong.io/tags/CSS3/"/>
+      <category term="CSS3" scheme="https://blog.qipo.net/tags/CSS3/"/>
     
   </entry>
   
   <entry>
     <title>伸缩盒子(flex)</title>
-    <link href="https://blog.loong.io/2017/08/31/fiex/"/>
-    <id>https://blog.loong.io/2017/08/31/fiex/</id>
+    <link href="https://blog.qipo.net/2017/08/31/fiex/"/>
+    <id>https://blog.qipo.net/2017/08/31/fiex/</id>
     <published>2017-08-31T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.139Z</updated>
     
@@ -2287,21 +2287,21 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://blog.loong.io/categories/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/categories/CSS/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
-      <category term="CSS3" scheme="https://blog.loong.io/tags/CSS3/"/>
+      <category term="CSS3" scheme="https://blog.qipo.net/tags/CSS3/"/>
     
   </entry>
   
   <entry>
     <title>Ajax</title>
-    <link href="https://blog.loong.io/2017/08/29/ajax/"/>
-    <id>https://blog.loong.io/2017/08/29/ajax/</id>
+    <link href="https://blog.qipo.net/2017/08/29/ajax/"/>
+    <id>https://blog.qipo.net/2017/08/29/ajax/</id>
     <published>2017-08-29T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.135Z</updated>
     
@@ -2317,21 +2317,21 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
-      <category term="AJAX" scheme="https://blog.loong.io/tags/AJAX/"/>
+      <category term="AJAX" scheme="https://blog.qipo.net/tags/AJAX/"/>
     
   </entry>
   
   <entry>
     <title>HTTP</title>
-    <link href="https://blog.loong.io/2017/08/28/http/"/>
-    <id>https://blog.loong.io/2017/08/28/http/</id>
+    <link href="https://blog.qipo.net/2017/08/28/http/"/>
+    <id>https://blog.qipo.net/2017/08/28/http/</id>
     <published>2017-08-28T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.132Z</updated>
     
@@ -2346,17 +2346,17 @@
     
     </summary>
     
-      <category term="HTTP" scheme="https://blog.loong.io/categories/HTTP/"/>
+      <category term="HTTP" scheme="https://blog.qipo.net/categories/HTTP/"/>
     
     
-      <category term="HTTP" scheme="https://blog.loong.io/tags/HTTP/"/>
+      <category term="HTTP" scheme="https://blog.qipo.net/tags/HTTP/"/>
     
   </entry>
   
   <entry>
     <title>课后题</title>
-    <link href="https://blog.loong.io/2017/08/28/test1/"/>
-    <id>https://blog.loong.io/2017/08/28/test1/</id>
+    <link href="https://blog.qipo.net/2017/08/28/test1/"/>
+    <id>https://blog.qipo.net/2017/08/28/test1/</id>
     <published>2017-08-28T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.134Z</updated>
     
@@ -2375,21 +2375,21 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>HTML中form表单</title>
-    <link href="https://blog.loong.io/2017/08/24/form/"/>
-    <id>https://blog.loong.io/2017/08/24/form/</id>
+    <link href="https://blog.qipo.net/2017/08/24/form/"/>
+    <id>https://blog.qipo.net/2017/08/24/form/</id>
     <published>2017-08-24T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.131Z</updated>
     
@@ -2404,19 +2404,19 @@
     
     </summary>
     
-      <category term="HTML" scheme="https://blog.loong.io/categories/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/categories/HTML/"/>
     
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript入门</title>
-    <link href="https://blog.loong.io/2017/08/21/JAVAScript/"/>
-    <id>https://blog.loong.io/2017/08/21/JAVAScript/</id>
+    <link href="https://blog.qipo.net/2017/08/21/JAVAScript/"/>
+    <id>https://blog.qipo.net/2017/08/21/JAVAScript/</id>
     <published>2017-08-21T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.127Z</updated>
     
@@ -2432,17 +2432,17 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>jQuery</title>
-    <link href="https://blog.loong.io/2017/08/21/jQuery/"/>
-    <id>https://blog.loong.io/2017/08/21/jQuery/</id>
+    <link href="https://blog.qipo.net/2017/08/21/jQuery/"/>
+    <id>https://blog.qipo.net/2017/08/21/jQuery/</id>
     <published>2017-08-21T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.129Z</updated>
     
@@ -2457,19 +2457,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>CSS入门</title>
-    <link href="https://blog.loong.io/2017/08/15/CSS/"/>
-    <id>https://blog.loong.io/2017/08/15/CSS/</id>
+    <link href="https://blog.qipo.net/2017/08/15/CSS/"/>
+    <id>https://blog.qipo.net/2017/08/15/CSS/</id>
     <published>2017-08-15T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.112Z</updated>
     
@@ -2484,19 +2484,19 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://blog.loong.io/categories/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/categories/CSS/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>CSS盒子模型</title>
-    <link href="https://blog.loong.io/2017/08/15/box/"/>
-    <id>https://blog.loong.io/2017/08/15/box/</id>
+    <link href="https://blog.qipo.net/2017/08/15/box/"/>
+    <id>https://blog.qipo.net/2017/08/15/box/</id>
     <published>2017-08-15T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.124Z</updated>
     
@@ -2512,19 +2512,19 @@
     
     </summary>
     
-      <category term="CSS" scheme="https://blog.loong.io/categories/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/categories/CSS/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
-      <category term="CSS" scheme="https://blog.loong.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://blog.qipo.net/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>HTML基础</title>
-    <link href="https://blog.loong.io/2017/08/14/HTML_base/"/>
-    <id>https://blog.loong.io/2017/08/14/HTML_base/</id>
+    <link href="https://blog.qipo.net/2017/08/14/HTML_base/"/>
+    <id>https://blog.qipo.net/2017/08/14/HTML_base/</id>
     <published>2017-08-14T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.099Z</updated>
     
@@ -2540,17 +2540,17 @@
     
     </summary>
     
-      <category term="HTML" scheme="https://blog.loong.io/categories/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/categories/HTML/"/>
     
     
-      <category term="HTML" scheme="https://blog.loong.io/tags/HTML/"/>
+      <category term="HTML" scheme="https://blog.qipo.net/tags/HTML/"/>
     
   </entry>
   
   <entry>
     <title>GIT 源码管理(3)</title>
-    <link href="https://blog.loong.io/2017/08/11/git-3/"/>
-    <id>https://blog.loong.io/2017/08/11/git-3/</id>
+    <link href="https://blog.qipo.net/2017/08/11/git-3/"/>
+    <id>https://blog.qipo.net/2017/08/11/git-3/</id>
     <published>2017-08-11T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.096Z</updated>
     
@@ -2566,19 +2566,19 @@
     
     </summary>
     
-      <category term="GIT" scheme="https://blog.loong.io/categories/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/categories/GIT/"/>
     
     
-      <category term="GIT" scheme="https://blog.loong.io/tags/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/tags/GIT/"/>
     
-      <category term="GitHub" scheme="https://blog.loong.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://blog.qipo.net/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>Github的使用</title>
-    <link href="https://blog.loong.io/2017/08/11/github/"/>
-    <id>https://blog.loong.io/2017/08/11/github/</id>
+    <link href="https://blog.qipo.net/2017/08/11/github/"/>
+    <id>https://blog.qipo.net/2017/08/11/github/</id>
     <published>2017-08-11T00:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.097Z</updated>
     
@@ -2594,19 +2594,19 @@
     
     </summary>
     
-      <category term="GIT" scheme="https://blog.loong.io/categories/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/categories/GIT/"/>
     
     
-      <category term="GIT" scheme="https://blog.loong.io/tags/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/tags/GIT/"/>
     
-      <category term="GitHub" scheme="https://blog.loong.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://blog.qipo.net/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>GIT 源码管理(2)</title>
-    <link href="https://blog.loong.io/2017/08/09/git-2/"/>
-    <id>https://blog.loong.io/2017/08/09/git-2/</id>
+    <link href="https://blog.qipo.net/2017/08/09/git-2/"/>
+    <id>https://blog.qipo.net/2017/08/09/git-2/</id>
     <published>2017-08-09T09:20:54.000Z</published>
     <updated>2020-06-03T02:37:45.093Z</updated>
     
@@ -2622,19 +2622,19 @@
     
     </summary>
     
-      <category term="GIT" scheme="https://blog.loong.io/categories/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/categories/GIT/"/>
     
     
-      <category term="GIT" scheme="https://blog.loong.io/tags/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/tags/GIT/"/>
     
-      <category term="GitHub" scheme="https://blog.loong.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://blog.qipo.net/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>GIT 源码管理(1)</title>
-    <link href="https://blog.loong.io/2017/08/09/git/"/>
-    <id>https://blog.loong.io/2017/08/09/git/</id>
+    <link href="https://blog.qipo.net/2017/08/09/git/"/>
+    <id>https://blog.qipo.net/2017/08/09/git/</id>
     <published>2017-08-09T09:16:54.000Z</published>
     <updated>2020-06-03T02:37:45.094Z</updated>
     
@@ -2650,19 +2650,19 @@
     
     </summary>
     
-      <category term="GIT" scheme="https://blog.loong.io/categories/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/categories/GIT/"/>
     
     
-      <category term="GIT" scheme="https://blog.loong.io/tags/GIT/"/>
+      <category term="GIT" scheme="https://blog.qipo.net/tags/GIT/"/>
     
-      <category term="GitHub" scheme="https://blog.loong.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://blog.qipo.net/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>原生和jQuery的Ajax用法</title>
-    <link href="https://blog.loong.io/2017/06/29/ajax/"/>
-    <id>https://blog.loong.io/2017/06/29/ajax/</id>
+    <link href="https://blog.qipo.net/2017/06/29/ajax/"/>
+    <id>https://blog.qipo.net/2017/06/29/ajax/</id>
     <published>2017-06-29T09:14:54.000Z</published>
     <updated>2020-06-03T02:37:45.091Z</updated>
     
@@ -2677,19 +2677,19 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="https://blog.loong.io/categories/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/categories/JavaScript/"/>
     
     
-      <category term="JavaScript" scheme="https://blog.loong.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://blog.qipo.net/tags/JavaScript/"/>
     
-      <category term="jQuery" scheme="https://blog.loong.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="https://blog.qipo.net/tags/jQuery/"/>
     
   </entry>
   
   <entry>
     <title>Linux Shell脚本-3</title>
-    <link href="https://blog.loong.io/2017/06/28/shell/"/>
-    <id>https://blog.loong.io/2017/06/28/shell/</id>
+    <link href="https://blog.qipo.net/2017/06/28/shell/"/>
+    <id>https://blog.qipo.net/2017/06/28/shell/</id>
     <published>2017-06-28T09:14:54.000Z</published>
     <updated>2020-06-03T02:37:45.074Z</updated>
     
@@ -2705,19 +2705,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://blog.loong.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://blog.loong.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/tags/Linux/"/>
     
-      <category term="Shell" scheme="https://blog.loong.io/tags/Shell/"/>
+      <category term="Shell" scheme="https://blog.qipo.net/tags/Shell/"/>
     
   </entry>
   
   <entry>
     <title>Linux Shell脚本-2</title>
-    <link href="https://blog.loong.io/2017/06/27/bashshell/"/>
-    <id>https://blog.loong.io/2017/06/27/bashshell/</id>
+    <link href="https://blog.qipo.net/2017/06/27/bashshell/"/>
+    <id>https://blog.qipo.net/2017/06/27/bashshell/</id>
     <published>2017-06-27T09:14:54.000Z</published>
     <updated>2020-06-03T02:37:45.058Z</updated>
     
@@ -2734,19 +2734,19 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://blog.loong.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://blog.loong.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/tags/Linux/"/>
     
-      <category term="Shell" scheme="https://blog.loong.io/tags/Shell/"/>
+      <category term="Shell" scheme="https://blog.qipo.net/tags/Shell/"/>
     
   </entry>
   
   <entry>
     <title>Linux Shell脚本</title>
-    <link href="https://blog.loong.io/2017/06/26/shell/"/>
-    <id>https://blog.loong.io/2017/06/26/shell/</id>
+    <link href="https://blog.qipo.net/2017/06/26/shell/"/>
+    <id>https://blog.qipo.net/2017/06/26/shell/</id>
     <published>2017-06-26T09:14:54.000Z</published>
     <updated>2020-06-03T02:37:45.056Z</updated>
     
@@ -2761,12 +2761,12 @@
     
     </summary>
     
-      <category term="Linux" scheme="https://blog.loong.io/categories/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/categories/Linux/"/>
     
     
-      <category term="Linux" scheme="https://blog.loong.io/tags/Linux/"/>
+      <category term="Linux" scheme="https://blog.qipo.net/tags/Linux/"/>
     
-      <category term="Shell" scheme="https://blog.loong.io/tags/Shell/"/>
+      <category term="Shell" scheme="https://blog.qipo.net/tags/Shell/"/>
     
   </entry>
   
