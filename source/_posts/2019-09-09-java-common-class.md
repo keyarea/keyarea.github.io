@@ -57,7 +57,7 @@ public class OptionalTest {
 > - 保存数据,允许为null: `public static <T> Optional<T> ofNullable(T able)`;
 > - 空的时候返回其它数据: `public T orElse(T other)`;
 
-![](http://imgs.loong.io/20190908101310_wCY5wM_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190908101310_wCY5wM_Screenshot.jpeg)
 
 范例: 修改程序,按照正规的结构完成
 
@@ -175,7 +175,7 @@ public class ThreadLocalTest {
 }
 ```
 
-![](http://imgs.loong.io/20190908105406_Oh17FM_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190908105406_Oh17FM_Screenshot.jpeg)
 
 对于当前的程序实际上采用的是一种单线程的模式来进行处理的,那么再多线程情况下能否实现完全一致的操作效果呢?为此我们启动三个线程进行处理.
 
@@ -233,7 +233,7 @@ public class ThreadLocalTest {
 
 这个时候消息的处理产生了影响.
 
-![](http://imgs.loong.io/20190908112149_vwSI5h_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190908112149_vwSI5h_Screenshot.jpeg)
 
 在保持Channel(所有发送的通道)核心结构不改变的情况下,需要考虑到每个线程的独立操作问题.那么在这样的情况下就发现对于Channel类而言,除了要保留有发送的消息之外,还应该多存放有一个每一个线程的标记(当前线程),
 那么这个时候我们就可以通过ThreadLocal类来存放数据.在ThreadLocal类里面提供有如下的操作方法:
@@ -243,7 +243,7 @@ public class ThreadLocalTest {
 - 取出数据: `public T get()`;
 - 删除数据: `public void remove()`;
 
-![](http://imgs.loong.io/20190908113324_LYlF82_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190908113324_LYlF82_Screenshot.jpeg)
 
 范例: 解决线程同步问题
 
@@ -335,7 +335,7 @@ public class TimerTest {
 
 ```
 
-![](http://imgs.loong.io/20190908115725_Wqt9ar_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190908115725_Wqt9ar_Screenshot.jpeg)
 
 
 这种定时是由JDK最原始的方式提供的支持,但是实际上开发之中利用此类方式进行的定时处理实现的代码会非常复杂.

@@ -91,7 +91,7 @@ public class ThreadDemo1 {
 
 经过分析以后已经可以确认同步问题所产生的主要原因了,那么下面就需要进行同步问题的解决,但是解决同步问题的关键是什么,是锁.指的是当某一个线程执行操作的时候,其他线程外面等待;
 
-![](http://imgs.loong.io/image/Thread/sync.jpg)
+![](http://imgs.qipo.net/image/Thread/sync.jpg)
 
 如果要想在程序之中实现这把锁的功能,就可以使用synchronized关键字来实现,利用此关键字可以定义我们的同步方法或同步代码快,在同步代码块的操作里面的代码只允许一个线程执行.
 

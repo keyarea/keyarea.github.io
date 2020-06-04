@@ -30,7 +30,7 @@ scroll,offset的使用
 4. `offsetTop`: 获得元素上外边框距离包含该元素的上内边框的距离(经过定位)
 5. `offsetParent`: 获得包含该元素的元素(定位)
 
-![](http://oujvmc3la.bkt.clouddn.com/offset.png)
+![](http://assets.qipo.net/offset.png)
 
 ```
 <!DOCTYPE html>
@@ -179,7 +179,7 @@ scroll是滚动用法，即通过拖动条改变页面位置，scroll相关属�
 3. `scrollLeft` :被隐藏在内容区域左侧的像素数。通过设置这个属性可以改变元素的滚动位置。
 4. `scrollTop` :被隐藏在内容区域上方的像素数。通过设置这个属性可以改变元素的滚动位置。
 
-![](http://oujvmc3la.bkt.clouddn.com/scroll.png)
+![](http://assets.qipo.net/scroll.png)
 
 ```
 <!DOCTYPE html>

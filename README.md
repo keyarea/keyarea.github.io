@@ -1,6 +1,6 @@
 # 我的博客
 
-技术博客：[地址](https://blog.loong.io)
+技术博客：[地址](https://blog.qipo.net)
 
 > 提交hexo源码
 

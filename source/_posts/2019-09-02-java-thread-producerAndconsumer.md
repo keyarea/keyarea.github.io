@@ -22,7 +22,7 @@ category:
 
 既然生产者与消费者是两个队里的线程,那么这两个独立的线程之间就需要有一个数据的保存的集中点,那么可以定义一个Message类进行数据的保存.
 
-![](http://imgs.loong.io/image/Thread/Producer&Comsumer.PNG)
+![](http://imgs.qipo.net/image/Thread/Producer&Comsumer.PNG)
 
 范例: 实现程序的基本结构
 

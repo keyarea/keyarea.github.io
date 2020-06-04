@@ -1013,7 +1013,7 @@ JAVAScript事件的三要素:事件源, 事件, 事件处理程序三部分组�
 
 如果你单击了某个按钮,他们会认为不仅仅发生在按钮上.换句话说,在单击按钮的同时,你也单击了按钮的容器元素,甚至你也单击了整个页面.事件流描述的是从页面中接受时间的顺序.有意思的是ie和netspace开发团队提出了差不多是完全相反的事件流的概念.ie的事件流是事件冒泡流,而netspace是事件捕获流.
 
-![](http://oujvmc3la.bkt.clouddn.com/dom.png)
+![](http://assets.qipo.net/dom.png)
 
 #### 事件冒泡
 
@@ -1632,7 +1632,7 @@ IE的event对象同样也包含与创建它的事件相关的属性和方法.其
 
 DOM为文档提供了结构化表示,并定义了如何通过脚本来访问文档结构.整个文档就是一棵树,树的根是`document`
 
-![](http://oujvmc3la.bkt.clouddn.com/dom.jpg)
+![](http://assets.qipo.net/dom.jpg)
 
 ### node节点
 

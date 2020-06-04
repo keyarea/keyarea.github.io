@@ -118,7 +118,7 @@ extends Object
 implements Serializable, CharSequence
 ```
 
-![](http://imgs.loong.io/20190901133929_g9g485_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190901133929_g9g485_Screenshot.jpeg)
 
 > 现在只要有字符串就可以为CharSequence接口实例化.
 
@@ -206,7 +206,7 @@ class NetMessage implements IMessage {
 > - 关闭方法: `public void close() throws Exception;`
 
 
-![](http://imgs.loong.io/20190901142730_jYHVWN_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190901142730_jYHVWN_Screenshot.jpeg)
 
 > 要想实现自动关闭的处理,除了要使用AutoCloseable之外,还需要结合异常处理语句完成才可以正常调用.
 
@@ -262,7 +262,7 @@ class NetMessage implements IMessage {
 > 由于在每一个JVM进程里面只允许提供有一个Runtime类的对象,所以这个类的构造方法被默认私有化了,那么就证明该类使用的是单例设计模式,并且每一个单例设计模式一定会提供有一个static方法获取本类
 实例.
 
-![](http://imgs.loong.io/20190901144631_8WimLJ_Screenshot.jpeg)
+![](http://imgs.qipo.net/20190901144631_8WimLJ_Screenshot.jpeg)
 
 > 由于Runtime类属于单例设计模式,如果想要获取实例化对象,那么就可以依靠类中的getRuntime()方法完成
 > - 获取实例化对象: `public static Runtime getRuntime();`

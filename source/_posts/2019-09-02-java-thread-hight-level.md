@@ -110,7 +110,7 @@ public class ThreadDemo1 {
 在多线程的定义之中,volatile关键字主要是在属性定义上使用的,表示此属性为直接数据操作,而不进行副本的拷贝处理.
 这样的话在一些书上就将其错误的理解为同步属性了.
 
-![](http://imgs.loong.io/image/Thread/volatile.jpg)
+![](http://imgs.qipo.net/image/Thread/volatile.jpg)
 
 在进行正常的变量处理的时候往往会经历如下的几个步骤:
 

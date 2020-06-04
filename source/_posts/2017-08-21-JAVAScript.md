@@ -21,7 +21,7 @@ JAVAScript一种直译式脚本语言,是一种动态类型.弱类型.基于原�
 * 文档对象模型(DOM),描述处理网页内容的方法和接口.
 * 浏览器对象模型(BOM),描述与浏览器进行交互的方法和接口.
 
-![](http://oujvmc3la.bkt.clouddn.com/js.jpg)
+![](http://assets.qipo.net/js.jpg)
 
 ### 基本特点
 
@@ -118,7 +118,7 @@ if (value){
 
 #### 关键字
 
-![](http://oujvmc3la.bkt.clouddn.com/keywords.png)
+![](http://assets.qipo.net/keywords.png)
 
 > 注意:定义标识符时不要使用关键字和保留字.
 
@@ -247,8 +247,8 @@ console.log(Boolean(10.123));//true
 console.log(Boolean(0));//false
 ```
 
-![](http://oujvmc3la.bkt.clouddn.com/bool1.png)
-![](http://oujvmc3la.bkt.clouddn.com/bool2.png)
+![](http://assets.qipo.net/bool1.png)
+![](http://assets.qipo.net/bool2.png)
 
 #### 数值类型
 

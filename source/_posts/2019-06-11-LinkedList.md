@@ -29,7 +29,7 @@ category:
 为了描述这样的逻辑,可以把每一个存储理解为一个节点,所以此时应该准备出一个节点类,但是这个节点类里面可以
 保存各种数据类型的数据.
 
-![](http://imgs.loong.io/image/linkedlist/linkedList.jpg)
+![](http://imgs.qipo.net/image/linkedlist/linkedList.jpg)
 
 虽然已经清楚了需要通过Node节点来进行数据的保存,但是毕竟这里面需要牵扯到节点的引用处理关系,那么这个引用处理关系
 是由使用者控制吗?这样肯定的不可能,所以应该有一个专门的类来进行节点的引用关系的配置.
@@ -85,7 +85,7 @@ public class LinkDemo {
 > 这样肯定不可能,所以应该有一个专门的类进行节点的引用关系的配置.因为真实的使用者关心的
 只是数据的存储与获取,所以现在应该对我们的Node类进行包装处理.
 
-![](http://imgs.loong.io/image/linkedlist/linkedListStructure.jpg)
+![](http://imgs.qipo.net/image/linkedlist/linkedListStructure.jpg)
 
 ## 数据增加
 
@@ -376,7 +376,7 @@ public class LinkDemo2 {
 数组的形式返回来,那么这个时候就可以定义一个toArray()方法,但是这个时候只能够返回Object型的数组.
 
 
-![](http://imgs.loong.io/image/linkedlist/toArray.jpg)
+![](http://imgs.qipo.net/image/linkedlist/toArray.jpg)
 
 > 1.在ILink接口里面追加新的处理方法;
 
@@ -527,7 +527,7 @@ public class LinkDemo2 {
 链表可以像数组一样进行处理,所以也应该可以像数组一样进行索引数据的获取,在这样的情况下就可以继续利用
 递归的形式来完成.
 
-![](http://imgs.loong.io/image/linkedlist/getDataByIndex.png)
+![](http://imgs.qipo.net/image/linkedlist/getDataByIndex.png)
 
 > 1.在ILink接口里面追加有新的方法
 
@@ -1070,11 +1070,11 @@ public class LinkDemo2 {
 
 * 要删除是根节点数据(LinkImpl与根节点有关，所以这个判断由根节点完成)；
 
-![](http://imgs.loong.io/image/linkedlist/deleteData.png)
+![](http://imgs.qipo.net/image/linkedlist/deleteData.png)
 
 * 要删除的不是根节点数据（由Node类负责）；
 
-![](http://imgs.loong.io/image/linkedlist/deleteData1.png)
+![](http://imgs.qipo.net/image/linkedlist/deleteData1.png)
 
 > 1.在ILink接口里面追加新的删除方法
 
