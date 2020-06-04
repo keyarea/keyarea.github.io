@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,17 +96,17 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="表单在网页中主要负责数据采集功能。一个表单有三个基本组成部分： 表单标签：这里面包含了处理表单数据所用CGI程序的URL以及数据提交到服务器的方法。 表单域：包含了文本框、密码框、隐藏域、多行文本框、复选框、单选框、下拉选择框和文件上传框等。 表单按钮：包括提交按钮、复位按钮和一般按钮；用于将数据传送到服务器上的CGI脚本或者取消输入，还可以用表单按钮来控制其他定义了处理脚本的处理工作。 表单 表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/form.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/input.jpg">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/2017-08-24%2019-24-40%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/select.jpg">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/option.jpg">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/2017-08-24%2019-48-48%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.131Z">
+<meta property="og:image" content="http://assets.qipo.net/form.png">
+<meta property="og:image" content="http://assets.qipo.net/input.jpg">
+<meta property="og:image" content="http://assets.qipo.net/2017-08-24%2019-24-40%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:image" content="http://assets.qipo.net/select.jpg">
+<meta property="og:image" content="http://assets.qipo.net/option.jpg">
+<meta property="og:image" content="http://assets.qipo.net/2017-08-24%2019-48-48%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML中form表单">
 <meta name="twitter:description" content="表单在网页中主要负责数据采集功能。一个表单有三个基本组成部分： 表单标签：这里面包含了处理表单数据所用CGI程序的URL以及数据提交到服务器的方法。 表单域：包含了文本框、密码框、隐藏域、多行文本框、复选框、单选框、下拉选择框和文件上传框等。 表单按钮：包括提交按钮、复位按钮和一般按钮；用于将数据传送到服务器上的CGI脚本或者取消输入，还可以用表单按钮来控制其他定义了处理脚本的处理工作。 表单 表">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/form.png">
+<meta name="twitter:image" content="http://assets.qipo.net/form.png">
 
 
 
@@ -114,7 +114,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -400,7 +400,7 @@
 
       
         <p>表单在网页中主要负责数据采集功能。一个表单有三个基本组成部分： 表单标签：这里面包含了处理表单数据所用CGI程序的URL以及数据提交到服务器的方法。 表单域：包含了文本框、密码框、隐藏域、多行文本框、复选框、单选框、下拉选择框和文件上传框等。 表单按钮：包括提交按钮、复位按钮和一般按钮；用于将数据传送到服务器上的CGI脚本或者取消输入，还可以用表单按钮来控制其他定义了处理脚本的处理工作。</p>
-<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p><img src="http://oujvmc3la.bkt.clouddn.com/form.png" alt></p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p><img src="http://assets.qipo.net/form.png" alt></p>
 <p>表单组成:<br>对于表单构成中的表单控件,提示信息和表单域,初学者可能比较难以理解,对他们的具体解释如下:</p>
 <ul>
 <li>表单控件:包含了具体的表单功能项,如单行文本输入框,密码输入框,复选框,提交按钮,重置按钮等.</li>
@@ -417,29 +417,29 @@
 </ul>
 <h4 id="input控件"><a href="#input控件" class="headerlink" title="input控件"></a>input控件</h4><p>input控件的基本语法格式如下:</p>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"input类型"</span>  /&gt;</span><br><span class="line"></span><br><span class="line">//在上面的语法中,&lt;<span class="built_in">input</span> /&gt;标记为单标记,<span class="built_in">type</span>属性为最基本的属性,其取值有很多种,用于指定不同的控机类型.除了<span class="built_in">type</span>属性之外,&lt;<span class="built_in">input</span> /&gt;标记还可以定义很多其他属性,其常用属性如下表所示.</span><br></pre></td></tr></table></figure>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/input.jpg" alt></p>
+<p><img src="http://assets.qipo.net/input.jpg" alt></p>
 <p>实例:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>表单<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"get"</span> &gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">maxlength</span>=<span class="string">"20"</span> &gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 单行文本输入框  其maxlength属性会导致其输入的最大字符数为20--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"123"</span> &gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 密码输入框,其输入显示为圆点 value属性用来设置默认值--&gt;</span></span><br><span class="line">      男<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span> 女<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">value</span>=<span class="string">"0"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 单选按钮 要想做到单选,必须让其name属性相同 这里填写value值,其不再是默认值,而是进行表单提交时,提交的值--&gt;</span></span><br><span class="line">      课程:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"yw"</span>&gt;</span>语文 <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"sx"</span>&gt;</span>数学 <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 复选框 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 普通按钮,value属性为其设置显示名称 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span> <span class="attr">value</span>=<span class="string">"清空"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 重置按钮,让整个表单清空,value属性其设置显示名称 --&gt;</span></span><br><span class="line">      这有个隐藏域--&gt;<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 隐藏域 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">multiple</span> <span class="attr">accept</span>=<span class="string">"image/*"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 文件域,供上传文件使用 multiple这个属性是多选,可以允许提交多个文件  accept属性用于指定文件类型,只能上传图片 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 提交按钮,会让整个表单提交 --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"image"</span> <span class="attr">src</span>=<span class="string">"./timg.jpg"</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 图片形式的提交 --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其浏览器显示如下:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/2017-08-24%2019-24-40%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt></p>
+<p><img src="http://assets.qipo.net/2017-08-24%2019-24-40%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt></p>
 <h4 id="textarea控件"><a href="#textarea控件" class="headerlink" title="textarea控件"></a>textarea控件</h4><p>如果需要输入大量的信息,那么就需要用到textarea标记.<br>通过textarea控件可以轻松的创建多行文本输入框,其基本语法格式如下:</p>
 <figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea rows=<span class="string">"10"</span> cols=<span class="string">"10"</span>&gt;</span><br><span class="line">......</span><br><span class="line">&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
 <p>实例:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>textarea文本域<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    文本域:</span><br><span class="line">    <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">"10"</span> <span class="attr">cols</span>=<span class="string">"10"</span> <span class="attr">style</span>=<span class="string">"vertical-align:top"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- rows和cols分别设置行宽和列高,当然也可用width和height设置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="select控件"><a href="#select控件" class="headerlink" title="select控件"></a>select控件</h4><p>当点击下拉符号时,会出现一个选择列表.在HTML中,要想制作如下图所示的下拉菜单,就需要使用select控件.</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/select.jpg" alt></p>
+<p><img src="http://assets.qipo.net/select.jpg" alt></p>
 <p>基本语法格式如下:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span>&gt;</span>选项3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>&lt;select&gt;&lt;/select&gt;</code>标记用于在表单中添加一个下拉菜单,<code>&lt;option&gt;&lt;/option&gt;</code>用于定义下拉菜单中的具体选项,每对<code>&lt;select&gt;&lt;/select&gt;</code>中至少应包含一对<code>&lt;option&gt;&lt;/option&gt;</code>.</p>
 <blockquote>
 <p><select>和<option>的属性</option></select></p>
 </blockquote>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/option.jpg" alt></p>
+<p><img src="http://assets.qipo.net/option.jpg" alt></p>
 <h4 id="fieldset组合控件"><a href="#fieldset组合控件" class="headerlink" title="fieldset组合控件"></a>fieldset组合控件</h4><p>用于将form中的控件进行分组,fieldset没有必须或唯一的属性.<br><code>legend</code>用于给fieldset定义标题.</p>
 <p>语法格式如下:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"test.php"</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">id</span>=<span class="string">"radio"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其显示如下:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/2017-08-24%2019-48-48%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt></p>
+<p><img src="http://assets.qipo.net/2017-08-24%2019-48-48%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt></p>
 <h3 id="jQuery中的表单操作"><a href="#jQuery中的表单操作" class="headerlink" title="jQuery中的表单操作"></a>jQuery中的表单操作</h3><h4 id="表单选择器"><a href="#表单选择器" class="headerlink" title="表单选择器"></a>表单选择器</h4><p>:button<br>:checkbox<br>:checked<br>:disabled<br>:enabled<br>:focus<br>:file<br>:image<br>:input<br>:password<br>:radio<br>:reset<br>:selected<br>:submit<br>:text</p>
 <h4 id="表单元素值操作"><a href="#表单元素值操作" class="headerlink" title="表单元素值操作"></a>表单元素值操作</h4><ul>
 <li>val() 获得值</li>
@@ -654,7 +654,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -730,7 +730,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -836,13 +836,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

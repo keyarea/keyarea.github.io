@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -88,18 +88,23 @@
 
 
 
-<meta name="description" content="个人认为，对于初学者this关键字是一个非常麻烦的关键字。因为从this的实际使用来讲，它可以做3件事情  调用本类属性 调用本类方法（普通和构造） 表示当前对象（相对概念）  使用this表示本类属性在真正使用this调用属性之前首先来观察如下的一道简单的程序。 范例：观察如下代码 123456789101112131415161718package this关键字;class Person&amp;#">
+<meta name="description" content="引用传递是java的整体核心，如果你不懂引用传递，基本上所有的代码都无法进行正常的分析。下面使用3个简单的程序来对引用传递进行简单的分析。 范例：第一道引用传递 12345678910111213141516171819202122package 引用传递;class Message&amp;#123;    private int num;    public void setNum(int num)&amp;">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java this关键字">
+<meta property="og:title" content="Java 引用传递分析">
 <meta property="og:url" content="https://blog.qipo.net/2018/02/13/java/index.html">
 <meta property="og:site_name" content="Key">
-<meta property="og:description" content="个人认为，对于初学者this关键字是一个非常麻烦的关键字。因为从this的实际使用来讲，它可以做3件事情  调用本类属性 调用本类方法（普通和构造） 表示当前对象（相对概念）  使用this表示本类属性在真正使用this调用属性之前首先来观察如下的一道简单的程序。 范例：观察如下代码 123456789101112131415161718package this关键字;class Person&amp;#">
+<meta property="og:description" content="引用传递是java的整体核心，如果你不懂引用传递，基本上所有的代码都无法进行正常的分析。下面使用3个简单的程序来对引用传递进行简单的分析。 范例：第一道引用传递 12345678910111213141516171819202122package 引用传递;class Message&amp;#123;    private int num;    public void setNum(int num)&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.204Z">
+<meta property="og:image" content="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%921.PNG">
+<meta property="og:image" content="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%922.PNG">
+<meta property="og:image" content="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%923.PNG">
+<meta property="og:image" content="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%924.PNG">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java this关键字">
-<meta name="twitter:description" content="个人认为，对于初学者this关键字是一个非常麻烦的关键字。因为从this的实际使用来讲，它可以做3件事情  调用本类属性 调用本类方法（普通和构造） 表示当前对象（相对概念）  使用this表示本类属性在真正使用this调用属性之前首先来观察如下的一道简单的程序。 范例：观察如下代码 123456789101112131415161718package this关键字;class Person&amp;#">
+<meta name="twitter:title" content="Java 引用传递分析">
+<meta name="twitter:description" content="引用传递是java的整体核心，如果你不懂引用传递，基本上所有的代码都无法进行正常的分析。下面使用3个简单的程序来对引用传递进行简单的分析。 范例：第一道引用传递 12345678910111213141516171819202122package 引用传递;class Message&amp;#123;    private int num;    public void setNum(int num)&amp;">
+<meta name="twitter:image" content="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%921.PNG">
 
 
 
@@ -107,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -135,7 +140,7 @@
 
 
 
-  <title>Java this关键字 | Key</title>
+  <title>Java 引用传递分析 | Key</title>
   
 
 
@@ -289,7 +294,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java this关键字</h2>
+          <h2 class="post-title" itemprop="name headline">Java 引用传递分析</h2>
         
 
         <div class="post-meta">
@@ -355,7 +360,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  434
                 </span>
               
 
@@ -371,7 +376,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -392,43 +397,22 @@
       
 
       
-        <p>个人认为，对于初学者this关键字是一个非常麻烦的关键字。因为从this的实际使用来讲，它可以做3件事情</p>
-<ul>
-<li>调用本类属性</li>
-<li>调用本类方法（普通和构造）</li>
-<li>表示当前对象（相对概念）</li>
-</ul>
-<h1 id="使用this表示本类属性"><a href="#使用this表示本类属性" class="headerlink" title="使用this表示本类属性"></a>使用this表示本类属性</h1><p>在真正使用this调用属性之前首先来观察如下的一道简单的程序。</p>
-<p>范例：观察如下代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">this</span>关键字;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String n,<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        name = n;</span><br><span class="line">        age = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span> + name + <span class="string">"年龄："</span> + age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">This1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person(<span class="string">"kai"</span>,<span class="number">25</span>).getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>但是现在的参数给出的有一些问题，来分析以下，当前类中的构造方法的核心目的在于：为类中的name和age两个属性进行初始化。但是现在构造方法的参数声明不准确<code>public Person(String n,int a)</code>,所以最好的方法就是将参数的名称与属性名称统一起来。那么这个时候就可能产生参数与属性同名问题，所以为了明确标识出要使用的是属性还是方法的参数，那么建议属性前面都统一加上<code>this</code>的形式。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">this</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person1</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person1</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+ <span class="keyword">this</span>.name + <span class="string">"  年龄："</span> +<span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">This2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person1(<span class="string">"kai"</span>,<span class="number">25</span>).getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>只要在类的方法中访问类的属性，那么属性前一定要追加<code>this</code>关键字的形式。</p>
-<h1 id="this调用方法"><a href="#this调用方法" class="headerlink" title="this调用方法"></a>this调用方法</h1><p>类中的方法一共有两种：</p>
-<ul>
-<li>构造方法：<code>this.方法(参数)</code></li>
-<li>普通方法：<code>this(参数)</code></li>
-</ul>
-<p>范例：调用本类方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">this</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person2</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person2</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">        <span class="keyword">this</span>.print();<span class="comment">//调用本类方法</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"***************"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+ <span class="keyword">this</span>.name + <span class="string">"  年龄："</span> +<span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">This3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person2(<span class="string">"kai"</span>,<span class="number">25</span>).getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>虽然调用本类的普通方法前可以不使用<code>this</code>，但是强烈建议追加上<code>this</code>,这样的目的可以区分方法的定义来源。</p>
-<p>范例：调用构造</p>
-<p>构造方法与普通方法最大的区别：使用关键字new 实例化新对象的时候使用一次，而普通方法是实例化完成后（构造方法已经执行过了）可以调用多次。</p>
-<p>那么在java里面支持类构造方法的互相调用。</p>
-<p>范例：观察构造方法本身存在的问题</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">this</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person3</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person3</span><span class="params">()</span></span>&#123;<span class="comment">//无参构造</span></span><br><span class="line">        System.out.println(<span class="string">"******一个新的Person类产生了******"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person3</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"******一个新的Person类产生了******"</span>);</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person3</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"******一个新的Person类产生了******"</span>);</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+ <span class="keyword">this</span>.name + <span class="string">"  年龄："</span> +<span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">This4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person3(<span class="string">"kai"</span>,<span class="number">25</span>));</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person3(<span class="string">"kai"</span>));</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person3());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>现在给出的程序中出现了重复的代码，这样的操作很明显不应该出现，必须消除掉重复的代码。</p>
-<p>范例：使用this解决问题</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">this</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person3</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person3</span><span class="params">()</span></span>&#123;<span class="comment">//无参构造</span></span><br><span class="line">        System.out.println(<span class="string">"******一个新的Person类产生了******"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person3</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();  <span class="comment">//调用无参构造</span></span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person3</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>(name);  <span class="comment">//调用有参构造</span></span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+ <span class="keyword">this</span>.name + <span class="string">"  年龄："</span> +<span class="keyword">this</span>.age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">This4</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person3(<span class="string">"kai"</span>,<span class="number">25</span>));</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person3(<span class="string">"kai"</span>));</span><br><span class="line">        System.out.println(<span class="keyword">new</span> Person3());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>虽然使用<code>this</code>可以实现构造方法的互相调用，但是有以下的几点要求：</p>
-<ul>
-<li><code>this()</code>调用构造方法的语句必须放在构造方法的首行。(报错)</li>
-<li>使用<code>this()</code>调用构造方法的时候请留有出口。(报错，递归调用构造方法)</li>
-</ul>
-<h1 id="this表示当前对象"><a href="#this表示当前对象" class="headerlink" title="this表示当前对象"></a>this表示当前对象</h1><p>在一个类之中肯定会产生若干个对象，那么程序类在分辨的时候不会记住有多少个对象产生了，它唯一可能知道的当前操作本类的对象是哪一个。</p>
-<p>范例：观察当前对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">this</span>关键字;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person4</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"fun方法"</span>+<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">This5</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Person4 p1 = <span class="keyword">new</span> Person4();</span><br><span class="line">        System.out.println(<span class="string">"main方法"</span>+p1);</span><br><span class="line">        p1.fun();</span><br><span class="line">        System.out.println(<span class="string">"+++++++++++"</span>);</span><br><span class="line">        Person4 p2 = <span class="keyword">new</span> Person4();</span><br><span class="line">        System.out.println(<span class="string">"main方法"</span>+p2);</span><br><span class="line">        p2.fun();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在整体的操作过程之中，this定义没有变，只要有一个对象调用了本类中的方法，那么这个this就表示当前执行的对象。</p>
+        <p>引用传递是java的整体核心，如果你不懂引用传递，基本上所有的代码都无法进行正常的分析。下面使用3个简单的程序来对引用传递进行简单的分析。</p>
+<p>范例：第一道引用传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> num;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNum</span><span class="params">(<span class="keyword">int</span> num)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">gatNum</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Message1</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Message meg = <span class="keyword">new</span> Message();</span><br><span class="line">        meg.setNum(<span class="number">100</span>);</span><br><span class="line">        fun(meg);</span><br><span class="line">        System.out.println(meg.gatNum());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Message meg)</span></span>&#123;</span><br><span class="line">        meg.setNum(<span class="number">30</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面通过内存关系图进行分析：</p>
+<p><img src="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%921.PNG" alt></p>
+<p>范例：第二道引用传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Message2</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        String str = <span class="string">"hello"</span>;</span><br><span class="line">        fun(str);</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(String temp)</span></span>&#123;</span><br><span class="line">        temp = <span class="string">"world"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果是<code>hello</code>.本题目分析的关键在于：字符串常量一旦声明则不可改变，字符串对象内容的改变依靠的是地址的引用关系变更。</p>
+<p><img src="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%922.PNG" alt></p>
+<p>范例:第三道引用传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 引用传递;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Note</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String Info;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setInfo</span><span class="params">(String Info)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.Info = Info;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.Info;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Message3</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Note note = <span class="keyword">new</span> Note();</span><br><span class="line">        note.setInfo(<span class="string">"hello"</span>);</span><br><span class="line">        fun(note);</span><br><span class="line">        System.out.println(note.getInfo());<span class="comment">//world</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">(Note note)</span></span>&#123;</span><br><span class="line">        note.setInfo(<span class="string">"world"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要想对以上的代码进行分析，一定要有一个前提：你先把String类当做一个基本数据类型那样来操作。</p>
+<p><img src="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%923.PNG" alt></p>
+<p>String是引用类型，你不应该按照基本数据类型那样来进行分析，你应该按照引用类型进行分析。</p>
+<p><img src="http://assets.qipo.net/%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%924.PNG" alt></p>
+<p>对于字符串最简单的方法就是按照基本数据类型那样进行分析</p>
 
       
     </div>
@@ -488,8 +472,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/13/java2/" rel="next" title="Java 引用传递实际应用">
-                <i class="fa fa-chevron-left"></i> Java 引用传递实际应用
+              <a href="/2018/01/31/java/" rel="next" title="Java String类的常用方法">
+                <i class="fa fa-chevron-left"></i> Java String类的常用方法
               </a>
             
           </div>
@@ -498,8 +482,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/13/java/" rel="prev" title="Java 引用传递分析">
-                Java 引用传递分析 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/13/java3/" rel="prev" title="Java 综合案例：数据表与简单Java类（一对多）">
+                Java 综合案例：数据表与简单Java类（一对多） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -552,17 +536,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -628,7 +603,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -647,22 +622,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用this表示本类属性"><span class="nav-number">1.</span> <span class="nav-text">使用this表示本类属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this调用方法"><span class="nav-number">2.</span> <span class="nav-text">this调用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this表示当前对象"><span class="nav-number">3.</span> <span class="nav-text">this表示当前对象</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -704,7 +663,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -810,13 +769,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

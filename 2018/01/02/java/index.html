@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,15 +96,15 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="类与对象是整个面向对象设计的核心所在，也是所有概念的基础。类的本身属于引用数据类型，所以类的使用会牵扯到内存的分配问题。 认识类与对象现在大家可以听懂本人说话，我们具备共同的特征：我们都是中国人，母语都是汉语，而且身体正常。具备这个特征的人很多，那么就自然是一个群体，而群体的特征就是整个类的定义概念。所谓的类描述的就是共性特征。 任何时候只是依靠共性特征是无法进行精准描述的，那么就需要一些个性化的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OOP1.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OOP2.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OOP3.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/OOP4.PNG">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.194Z">
+<meta property="og:image" content="http://assets.qipo.net/OOP1.PNG">
+<meta property="og:image" content="http://assets.qipo.net/OOP2.PNG">
+<meta property="og:image" content="http://assets.qipo.net/OOP3.PNG">
+<meta property="og:image" content="http://assets.qipo.net/OOP4.PNG">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java类与对象">
 <meta name="twitter:description" content="类与对象是整个面向对象设计的核心所在，也是所有概念的基础。类的本身属于引用数据类型，所以类的使用会牵扯到内存的分配问题。 认识类与对象现在大家可以听懂本人说话，我们具备共同的特征：我们都是中国人，母语都是汉语，而且身体正常。具备这个特征的人很多，那么就自然是一个群体，而群体的特征就是整个类的定义概念。所谓的类描述的就是共性特征。 任何时候只是依靠共性特征是无法进行精准描述的，那么就需要一些个性化的">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/OOP1.PNG">
+<meta name="twitter:image" content="http://assets.qipo.net/OOP1.PNG">
 
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -434,11 +434,11 @@
 <li>栈内存空间：保存的堆内存的地址，堆内存的操作权，如果想要简化理解，可以理解为保存的是对象名称；</li>
 </ul>
 <p>所以按照之前的程序，那么现在就可以给出如下的内存参考图：</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/OOP1.PNG" alt></p>
+<p><img src="http://assets.qipo.net/OOP1.PNG" alt></p>
 <p>但是对于对象的产生实际上要知道一共会有两种一共会有两种格式，现在使用的是声明并实例化对象的格式，那么也可以使用分布的方式来完成。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;<span class="comment">//定义一个类，类名称要求首字母大写</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"name = "</span>+ name + <span class="string">",age = "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class1</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//类名称 对象名称 = new 类名称（）；</span></span><br><span class="line">		Person kai = <span class="keyword">null</span>;<span class="comment">//声明一个新的对象</span></span><br><span class="line">		kai = <span class="keyword">new</span> Person();<span class="comment">//实例化了一个对象</span></span><br><span class="line">		kai.name = <span class="string">"wangkai"</span>;<span class="comment">//设置对象中的属性</span></span><br><span class="line">		kai.age = <span class="number">23</span>;</span><br><span class="line">		kai.info();<span class="comment">//调用方法</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>分布式具体内存分析：</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/OOP2.PNG" alt></p>
+<p><img src="http://assets.qipo.net/OOP2.PNG" alt></p>
 <p>但是千万要记住一点，对象（所有的引用数据类型）必须在其开辟空间之后才可以使用。如果使用了未开辟内存空间的引用类型，则将出现NullPointrException：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;<span class="comment">//定义一个类，类名称要求首字母大写</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"name = "</span>+ name + <span class="string">",age = "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class3</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//类名称 对象名称 = new 类名称（）；</span></span><br><span class="line">		Person kai = <span class="keyword">null</span>;<span class="comment">//声明一个新的对象</span></span><br><span class="line">		kai.info();<span class="comment">//调用方法</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这个时候我们只是声明了对象，而并没有为其开辟堆内存空间，而本程序在编译的时候不会产生任何的语法错误，但是在执行的时候会出现如下的错误提示：</p>
@@ -449,11 +449,11 @@
 <p>范例：观察引用传递</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用传递</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;<span class="comment">//定义一个类，类名称要求首字母大写</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"name = "</span>+ name + <span class="string">",age = "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class2</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//类名称 对象名称 = new 类名称（）；</span></span><br><span class="line">		Person kai = <span class="keyword">new</span> Person();<span class="comment">//声明一个新的对象</span></span><br><span class="line">		kai.name = <span class="string">"王凯"</span>;</span><br><span class="line">		kai.age = <span class="number">23</span>;</span><br><span class="line">		Person wang = kai;</span><br><span class="line">		wang.name = <span class="string">"小王"</span>;</span><br><span class="line">		kai.info();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此程序的执行观察时需要通过内存关系图来进行：</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/OOP3.PNG" alt></p>
+<p><img src="http://assets.qipo.net/OOP3.PNG" alt></p>
 <p>范例：观察引用传递</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//引用传递</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;<span class="comment">//定义一个类，类名称要求首字母大写</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">info</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"name = "</span>+ name + <span class="string">",age = "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Class4</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">	    <span class="comment">//类名称 对象名称 = new 类名称（）；</span></span><br><span class="line">		Person per1 = <span class="keyword">new</span> Person();<span class="comment">//声明一个新的对象</span></span><br><span class="line">		Person per2 = <span class="keyword">new</span> Person();</span><br><span class="line">		per1.name = <span class="string">"wangkai"</span>;</span><br><span class="line">		per1.age = <span class="number">23</span>;</span><br><span class="line">		per2.name = <span class="string">"kai"</span>;</span><br><span class="line">		per2.age = <span class="number">23</span>;</span><br><span class="line">		per2 = per1;</span><br><span class="line">		per2.name = <span class="string">"hello"</span>;</span><br><span class="line">		per2.info();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>观察此时的内存分析图：</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/OOP4.PNG" alt></p>
+<p><img src="http://assets.qipo.net/OOP4.PNG" alt></p>
 <p>在程序开发过程之中，所谓的垃圾空间指的就是没有任何栈内存指向的堆内存空间，所有的垃圾空间将不定期被java中的垃圾收集器（GC，Garbage Collector）进行回收以实现内存空间的释放，不过从实际开发来讲，虽然java有提供gc，但是gc也会造成程序性能的下降，所以开发过程之中一定要控制你对象的产生数量，即：无用的对象尽可能的少产生。</p>
 <h1 id="private（私有）实现封装处理"><a href="#private（私有）实现封装处理" class="headerlink" title="private（私有）实现封装处理"></a>private（私有）实现封装处理</h1><p>面向对象之中有三大主要特征：封装，继承，多态，对于封装是整个java中最复杂的概念，而此次所讲的内容也不过是封装中的基本概念而已。</p>
 <p>要想清楚封装，首先必须清楚如果没有封装会怎样。</p>
@@ -743,7 +743,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -819,7 +819,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -925,13 +925,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

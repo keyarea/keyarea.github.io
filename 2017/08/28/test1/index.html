@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,12 +96,12 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="jQuery库中的$()是什么?$(function(){})的作用? 简述HTTP协议. html页面中DOCTYPE的作用 css优先级计算方式 两栏布局,左边固定宽,右栏随窗口的大小变化,至少两种思路  解答第一题答:  $()等同于jQuery(),通过提供的选择器检索任何DOM元素并且通过这些元素创建一个新的jQuery对象. $(function(){})是$(document).r">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/%E2%95%AB%E2%95%A9%E2%95%98%E2%94%A4%E2%95%9D%E2%95%99%E2%95%98%E2%95%AA.jpg">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.134Z">
+<meta property="og:image" content="http://assets.qipo.net/%E2%95%AB%E2%95%A9%E2%95%98%E2%94%A4%E2%95%9D%E2%95%99%E2%95%98%E2%95%AA.jpg">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="课后题">
 <meta name="twitter:description" content="jQuery库中的$()是什么?$(function(){})的作用? 简述HTTP协议. html页面中DOCTYPE的作用 css优先级计算方式 两栏布局,左边固定宽,右栏随窗口的大小变化,至少两种思路  解答第一题答:  $()等同于jQuery(),通过提供的选择器检索任何DOM元素并且通过这些元素创建一个新的jQuery对象. $(function(){})是$(document).r">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/%E2%95%AB%E2%95%A9%E2%95%98%E2%94%A4%E2%95%9D%E2%95%99%E2%95%98%E2%95%AA.jpg">
+<meta name="twitter:image" content="http://assets.qipo.net/%E2%95%AB%E2%95%A9%E2%95%98%E2%94%A4%E2%95%9D%E2%95%99%E2%95%98%E2%95%AA.jpg">
 
 
 
@@ -109,7 +109,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -406,7 +406,7 @@
 <li><code>$()</code>等同于<code>jQuery()</code>,通过提供的选择器检索任何DOM元素并且通过这些元素创建一个新的jQuery对象.</li>
 <li><code>$(function(){})</code>是<code>$(document).ready(function(){})</code>的简写,用来DOM加载完成之后执行一系列预先定义好的函数.DOM节点加载完毕指的的是页面上所有的标签都已经加载就绪(但不是所有的资源，比如图片，音频，视频等等),脚本文件尽量放在body最后.</li>
 </ul>
-<h5 id="拓展-详解浏览器渲染页面过程"><a href="#拓展-详解浏览器渲染页面过程" class="headerlink" title="拓展  详解浏览器渲染页面过程"></a>拓展  详解浏览器渲染页面过程</h5><p><img src="http://oujvmc3la.bkt.clouddn.com/%E2%95%AB%E2%95%A9%E2%95%98%E2%94%A4%E2%95%9D%E2%95%99%E2%95%98%E2%95%AA.jpg" alt></p>
+<h5 id="拓展-详解浏览器渲染页面过程"><a href="#拓展-详解浏览器渲染页面过程" class="headerlink" title="拓展  详解浏览器渲染页面过程"></a>拓展  详解浏览器渲染页面过程</h5><p><img src="http://assets.qipo.net/%E2%95%AB%E2%95%A9%E2%95%98%E2%94%A4%E2%95%9D%E2%95%99%E2%95%98%E2%95%AA.jpg" alt></p>
 <p>1.解析HTML文件，创建DOM树<br>自上而下，遇到任何样式（link、style）与脚本（script）都会阻塞（外部样式不阻塞后续外部脚本的加载）。<br>2.解析CSS<br>优先级：浏览器默认设置&lt;用户设置&lt;外部样式&lt;内联样式&lt;HTML中的style样式；<br>特定级：id数<em>100+类或伪类数</em>10+tag名称*1<br>3.将CSS与DOM合并，构建渲染树（renderingtree）<br>DOM树与HTML一一对应，渲染树会忽略诸如head、display:none的元素<br>4.布局和绘制，重绘（repaint）和重排（reflow）<br>重排：若渲染树的一部分更新，且尺寸变化，就会发生重排；<br>重绘：部分节点需要更新，但不改变其他集合形状。如改变某个元素的颜色，就会发生重绘。<br>附：<br>1.重绘和重排何时会发生：<br>（1）增加或删除DOM节点；<br>（2）display:none（重排并重绘）；visibility:hidden（重排）；<br>（3）移动页面中的元素；<br>（4）增加或修改样式；<br>（5）用户改变窗口大小，滚动页面等。<br>2.如何减少重绘和重排以提升页面性能：<br>（1）不要一个个修改属性，应通过一个class来修改<br>错误写法：div.style.width=”50px”;div.style.top=”60px”;<br>正确写法：div.className+=” modify”;<br>（2）clone节点，在副本中修改，然后直接替换当前的节点；<br>（3）若要频繁获取计算后的样式，请暂存起来；<br>（4）降低受影响的节点：在页面顶部插入节点将影响后续所有节点。而绝对定位的元素改变会影响较少的元素；<br>（5）批量添加DOM：多个DOM插入或修改，应组成一个长的字符串后一次性放入DOM。使用innerHTML永远比DOM操作快。（特别注意：innerHTML不会执行字符串中的嵌入脚本，因此不会产生XSS漏洞）。</p>
 <h4 id="第二题"><a href="#第二题" class="headerlink" title="第二题"></a>第二题</h4><p>答:<br>HTTP协议,中文翻译为超文本传输协议,所有www文件必须遵守这个标准,HTTP协议是一个应用层协议,是客户端与服务器请求和应答的标准.</p>
 <h4 id="第三题"><a href="#第三题" class="headerlink" title="第三题"></a>第三题</h4><p>答:<br>DOCTYPE 一般写于HTML文档的最前端,指明其文档类型,让浏览器用什么标准去解析渲染页面.如果不写,只能按照浏览器默认的标准去解析渲染页面,浏览器之间默认的标准是不一样的.</p>
@@ -619,7 +619,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -695,7 +695,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -801,13 +801,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

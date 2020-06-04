@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,17 +96,17 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="java String类的基本特点 String类的两种实例化方法几乎所有的项目开发过程之中都一定会有String类的使用，但是String类的定义有一些差别，在使用上是有一些注意事项的。 String可以采用直接赋值的方式进行处理，这一点感觉上是和我们的基本数据类型是非常相似的。 范例：直接赋值实例化对象 12345678//字符串的直接赋值public class String1&amp;#123;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/String1.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/string2.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/string3.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/string4.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/string5.PNG">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/string6.PNG">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.200Z">
+<meta property="og:image" content="http://assets.qipo.net/String1.PNG">
+<meta property="og:image" content="http://assets.qipo.net/string2.PNG">
+<meta property="og:image" content="http://assets.qipo.net/string3.PNG">
+<meta property="og:image" content="http://assets.qipo.net/string4.PNG">
+<meta property="og:image" content="http://assets.qipo.net/string5.PNG">
+<meta property="og:image" content="http://assets.qipo.net/string6.PNG">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java String类的基本特点">
 <meta name="twitter:description" content="java String类的基本特点 String类的两种实例化方法几乎所有的项目开发过程之中都一定会有String类的使用，但是String类的定义有一些差别，在使用上是有一些注意事项的。 String可以采用直接赋值的方式进行处理，这一点感觉上是和我们的基本数据类型是非常相似的。 范例：直接赋值实例化对象 12345678//字符串的直接赋值public class String1&amp;#123;">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/String1.PNG">
+<meta name="twitter:image" content="http://assets.qipo.net/String1.PNG">
 
 
 
@@ -114,7 +114,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -415,7 +415,7 @@
 <p>范例：观察在String上直接使用<code>==</code>比较</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//String类型使用==</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String4</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		String str1 = <span class="string">"hello"</span>;</span><br><span class="line">		String str2 = <span class="keyword">new</span> String (<span class="string">"hello"</span>);</span><br><span class="line">		System.out.println(str1 == str2);<span class="comment">//false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>现在两个字符串的内容是相同的，而使用了“==”比较之后内容是不同的，如果想要得出结论需要进行我们的内存图分析。</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/String1.PNG" alt></p>
+<p><img src="http://assets.qipo.net/String1.PNG" alt></p>
 <p><code>==</code>本身是进行我们的数值比较的，但是如果用在了我们的对象之中，那么所比较的就应该是两个对象所保存的内存地址的数值，所以属于地址数值比较，而并没有比较对象的内容。</p>
 <p>那么如果要进行内容的比较，则必须采用String类中的一个方法（暂时变形）：</p>
 <pre><code>内容比较：`public Boolean equals(String str)`
@@ -446,10 +446,10 @@
 <p>那么以后在进行比较的时候，强烈建议如上的写法，把字符串写到前面。</p>
 <h1 id="String两种实例化的区别"><a href="#String两种实例化的区别" class="headerlink" title="String两种实例化的区别"></a>String两种实例化的区别</h1><p>现在已经给出了String两种实例化的操作模式，那么在实际的开发之中，使用哪一种会更好，以及彼此之间的区别有哪些呢？</p>
 <h2 id="采用直接赋值："><a href="#采用直接赋值：" class="headerlink" title="采用直接赋值："></a>采用直接赋值：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串的直接赋值</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String1</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		<span class="comment">//str是一个对象，那么‘hello’就应该保存在堆内存之中</span></span><br><span class="line">		String str = <span class="string">"hello"</span>;</span><br><span class="line">		System.out.println(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/string2.PNG" alt></p>
+<p><img src="http://assets.qipo.net/string2.PNG" alt></p>
 <p>那么随后下面按照同样的模式继续进行新的字符串对象的创建</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String8</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		String str = <span class="string">"hello"</span>;</span><br><span class="line">		String str1 = <span class="string">"hello"</span>;</span><br><span class="line">		String str2 = <span class="string">"hello"</span>;</span><br><span class="line">		System.out.println( str == str1 );<span class="comment">//true</span></span><br><span class="line">		System.out.println( str1 == str2 );<span class="comment">//true</span></span><br><span class="line">		System.out.println( str == str2 );<span class="comment">//true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/string3.PNG" alt></p>
+<p><img src="http://assets.qipo.net/string3.PNG" alt></p>
 <p>以上是通过程序的运行结果来分析出的内存关系，但是从另一个方面来讲，为什么没有开辟新的堆内存空间呢?</p>
 <p>String类的设计使用了一个共享的设计模式</p>
 <p>在jvm的底层实际上会自动维护一个对象池（字符串对象池），如果现在使用了直接赋值的模式进行String类的实例化操作，那么该实例化对象（字符串）将自动保存到这个对象池之中，如果下次有人使用了直接赋值的模式声明了一个String类的对象，那么对象池之中有指定的内容，那么将直接进行引用，如果没有，将开辟新的字符串对象，而后将其保存在对象池之中以供下次使用。（所谓的对象池就是一个对象数组）</p>
@@ -458,13 +458,13 @@
 <p>此时返回的都是true，一方面是与共享设计有关，另一方面就是jdk版本不同也会存在若干差异。</p>
 <h2 id="采用构造方法"><a href="#采用构造方法" class="headerlink" title="采用构造方法"></a>采用构造方法</h2><p>类对象使用构造方法进行实例化才属于我们的标准做法，那么来分析如下的一段程序：</p>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">String</span> <span class="built_in">str</span> = <span class="keyword">new</span> <span class="keyword">String</span> (<span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/string4.PNG" alt></p>
+<p><img src="http://assets.qipo.net/string4.PNG" alt></p>
 <p>那么通过分析首先可以确定一点的是，如果使用了构造方法将会开辟两块堆内存空间，并且有一块堆内存空间将会成为垃圾空间，除了这一缺点之外，实际上也会对我们的字符串共享产生问题。</p>
 <p>范例：观察字符串共享问题</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String10</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		String str = <span class="keyword">new</span> String(<span class="string">"hello"</span>);</span><br><span class="line">		System.out.println(str == <span class="string">"hello"</span>);<span class="comment">//false</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>那么这个时候并不表示不能够进入对象池保存，关键的问题是：需要手工来处理，在String类中有一个方法可以实现入池的操作：<code>public String intern()</code>;</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String10</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		String str = <span class="keyword">new</span> String(<span class="string">"hello"</span>).intern();</span><br><span class="line">		System.out.println(str == <span class="string">"hello"</span>);<span class="comment">//true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/string5.PNG" alt></p>
+<p><img src="http://assets.qipo.net/string5.PNG" alt></p>
 <blockquote>
 <p>请解释String对象实例化的两种区别？</p>
 </blockquote>
@@ -475,7 +475,7 @@
 <p>范例：观察如下代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String11</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		String str = <span class="string">"hello"</span>;</span><br><span class="line">		str=str+<span class="string">"world"</span>;</span><br><span class="line">		System.out.println(str + <span class="string">"!!!"</span>);<span class="comment">//helloworld!!!</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上字符串的变更是字符串对象的变更而不是，而并不是字符串的内容，以上的代码执行操作如下：</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/string6.PNG" alt></p>
+<p><img src="http://assets.qipo.net/string6.PNG" alt></p>
 <p>可以发现字符串上没有发生我们的任何的变化，但是字符串对象的引用却一直在改变，而且会形成大量的垃圾，正是因为String的这个特点，所以如下的代码不应该在你的开发中出现。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在你的开发之中不应该出现</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">String12</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		String str = <span class="string">"hello"</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i&lt; <span class="number">100</span> ;i++) &#123;</span><br><span class="line">			str+=i;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(str);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果说现在很多用户都使用了同样的操作，那么产生的垃圾数量就相当可观了。</p>
@@ -683,7 +683,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -759,7 +759,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -865,13 +865,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

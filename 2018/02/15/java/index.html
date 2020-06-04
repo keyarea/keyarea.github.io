@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,13 +96,13 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="在所有定义的方法上以及所有的属性上实际上都可以使用static关键字进行定义。 static属性在讲解具体的的static之前，首先来看这样一个程序: 范例：设置一个表示人的类，同时设置他所在的国家 1234567891011121314151617181920212223package static关键字;class Person&amp;#123;    private String name;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/static1.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/static2.png">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.211Z">
+<meta property="og:image" content="http://assets.qipo.net/static1.png">
+<meta property="og:image" content="http://assets.qipo.net/static2.png">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java static关键字">
 <meta name="twitter:description" content="在所有定义的方法上以及所有的属性上实际上都可以使用static关键字进行定义。 static属性在讲解具体的的static之前，首先来看这样一个程序: 范例：设置一个表示人的类，同时设置他所在的国家 1234567891011121314151617181920212223package static关键字;class Person&amp;#123;    private String name;">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/static1.png">
+<meta name="twitter:image" content="http://assets.qipo.net/static1.png">
 
 
 
@@ -110,7 +110,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -400,7 +400,7 @@
 <p>范例：设置一个表示人的类，同时设置他所在的国家</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">static</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    String country = <span class="string">"中国"</span>;   <span class="comment">//为了后面的操作方便，暂时不进行封装</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+<span class="keyword">this</span>.name +<span class="string">"，年龄："</span>+<span class="keyword">this</span>.age+<span class="string">"，国家："</span>+<span class="keyword">this</span>.country;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person(<span class="string">"王五"</span>,<span class="number">24</span>);</span><br><span class="line">        Person p2 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>,<span class="number">34</span>);</span><br><span class="line">        Person p3 = <span class="keyword">new</span> Person(<span class="string">"赵六"</span>,<span class="number">67</span>);</span><br><span class="line">        System.out.println(p1.getInfo());</span><br><span class="line">        System.out.println(p2.getInfo());</span><br><span class="line">        System.out.println(p3.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上的定义模式是在之前使用过的，而这个时候3个对象进行内存分配的图形如下：</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/static1.png" alt></p>
+<p><img src="http://assets.qipo.net/static1.png" alt></p>
 <p>既然现在描述的都是中国人，那么理论上这些country属性都是相同的，所以此时发现每一个对象的country属性被重复保存了。</p>
 <p>那么如果现在假设国家的名称突然改变了，而如果按照以上的存储模式就会出现一个问题，假设Person类已经产生了10亿个对象了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">static</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    String country = <span class="string">"中国"</span>;   <span class="comment">//为了后面的操作方便，暂时不进行封装</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+<span class="keyword">this</span>.name +<span class="string">"，年龄："</span>+<span class="keyword">this</span>.age+<span class="string">"，国家："</span>+<span class="keyword">this</span>.country;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person(<span class="string">"王五"</span>,<span class="number">24</span>);</span><br><span class="line">        p1.country = <span class="string">"中华民国"</span>;</span><br><span class="line">        Person p2 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>,<span class="number">34</span>);</span><br><span class="line">        Person p3 = <span class="keyword">new</span> Person(<span class="string">"赵六"</span>,<span class="number">67</span>);</span><br><span class="line">        System.out.println(p1.getInfo());</span><br><span class="line">        System.out.println(p2.getInfo());</span><br><span class="line">        System.out.println(p3.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -408,7 +408,7 @@
 <p>范例：定义static属性</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> <span class="keyword">static</span>关键字;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">static</span> String country = <span class="string">"中国"</span>;   <span class="comment">//为了后面的操作方便，暂时不进行封装</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name,<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getInfo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"姓名："</span>+<span class="keyword">this</span>.name +<span class="string">"，年龄："</span>+<span class="keyword">this</span>.age+<span class="string">"，国家："</span>+<span class="keyword">this</span>.country;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person(<span class="string">"王五"</span>,<span class="number">24</span>);</span><br><span class="line">        p1.country = <span class="string">"中华民国"</span>;</span><br><span class="line">        Person p2 = <span class="keyword">new</span> Person(<span class="string">"张三"</span>,<span class="number">34</span>);</span><br><span class="line">        Person p3 = <span class="keyword">new</span> Person(<span class="string">"赵六"</span>,<span class="number">67</span>);</span><br><span class="line">        System.out.println(p1.getInfo());</span><br><span class="line">        System.out.println(p2.getInfo());</span><br><span class="line">        System.out.println(p3.getInfo());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当我们的程序使用了static关键字进行定义了之后，那么此属性将不会保存在堆内存里面，会保存在一个叫全局数据区的内存空间之中，并且所有的对象都可以进行该数据区的访问。</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/static2.png" alt></p>
+<p><img src="http://assets.qipo.net/static2.png" alt></p>
 <p>但是既然现在使用的是共享属性了，这个时候代码就会出现一个问题，共享属性能通过一个对象修改吗？对于static实际上我们也会将其称呼为类属性，而所有的类属性都可以利用类名称直接调用。</p>
 <figure class="highlight protobuf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//static属性可以直接通过类名称直接调用</span></span><br><span class="line">        Person.country = <span class="string">"中华民国"</span>;</span><br></pre></td></tr></table></figure>
 <p>结论：访问static属性都使用类名称。</p>
@@ -662,7 +662,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -738,7 +738,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -844,13 +844,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

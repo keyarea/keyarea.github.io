@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,14 +96,14 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。 gitHub于2008年4月10日正式上线，除了git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。目前，其注册用户已经超过350万，托管版本数量也是非常之多，其中不乏知名开源项目 Ru">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/github.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/repo.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/repo1.png">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.097Z">
+<meta property="og:image" content="http://assets.qipo.net/github.png">
+<meta property="og:image" content="http://assets.qipo.net/repo.png">
+<meta property="og:image" content="http://assets.qipo.net/repo1.png">
+<meta property="og:updated_time" content="2020-06-04T08:25:51.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github的使用">
 <meta name="twitter:description" content="gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。 gitHub于2008年4月10日正式上线，除了git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。目前，其注册用户已经超过350万，托管版本数量也是非常之多，其中不乏知名开源项目 Ru">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/github.png">
+<meta name="twitter:image" content="http://assets.qipo.net/github.png">
 
 
 
@@ -111,7 +111,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -399,9 +399,9 @@
         <p>gitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。</p>
 <p>gitHub于2008年4月10日正式上线，除了git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。目前，其注册用户已经超过350万，托管版本数量也是非常之多，其中不乏知名开源项目 Ruby on Rails、jQuery、python 等。</p>
 <h3 id="注册github"><a href="#注册github" class="headerlink" title="注册github"></a>注册github</h3><p>我们打开<a href="https://github.com" target="_blank" rel="noopener">Github</a>, 输入邮箱和密码, 就可以完成简单的注册功能.</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/github.png" alt></p>
+<p><img src="http://assets.qipo.net/github.png" alt></p>
 <h3 id="创建一个仓库"><a href="#创建一个仓库" class="headerlink" title="创建一个仓库"></a>创建一个仓库</h3><p>那我们现在就去创建一个仓库.</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/repo.png" alt></p>
+<p><img src="http://assets.qipo.net/repo.png" alt></p>
 <p>Repository name: 要创建git仓库的名字</p>
 <p>Description: 这个仓库的简单描述, 让别人很快的了解这个库是做什么用的.</p>
 <p>Public: 表示这个仓库是公开的, 任何人都可看到, 可以随意下载, 这就是传说中的开源.</p>
@@ -421,7 +421,7 @@
 <li>我们还可以用clone直接去下载这个项目, 这也是最常用下载或拉取github仓库的方法.</li>
 </ol>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> <span class="title">https</span>://github.com/<span class="number">7666</span>/freeBook-H5.git</span><br></pre></td></tr></table></figure>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/repo1.png" alt></p>
+<p><img src="http://assets.qipo.net/repo1.png" alt></p>
 <h3 id="本地提交给Github"><a href="#本地提交给Github" class="headerlink" title="本地提交给Github"></a>本地提交给Github</h3><p>如果你已经完成了本地仓库的添加,那么接下来就是</p>
 <figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="keyword">add</span><span class="bash"> origin https://github.com/7666/freeBook-H5.git   <span class="comment">#连接github远程仓库,已经连接的话,第二次提交就不用再次输入此命令,直接git push</span></span></span><br><span class="line"><span class="bash">git push -u origin master                                       <span class="comment">#将本地仓库文件推送到远程仓库</span></span></span><br></pre></td></tr></table></figure>
 <p>如果你不想提交到这个仓库了,想连接其他远程仓库,并把本地仓库的文件提交上去<br><code>git remote rm &lt;主机名&gt;</code>命令用于删除远程主机<br><code>git remote add &lt;主机名&gt; &lt;网址&gt;</code>命令用于添加远程主机。<br>当然你也可以直接进入<code>.git</code>文件,修改<code>config</code>文件,将<code>url</code>字段修改为你远程仓库的网址即可.</p>
@@ -637,7 +637,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -713,7 +713,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -819,13 +819,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

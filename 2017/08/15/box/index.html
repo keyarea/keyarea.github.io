@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,19 +96,19 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="所有HTMl元素可以看做盒子,在CSS中,’box-model’这一术语是用来设计和布局时使用的.CSS盒模型本质上是一个盒子,封装周围的HTML元素,它包括:边距,边框,填充和实际内容. 盒子模型所谓盒子模型就是把HTML页面中的元素看做是一个矩形的盒子,也就是一个盛装内容的容器.每个矩形都是由元素的内容,内边距(padding),边框(border)和外边框(margin)组成.  如果把手机">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/box.jpg">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/box1.jpg">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/margin1.gif">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/margin2.gif">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/margin3.gif">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/margin4.gif">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/before.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/after.png">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.124Z">
+<meta property="og:image" content="http://assets.qipo.net/box.jpg">
+<meta property="og:image" content="http://assets.qipo.net/box1.jpg">
+<meta property="og:image" content="http://assets.qipo.net/margin1.gif">
+<meta property="og:image" content="http://assets.qipo.net/margin2.gif">
+<meta property="og:image" content="http://assets.qipo.net/margin3.gif">
+<meta property="og:image" content="http://assets.qipo.net/margin4.gif">
+<meta property="og:image" content="http://assets.qipo.net/before.png">
+<meta property="og:image" content="http://assets.qipo.net/after.png">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS盒子模型">
 <meta name="twitter:description" content="所有HTMl元素可以看做盒子,在CSS中,’box-model’这一术语是用来设计和布局时使用的.CSS盒模型本质上是一个盒子,封装周围的HTML元素,它包括:边距,边框,填充和实际内容. 盒子模型所谓盒子模型就是把HTML页面中的元素看做是一个矩形的盒子,也就是一个盛装内容的容器.每个矩形都是由元素的内容,内边距(padding),边框(border)和外边框(margin)组成.  如果把手机">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/box.jpg">
+<meta name="twitter:image" content="http://assets.qipo.net/box.jpg">
 
 
 
@@ -116,7 +116,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -403,9 +403,9 @@
       
         <p>所有HTMl元素可以看做盒子,在CSS中,’box-model’这一术语是用来设计和布局时使用的.CSS盒模型本质上是一个盒子,封装周围的HTML元素,它包括:边距,边框,填充和实际内容.</p>
 <h3 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h3><p>所谓盒子模型就是把HTML页面中的元素看做是一个矩形的盒子,也就是一个盛装内容的容器.每个矩形都是由元素的内容,内边距(padding),边框(border)和外边框(margin)组成.</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/box.jpg" alt></p>
+<p><img src="http://assets.qipo.net/box.jpg" alt></p>
 <p>如果把手机想象成HTML元素,那么手机盒子就是一个CSS盒子模型,其中手机为CSS盒子模型的内容,填充泡沫的厚度为CSS盒子模型的内边距,纸盒的厚度为CSS盒子模型的边框.<br>多个手机放一起时</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/box1.jpg" alt></p>
+<p><img src="http://assets.qipo.net/box1.jpg" alt></p>
 <p>最终的网页就是由多个盒子组成.</p>
 <h4 id="盒子宽度和高度的计算"><a href="#盒子宽度和高度的计算" class="headerlink" title="盒子宽度和高度的计算"></a>盒子宽度和高度的计算</h4><p>Width = <code>border-left</code> +<code>padding-left</code> + <code>width</code> +<code>padding-right</code> +<code>border-right</code></p>
 <p>Height =<code>border-top</code> +<code>padding-top</code>+<code>height</code>+<code>padding-bottom</code>+<code>border-bottom</code></p>
@@ -452,13 +452,13 @@
 </blockquote>
 <h5 id="外边距合并情况"><a href="#外边距合并情况" class="headerlink" title="外边距合并情况"></a>外边距合并情况</h5><p>外边距合并(叠加)是一个相当简单的概念.但是,在实践中对网页进行布局时,他会造成很多混淆.<br>简单的说,外边距合并指的是,当两个垂直外边距相遇时,他们将会形成一个外边距.合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者.</p>
 <p>当一个元素出现在另一个元素上面时,第一个元素的下外边距与第二个元素的上外边距会发生合并.请看下图:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/margin1.gif" alt></p>
+<p><img src="http://assets.qipo.net/margin1.gif" alt></p>
 <p>当一个元素包含在另一个元素中时(假设没有内边距或边框把外边距分隔开),他们的上或/和下外边距也会发生合并.请看下图:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/margin2.gif" alt></p>
+<p><img src="http://assets.qipo.net/margin2.gif" alt></p>
 <p>尽管看上去有些奇怪,但是外边距甚至可以与自身发生合并.<br>假设有个空元素,他有外边距,但是没有边框或填充.在这种情况下,上外边距与下外边距就会碰到一起,他们就会发生合并:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/margin3.gif" alt></p>
+<p><img src="http://assets.qipo.net/margin3.gif" alt></p>
 <p>如果这个外边距遇到另一个元素的外边框,他还会发生合并:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/margin4.gif" alt></p>
+<p><img src="http://assets.qipo.net/margin4.gif" alt></p>
 <p>这就是一系列的段落元素占用空间非常小的原因,因为他们的所有外边距都合并到一起了,形成了一个小的外边距.</p>
 <h5 id="解决嵌套元素的外边距合并"><a href="#解决嵌套元素的外边距合并" class="headerlink" title="解决嵌套元素的外边距合并"></a>解决嵌套元素的外边距合并</h5><p>对于两个嵌套关系的块元素,如果父元素没有上内边距及边框,则父元素的上外边距会和子元素的上外边距发生合并,合并后的外边距为两者中的较大者,即使父元素的上外边距为0,也会发生合并.<br>如果希望外边距不合并,可以为父元素定义1像素的上边框或者上内边框.这里以定义父元素的上边框为例,在父元素的CSS样式中增加如下代码:<br><code>border:1px solid red;</code>或者<code>padding-top:1px;</code></p>
 <h3 id="浮动概念"><a href="#浮动概念" class="headerlink" title="浮动概念"></a>浮动概念</h3><p>元素的浮动是指设置了浮动属性的元素会脱离标准文档流的控制,移动到其父元素中指定位置的过程.比喻:游泳池的池底以及水面游泳池的池底相当于标准流(文档流),水面相当于浮动的元素的所有层.水面的元素会遮挡水中的元素.</p>
@@ -519,9 +519,9 @@
 <p>下面是清除浮动的实例:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>清除浮动<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">      <span class="selector-class">.charfix</span><span class="selector-pseudo">::before</span>,<span class="selector-class">.charfix</span><span class="selector-pseudo">::after</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">content</span><span class="selector-pseudo">:""</span>;</span></span><br><span class="line"><span class="undefined">        clear: both;</span></span><br><span class="line"><span class="undefined">        display: block;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="css">      <span class="selector-class">.two</span>&#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:100px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">float</span><span class="selector-pseudo">:left</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">background</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">border</span><span class="selector-pseudo">:solid</span> <span class="selector-tag">red</span> 1<span class="selector-tag">px</span>;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 清除浮动只需要父元素在这里写上charfix这个类 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;div class="one charfix"&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"one"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"two"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>清除浮动演示<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>清除浮动之前:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/before.png" alt></p>
+<p><img src="http://assets.qipo.net/before.png" alt></p>
 <p>清除浮动后:</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/after.png" alt></p>
+<p><img src="http://assets.qipo.net/after.png" alt></p>
 <p>明显可以看出子类浮动导致父类没有高度的影响消除了.</p>
 <h3 id="visbility"><a href="#visbility" class="headerlink" title="visbility"></a>visbility</h3><p>这个元素和<code>display</code>有点像,但他们是两种截然不同的东西.<br>visibility属性值有两个:<code>hidden</code>,<code>visble</code>.<br>其中<code>visibility:hidden</code>是元素隐藏,仍然占据页面位置.<code>visibility:visble</code>是元素显示.<br>而<code>display:none;</code>也是元素隐藏,但是并不会占据页面位置.要想显示设置<code>block</code>…即可.</p>
 <h3 id="层级-z-index"><a href="#层级-z-index" class="headerlink" title="层级 z-index"></a>层级 z-index</h3><p>z-index:<code>auto</code>|<code>&lt;integer&gt;</code><br>默认值:<code>auto</code><br>适用于:定位元素.即定义了<code>position</code>为非<code>static</code>的元素.<br><code>auto</code>:元素在当前层叠上下文中的层叠级别是0.元素不会创建新的局部层叠上下文,除非它是根元素.<br><code>&lt;integer&gt;</code>:用整数值来定义层叠级别.可以为负值.<br>演示:</p>
@@ -730,7 +730,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -806,7 +806,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -912,13 +912,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

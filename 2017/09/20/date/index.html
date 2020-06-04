@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,13 +96,13 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="Date类型使用自 UTC(Coordinated Universal Time,国际协调时间)1970 年 1 月 1 日午夜(零时)开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下, Date 类型保存的日期能够精确到 1970 年 1月 1 日之前或之后的 285 616 年。ECMAScript 还为保存数学公式和信息提供了一个公共位置,即 Math 对象。与我们在 JavaSc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/math.png">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/math1.png">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.154Z">
+<meta property="og:image" content="http://assets.qipo.net/math.png">
+<meta property="og:image" content="http://assets.qipo.net/math1.png">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript内置对象Math,Date">
 <meta name="twitter:description" content="Date类型使用自 UTC(Coordinated Universal Time,国际协调时间)1970 年 1 月 1 日午夜(零时)开始经过的毫秒数来保存日期。在使用这种数据存储格式的条件下, Date 类型保存的日期能够精确到 1970 年 1月 1 日之前或之后的 285 616 年。ECMAScript 还为保存数学公式和信息提供了一个公共位置,即 Math 对象。与我们在 JavaSc">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/math.png">
+<meta name="twitter:image" content="http://assets.qipo.net/math.png">
 
 
 
@@ -110,7 +110,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -420,7 +420,7 @@
 <p>与 <code>toLocaleString()</code> 和 <code>toString()</code> 方法一样,以上这些字符串格式方法的输出也是因浏览器而异的,因此没有哪一个方法能够用来在用户界面中显示一致的日期信息。</p>
 <p>实例:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> d = <span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">//现在时间</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toDateString());<span class="comment">//Wed Sep 20 2017</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toLocaleDateString());<span class="comment">//2017/9/20</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toTimeString());<span class="comment">//20:27:15 GMT+0800 (CST)</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toLocaleTimeString());<span class="comment">//下午8:27:15</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(d.toUTCString());<span class="comment">//Wed, 20 Sep 2017 12:27:15 GMT</span></span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="javascript-内置对象-Math"><a href="#javascript-内置对象-Math" class="headerlink" title="javascript　内置对象 Math"></a>javascript　内置对象 Math</h2><h3 id="Math-属性"><a href="#Math-属性" class="headerlink" title="Math 属性"></a>Math 属性</h3><p><img src="http://oujvmc3la.bkt.clouddn.com/math.png" alt></p>
+<h2 id="javascript-内置对象-Math"><a href="#javascript-内置对象-Math" class="headerlink" title="javascript　内置对象 Math"></a>javascript　内置对象 Math</h2><h3 id="Math-属性"><a href="#Math-属性" class="headerlink" title="Math 属性"></a>Math 属性</h3><p><img src="http://assets.qipo.net/math.png" alt></p>
 <h3 id="Math-常见方法"><a href="#Math-常见方法" class="headerlink" title="Math 常见方法"></a>Math 常见方法</h3><h4 id="Math-max-Math-min"><a href="#Math-max-Math-min" class="headerlink" title="Math.max(),Math.min()"></a>Math.max(),Math.min()</h4><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d = Math.min(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>);</span><br><span class="line">console.log(d);<span class="comment">//1 最小值</span></span><br><span class="line"></span><br><span class="line">d = Math.max(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">console.log(d);<span class="comment">//5 最大值</span></span><br><span class="line"></span><br><span class="line">var nums = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">34</span>,<span class="number">56</span>,<span class="number">78</span>];</span><br><span class="line">d = Math.max.apply(Math, nums);</span><br><span class="line">console.log(d);<span class="comment">//78</span></span><br></pre></td></tr></table></figure>
 <h4 id="舍入方法"><a href="#舍入方法" class="headerlink" title="舍入方法"></a>舍入方法</h4><p>下面来介绍将小数值舍入为整数的几个方法: <code>Math.ceil()</code> 、 <code>Math.floor()</code> 和 <code>Math.round()</code> 。</p>
 <ul>
@@ -431,7 +431,7 @@
 <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取舍</span></span><br><span class="line"><span class="comment">//round</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">20.1</span>));<span class="comment">//20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">20.6</span>));<span class="comment">//21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">-20.1</span>));<span class="comment">//-20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">round</span>(<span class="number">-20.6</span>));<span class="comment">//-21</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ceil 向上取</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">20.1</span>));<span class="comment">//21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">20.6</span>));<span class="comment">//21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">-20.1</span>));<span class="comment">//-20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">ceil</span>(<span class="number">-20.6</span>));<span class="comment">//-20</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//floor 向下取</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">20.1</span>));<span class="comment">//20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">20.6</span>));<span class="comment">//20</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">-20.1</span>));<span class="comment">//-21</span></span><br><span class="line">console.<span class="built-in">log</span>(Math.<span class="built-in">floor</span>(<span class="number">-20.6</span>));<span class="comment">//-21</span></span><br></pre></td></tr></table></figure>
 <h4 id="random-方法"><a href="#random-方法" class="headerlink" title="random() 方法:"></a>random() 方法:</h4><p><code>Math.random()</code> 方法返回大于等于 0 小于 1 的一个随机数。<br>可以利用<code>Math.random()</code>实现某个正数范围内获得一个随机数:<code>值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</code>.</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">产生[<span class="number">0</span>, <span class="number">11</span>]之间的数</span><br><span class="line">num = Math.floor(Math.random()*<span class="number">12</span> + <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">产生[<span class="number">2</span>, <span class="number">10</span>]之间的数</span><br><span class="line">num = Math.floor(Math.random()*<span class="number">9</span> + <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><p><img src="http://oujvmc3la.bkt.clouddn.com/math1.png" alt></p>
+<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><p><img src="http://assets.qipo.net/math1.png" alt></p>
 
       
     </div>
@@ -501,8 +501,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/21/closure/" rel="prev" title="JavaScript闭包">
-                JavaScript闭包 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/21/object/" rel="prev" title="JavaScript面向对象">
+                JavaScript面向对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -631,7 +631,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -707,7 +707,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -813,13 +813,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

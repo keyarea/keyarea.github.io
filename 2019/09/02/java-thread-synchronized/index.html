@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,12 +96,12 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="线程的同步与死锁在多线程的处理之中,可以利用Runnable描述多个线程操作的资源,而Thread描述每一个线程对象,于是当多个线程当同一线程访问同一资源的时候如果处理不当就会产生数据的错误操作. 同步问题的引出下面编写一个简单的卖票程序,将创建若干个线程对象实现卖票的处理操作. 范例: 卖票处理操作 123456789101112131415161718192021222324252627pac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://imgs.loong.io/image/Thread/sync.jpg">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.372Z">
+<meta property="og:image" content="http://imgs.qipo.net/image/Thread/sync.jpg">
+<meta property="og:updated_time" content="2020-06-04T08:36:19.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 线程的同步与死锁">
 <meta name="twitter:description" content="线程的同步与死锁在多线程的处理之中,可以利用Runnable描述多个线程操作的资源,而Thread描述每一个线程对象,于是当多个线程当同一线程访问同一资源的时候如果处理不当就会产生数据的错误操作. 同步问题的引出下面编写一个简单的卖票程序,将创建若干个线程对象实现卖票的处理操作. 范例: 卖票处理操作 123456789101112131415161718192021222324252627pac">
-<meta name="twitter:image" content="http://imgs.loong.io/image/Thread/sync.jpg">
+<meta name="twitter:image" content="http://imgs.qipo.net/image/Thread/sync.jpg">
 
 
 
@@ -109,7 +109,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -404,7 +404,7 @@
 <p>这个时候追加了网络延迟问题就暴露出来了,而实际上这个问题一直都存在.</p>
 </blockquote>
 <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>经过分析以后已经可以确认同步问题所产生的主要原因了,那么下面就需要进行同步问题的解决,但是解决同步问题的关键是什么,是锁.指的是当某一个线程执行操作的时候,其他线程外面等待;</p>
-<p><img src="http://imgs.loong.io/image/Thread/sync.jpg" alt></p>
+<p><img src="http://imgs.qipo.net/image/Thread/sync.jpg" alt></p>
 <p>如果要想在程序之中实现这把锁的功能,就可以使用synchronized关键字来实现,利用此关键字可以定义我们的同步方法或同步代码快,在同步代码块的操作里面的代码只允许一个线程执行.</p>
 <h3 id="利用同步代码快进行处理"><a href="#利用同步代码快进行处理" class="headerlink" title="利用同步代码快进行处理"></a>利用同步代码快进行处理</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">synchronized</span><span class="params">(同步对象)</span></span> &#123;</span><br><span class="line">    同步代码操作</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -630,7 +630,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -706,7 +706,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -812,13 +812,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>

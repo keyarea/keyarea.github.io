@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,12 +96,12 @@
 <meta property="og:site_name" content="Key">
 <meta property="og:description" content="【90%的正规代码】在以后所有你进行的项目开发之中，绝对不要出现一个类去继承一个抽已经实现好的类，而只能继承我们的抽象类以及接口。 对象的多态性在于我们的一个方法的覆写，那么如果说现在子类没有去进行指定方法的覆写，这样的操作就有些不合乎要求的。所以如果要对子类的方法进行一些强制的要求就必须采用抽象类来解决。 抽象类的基本概念抽象类只是在普通类的基础上扩充了一些抽象方法而已。所谓的抽象方法指的 是只">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oujvmc3la.bkt.clouddn.com/abstract.PNG">
-<meta property="og:updated_time" content="2020-06-03T02:37:45.277Z">
+<meta property="og:image" content="http://assets.qipo.net/abstract.PNG">
+<meta property="og:updated_time" content="2020-06-04T08:30:16.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 抽象类的定义以及使用">
 <meta name="twitter:description" content="【90%的正规代码】在以后所有你进行的项目开发之中，绝对不要出现一个类去继承一个抽已经实现好的类，而只能继承我们的抽象类以及接口。 对象的多态性在于我们的一个方法的覆写，那么如果说现在子类没有去进行指定方法的覆写，这样的操作就有些不合乎要求的。所以如果要对子类的方法进行一些强制的要求就必须采用抽象类来解决。 抽象类的基本概念抽象类只是在普通类的基础上扩充了一些抽象方法而已。所谓的抽象方法指的 是只">
-<meta name="twitter:image" content="http://oujvmc3la.bkt.clouddn.com/abstract.PNG">
+<meta name="twitter:image" content="http://assets.qipo.net/abstract.PNG">
 
 
 
@@ -109,7 +109,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -454,7 +454,7 @@
 <p>机器人 ：吃饭 + 工作；</p>
 </blockquote>
 <p>那么现在有一个按钮控制(方法),一旦传入了某些指令之后，就可以进行相应的处理；</p>
-<p><img src="http://oujvmc3la.bkt.clouddn.com/abstract.PNG" alt></p>
+<p><img src="http://assets.qipo.net/abstract.PNG" alt></p>
 <p>范例：定义抽象的行为</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> EAT  = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SLEEP = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> WORK = <span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">command</span><span class="params">(<span class="keyword">int</span> cmd)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">switch</span>(cmd) &#123;</span><br><span class="line">		<span class="keyword">case</span> EAT:</span><br><span class="line">			<span class="keyword">this</span>.eat();</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SLEEP:</span><br><span class="line">			<span class="keyword">this</span>.sleep();</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> WORK:</span><br><span class="line">			<span class="keyword">this</span>.work();</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> EAT + SLEEP:</span><br><span class="line">			<span class="keyword">this</span>.eat();</span><br><span class="line">		    <span class="keyword">this</span>.sleep();</span><br><span class="line">		    <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> EAT + SLEEP +WORK:</span><br><span class="line">			<span class="keyword">this</span>.eat();</span><br><span class="line">		    <span class="keyword">this</span>.sleep();</span><br><span class="line">		    <span class="keyword">this</span>.work();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//不清楚具体的实现，但是行为应该定义好</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">sleep</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">work</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>范例:定义各个行为的子类</p>
@@ -536,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/17/java/" rel="next" title="Java 覆写">
-                <i class="fa fa-chevron-left"></i> Java 覆写
+              <a href="/2018/02/17/java1/" rel="next" title="Java 综合案例：数组操作">
+                <i class="fa fa-chevron-left"></i> Java 综合案例：数组操作
               </a>
             
           </div>
@@ -676,7 +676,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="mailto:mail@loong.io" target="_blank" title="E-Mail">
+                    <a href="mailto:wxkayle@gmail.com" target="_blank" title="E-Mail">
                       
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
@@ -752,7 +752,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
 
 
 
@@ -858,13 +858,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
