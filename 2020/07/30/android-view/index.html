@@ -88,18 +88,18 @@
 
 
 
-<meta name="description" content="常用控件的使用方法TextView TextView是Android中最简单的一个空间，主要用于在界面上显示一段文本信息。  1234567891011121314151617&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;LinearLayout    xmlns:android=&quot;http://schemas.android.com/apk/re">
+<meta name="description" content="TextView TextView是Android中最简单的一个控件，主要用于在界面上显示一段文本信息。  1234567891011121314151617&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;LinearLayout    xmlns:android=&quot;http://schemas.android.com/apk/res/android">
 <meta name="keywords" content="Android Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android常用控件">
 <meta property="og:url" content="https://blog.qipo.net/2020/07/30/android-view/index.html">
 <meta property="og:site_name" content="Key">
-<meta property="og:description" content="常用控件的使用方法TextView TextView是Android中最简单的一个空间，主要用于在界面上显示一段文本信息。  1234567891011121314151617&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;LinearLayout    xmlns:android=&quot;http://schemas.android.com/apk/re">
+<meta property="og:description" content="TextView TextView是Android中最简单的一个控件，主要用于在界面上显示一段文本信息。  1234567891011121314151617&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;LinearLayout    xmlns:android=&quot;http://schemas.android.com/apk/res/android">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-30T00:24:01.864Z">
+<meta property="og:updated_time" content="2020-07-30T02:30:33.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android常用控件">
-<meta name="twitter:description" content="常用控件的使用方法TextView TextView是Android中最简单的一个空间，主要用于在界面上显示一段文本信息。  1234567891011121314151617&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;LinearLayout    xmlns:android=&quot;http://schemas.android.com/apk/re">
+<meta name="twitter:description" content="TextView TextView是Android中最简单的一个控件，主要用于在界面上显示一段文本信息。  1234567891011121314151617&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&amp;lt;LinearLayout    xmlns:android=&quot;http://schemas.android.com/apk/res/android">
 
 
 
@@ -355,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  2k
                 </span>
               
 
@@ -392,14 +392,14 @@
       
 
       
-        <h2 id="常用控件的使用方法"><a href="#常用控件的使用方法" class="headerlink" title="常用控件的使用方法"></a>常用控件的使用方法</h2><h3 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h3><blockquote>
-<p>TextView是Android中最简单的一个空间，主要用于在界面上显示一段文本信息。</p>
+        <h3 id="TextView"><a href="#TextView" class="headerlink" title="TextView"></a>TextView</h3><blockquote>
+<p>TextView是Android中最简单的一个控件，主要用于在界面上显示一段文本信息。</p>
 </blockquote>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:tools</span>=<span class="string">"http://schemas.android.com/tools"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">tools:context</span>=<span class="string">".MainActivity"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/text_view"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:gravity</span>=<span class="string">"center"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:text</span>=<span class="string">"Hello World!"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:textColor</span>=<span class="string">"#00ff00"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>android:id</code>:给当前控件一定了一个唯一标识符;</li>
 <li><code>android:text</code>: 指定了TextView中显示的文本内容;</li>
-<li><code>android:layout_height</code>和<code>android:layout_width</code>: 分别指定了空间的高度和宽度;其中可选则属性值为:<ul>
+<li><code>android:layout_height</code>和<code>android:layout_width</code>: 分别指定了控件的高度和宽度;其中可选则属性值为:<ul>
 <li><code>match_parent</code>和<code>fill_parent</code>:表示让当前的控件的大小和父布局的大小一样，也就是由父布局来决定当前控件的大小;</li>
 <li><code>wrap_content</code>: 标识让当前控件大小能够刚好包住里面的内容，也就是由控件的内容决定当前控件的大小;</li>
 </ul>
@@ -618,7 +618,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">104</span>
+                  <span class="site-state-item-count">107</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -629,7 +629,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -696,7 +696,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用控件的使用方法"><span class="nav-number">1.</span> <span class="nav-text">常用控件的使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextView"><span class="nav-number">1.1.</span> <span class="nav-text">TextView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button"><span class="nav-number">1.2.</span> <span class="nav-text">Button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EditText"><span class="nav-number">1.3.</span> <span class="nav-text">EditText</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageView"><span class="nav-number">1.4.</span> <span class="nav-text">ImageView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressBar"><span class="nav-number">1.5.</span> <span class="nav-text">ProgressBar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AlertDialog"><span class="nav-number">1.6.</span> <span class="nav-text">AlertDialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressDialog"><span class="nav-number">1.7.</span> <span class="nav-text">ProgressDialog</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TextView"><span class="nav-number">1.</span> <span class="nav-text">TextView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Button"><span class="nav-number">2.</span> <span class="nav-text">Button</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EditText"><span class="nav-number">3.</span> <span class="nav-text">EditText</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ImageView"><span class="nav-number">4.</span> <span class="nav-text">ImageView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressBar"><span class="nav-number">5.</span> <span class="nav-text">ProgressBar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AlertDialog"><span class="nav-number">6.</span> <span class="nav-text">AlertDialog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ProgressDialog"><span class="nav-number">7.</span> <span class="nav-text">ProgressDialog</span></a></li></ol></div>
             
 
           </div>
@@ -730,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">186.8k</span>
+    <span title="Site words total count">190.8k</span>
   
 </div>
 
